@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Node-Decision Annotation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <span id="brandTitle">节点决策标注</span>
+  </div>
+  <div class="topright">
+    <span id="whoami" class="whoami"></span>
+    <button id="langBtn" class="ghost" type="button">EN</button>
+  </div>
+</header>
+
+<nav class="steps" id="stepbar" hidden>
+  <button class="step" data-goto="quiz" type="button"><span class="n">1</span><span class="t" data-i18n="step_quiz">偏好问卷</span></button>
+  <button class="step" data-goto="learn" type="button"><span class="n">2</span><span class="t" data-i18n="step_learn">怎么标</span></button>
+  <button class="step" data-goto="nodes" type="button"><span class="n">3</span><span class="t" data-i18n="step_nodes">节点标注</span></button>
+  <button class="step" data-goto="export" type="button"><span class="n">4</span><span class="t" data-i18n="step_export">导出</span></button>
+</nav>
+
+<main>
+
+<!-- ───────────────────────── setup ───────────────────────── -->
+<section id="view-setup" class="view">
+  <h1 data-i18n="setup_h">开始之前</h1>
+  <p class="lede" data-i18n="setup_lede">这份标注分两部分：先做一份约 15 分钟的偏好问卷，再对若干轨迹树节点独立打标。全程在你本机完成，结果不会自动上传——做完导出一个 zip，手动发回即可。</p>
+
+  <div class="card">
+    <label class="fieldlabel" for="annotatorId" data-i18n="setup_id">标注者 ID</label>
+    <input id="annotatorId" type="text" placeholder="e.g. A01" autocomplete="off">
+    <p class="hint" data-i18n="setup_id_hint">只用这个 ID 标识你，不要填真实姓名或邮箱——本页面和它读取的数据都是公开的。</p>
+  </div>
+
+  <div class="card">
+    <div class="fieldlabel" data-i18n="setup_mic">麦克风</div>
+    <p class="hint" data-i18n="setup_mic_hint">每组题和每个节点后面可以录一段口头说明（也可以打字）。点下面按钮授权一次即可；不授权也能继续，只是只能打字。</p>
+    <div class="row">
+      <button id="micBtn" class="secondary" type="button" data-i18n="setup_mic_btn">授权麦克风</button>
+      <span id="micState" class="hint"></span>
+    </div>
+  </div>
+
+  <div class="card" id="datasetCard">
+    <div class="fieldlabel" data-i18n="setup_subset">待标节点</div>
+    <p class="hint" id="subsetInfo">读取中…</p>
+  </div>
+
+  <div class="card" id="consentCard">
+    <div class="fieldlabel" data-i18n="setup_consent">知情同意</div>
+    <p class="hint" data-i18n="setup_consent_body">这是一项研究用的标注任务。你的选择、文字说明和录音会被我们用于研究分析；录音会转成文字，转写后的内容可能出现在论文或报告里，但不会带上你的姓名。所有数据只存在你自己的电脑上，由你导出后手动发回，我们不会自动收集任何东西。你可以随时关掉页面退出，不需要给理由。</p>
+    <label class="check" id="consentRow">
+      <input id="consentBox" type="checkbox">
+      <span data-i18n="setup_consent_agree">我已阅读并同意参与</span>
+    </label>
+  </div>
+
+  <div class="card warn" id="resumeCard" hidden>
+    <div class="fieldlabel" data-i18n="setup_resume">发现未完成的草稿</div>
+    <p class="hint" id="resumeInfo"></p>
+    <div class="row">
+      <button id="resumeBtn" class="secondary" type="button" data-i18n="setup_resume_btn">继续上次</button>
+      <button id="discardBtn" class="ghost" type="button" data-i18n="setup_discard_btn">丢弃重来</button>
+    </div>
+  </div>
+
+  <button id="startBtn" class="primary big" type="button" data-i18n="setup_start">开始</button>
+</section>
+
+<!-- ───────────────────────── quiz ───────────────────────── -->
+<section id="view-quiz" class="view" hidden>
+  <div class="progress"><div class="bar" id="quizBar"></div></div>
+  <div class="progresstext" id="quizProgress"></div>
+  <div id="quizBody"></div>
+  <div class="navrow">
+    <button id="quizPrev" class="ghost" type="button" data-i18n="prev">上一组</button>
+    <button id="quizNext" class="primary" type="button" data-i18n="next">下一组</button>
+  </div>
+</section>
+
+<!-- ───────────────────────── learn ───────────────────────── -->
+<section id="view-learn" class="view" hidden>
+  <div id="learnBody"></div>
+  <div class="navrow">
+    <button id="learnBack" class="ghost" type="button" data-i18n="learn_back">回到问卷</button>
+    <button id="learnNext" class="primary" type="button" data-i18n="learn_next">我明白了，开始标注</button>
+  </div>
+</section>
+
+<!-- ───────────────────────── nodes ───────────────────────── -->
+<section id="view-nodes" class="view" hidden>
+  <div class="progress"><div class="bar" id="nodeBar"></div></div>
+  <div class="progresstext" id="nodeProgress"></div>
+  <div id="nodeBody"></div>
+  <div class="navrow">
+    <button id="nodePrev" class="ghost" type="button" data-i18n="prev_node">上一个</button>
+    <button id="nodeNext" class="primary" type="button" data-i18n="next_node">下一个</button>
+  </div>
+</section>
+
+<!-- ───────────────────────── export ───────────────────────── -->
+<section id="view-export" class="view" hidden>
+  <h1 data-i18n="export_h">导出</h1>
+  <p class="lede" data-i18n="export_lede">导出一个 zip，里面包含结果（JSON + CSV）和所有录音文件。请把这个 zip 发回给我们。</p>
+  <div class="card" id="exportSummary"></div>
+  <button id="exportBtn" class="primary big" type="button" data-i18n="export_btn">打包下载 zip</button>
+  <p class="hint" id="exportState"></p>
+</section>
+
+</main>
+
+<script src="vendor/jszip.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

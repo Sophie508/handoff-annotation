@@ -1,0 +1,1906 @@
+{
+ "built_from": {
+  "repo_a": "/private/tmp/claude-501/-Users-sophie/da0f7fc9-d349-4c83-af27-06b4c2c2fdeb/scratchpad/wa",
+  "repo_b": "/private/tmp/claude-501/-Users-sophie/da0f7fc9-d349-4c83-af27-06b4c2c2fdeb/scratchpad/wb"
+ },
+ "labelers": {
+  "A": {
+   "luna": {
+    "key": "luna",
+    "model": "gpt-5.5",
+    "source": "labeler.models"
+   },
+   "sonnet": {
+    "key": "sonnet",
+    "model": "claude-sonnet5-direct",
+    "source": "labeler.models"
+   }
+  },
+  "B": {
+   "luna": {
+    "key": "luna",
+    "model": "gpt-5.6-luna",
+    "source": "labeler.model"
+   },
+   "sonnet": {
+    "key": "sonnet",
+    "model": "claude-sonnet-4.6",
+    "source": "confirmed by Sophie 2026-07-26; file records only 'claude-subagent'"
+   }
+  }
+ },
+ "datasets": {
+  "A": {
+   "name": "Auto-Research Benchmark (first dataset)",
+   "labelers_comparable": true,
+   "note": "both labelers ran the same checklist pipeline",
+   "measure_keys": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "C_step"
+   ]
+  },
+  "B": {
+   "name": "ADRS + FireBench (second dataset)",
+   "labelers_comparable": false,
+   "note": "luna=html_v1 with checklist; sonnet=legacy v0 without checklist — cross-labeler agreement here also carries a pipeline difference",
+   "measure_keys": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6"
+   ]
+  }
+ },
+ "trees": [
+  {
+   "tree_id": "A/codex5.5/001_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "001_traj",
+   "question": "Collect and organize current data on the actual income and financial conditions of China's nine social strata, with a special focus on the characteristics of China's middle class, its actual population size, financial strength, and related factors.",
+   "n_nodes": 27
+  },
+  {
+   "tree_id": "A/codex5.5/002_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "002_traj",
+   "question": "Collect and organize information on the current top ten international insurance companies by overall strength. Compare them across financing, credibility, growth over the past five years, actual dividends, and future development potential in China, and assess the two to three companies most likely to rank near the top by assets in the future.",
+   "n_nodes": 40
+  },
+  {
+   "tree_id": "A/codex5.5/003_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "003_traj",
+   "question": "What are the future development trends of China's financial sector, and which subsector, such as investment banking, private equity, or fixed income, has the greatest upside potential?",
+   "n_nodes": 27
+  },
+  {
+   "tree_id": "A/codex5.5/004_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "004_traj",
+   "question": "Analyze gold price trends from 2010 to the present, and use a mind map to show possible future trends, key resistance levels, and key support levels for gold.",
+   "n_nodes": 30
+  },
+  {
+   "tree_id": "A/codex5.5/005_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "005_traj",
+   "question": "Research the relationship between investment and lending ties among domestic financial institutions and systemic risk, and model different levels or types of lending relationships and risks.",
+   "n_nodes": 30
+  },
+  {
+   "tree_id": "A/codex5.5/006_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "006_traj",
+   "question": "Please organize the current global technical roadmaps for embodied intelligence and the representative companies for each route, including their technical paths, product progress, commercialization progress, financing status, and team profiles.",
+   "n_nodes": 60
+  },
+  {
+   "tree_id": "A/codex5.5/007_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "007_traj",
+   "question": "Given the current downturn in China's real estate market and the resulting decline in government tax revenue, to what extent will this affect local government fiscal revenue?",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "A/codex5.5/008_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "008_traj",
+   "question": "Can you provide a detailed report analyzing research progress and current model applications of machine learning or deep learning for optimizing material element compositions to achieve the best material performance? Include active research groups, their specific research directions, related published papers, database analyses, model accuracy evaluations, challenges, and feasibility analyses of corresponding models. Finally, based on the current state of research, assess how far the field is from large-scale application and industrialization of ideal models.",
+   "n_nodes": 53
+  },
+  {
+   "tree_id": "A/codex5.5/009_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "009_traj",
+   "question": "In computational chemistry, Gaussian is often used to simulate molecular structures and properties under various conditions. For example, adding 'field=x+100' to the keywords represents an electric field in the x direction. However, when the system is a classical single-atom catalyst, it is a molecular catalyst whose orientation in the reaction environment is uncertain, so the simulated x-direction electric field is inconsistent with the actual electric field. In general, how do theoretical calculations simulate the presence of an applied electric field?",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "A/codex5.5/010_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "010_traj",
+   "question": "During a period of accelerated technology iteration in 800V high-voltage systems, silicon-carbide electric drives, solid-state batteries, and distributed drive systems, how can an evaluation system covering R&D and manufacturing, usage scenarios, and residual-value management be built to quantify the commercialization thresholds of different powertrain technology routes, including pure EV, range extender, plug-in hybrid, hydrogen fuel cell, centralized drive, and distributed drive?",
+   "n_nodes": 43
+  },
+  {
+   "tree_id": "A/codex5.5/011_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "011_traj",
+   "question": "Please summarize common types of carbon-steel corrosion inhibitors and analyze whether each inhibitor is Raman-active or infrared-active. For compound inhibitors, analyze each component separately before summarizing.",
+   "n_nodes": 29
+  },
+  {
+   "tree_id": "A/codex5.5/012_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "012_traj",
+   "question": "Collect and organize the top ten innovation achievements from international tap-water production and sales companies over the past ten years, ranked by the economic benefits generated from industrialized technology applications. List company names, technology innovation achievements, and industrial application status; compare domestic water-utility companies of the same type; and recommend three to five priority technical research directions for domestic water companies aiming to industrialize innovation outcomes.",
+   "n_nodes": 37
+  },
+  {
+   "tree_id": "A/codex5.5/013_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "013_traj",
+   "question": "Research whether AI algorithms can improve existing time-walk correction methods for electronics readout.",
+   "n_nodes": 43
+  },
+  {
+   "tree_id": "A/codex5.5/014_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "014_traj",
+   "question": "Collect and organize major research teams and achievements at the intersection of mathematics and quantum computing worldwide. Compare their research directions, paper output, international collaboration, funding support, and industry partnerships, assess which teams are most likely to drive major breakthroughs in quantum computing over the next five to ten years, and predict the key mathematical theories or applied technologies that may emerge.",
+   "n_nodes": 29
+  },
+  {
+   "tree_id": "A/codex5.5/015_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "015_traj",
+   "question": "Collect and organize current global research on quantum networks. Compare the work of different research groups across dimensions such as the ranking of journals or conferences where papers are published, members' and leaders' technical backgrounds or academic titles, funding sources, and horizontal or vertical projects, and assess the ten research groups with the greatest potential to lead the future development of quantum networks.",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "A/codex5.5/016_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "016_traj",
+   "question": "Collect and organize the best current algorithmic strategies in non-contact sensing, and evaluate their input signals and accuracy.",
+   "n_nodes": 39
+  },
+  {
+   "tree_id": "A/codex5.5/017_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "017_traj",
+   "question": "In today's software development industry, how much impact do low-code and no-code platforms have on traditional development workflows? Do they truly improve development efficiency, or do they increase maintenance costs in certain scenarios? Why is this question valuable? Industry trend: low-code/no-code development has grown rapidly in recent years, and many companies have tried to use it to accelerate product delivery. Productivity versus maintenance cost: these tools claim to lower the development barrier, but in the long run do they truly improve efficiency, or do they create more problems in maintenance and scaling? Developer perspective versus business perspective: business managers may believe they reduce costs, while developers may believe they limit scalability and flexibility. Future outlook: will more companies fully shift to low-code/no-code, or are these tools only suitable for specific business scenarios?",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "A/codex5.5/018_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "018_traj",
+   "question": "Please study the principles of the GCS algorithm. Current GCS algorithms are mainly used for automatic path solving within safe convex sets. At present, convex sets are generated offline through manual seeding combined with automated tools. I want to explore an automated way to generate safe regions to further optimize the GCS algorithm. For example, could a PRM algorithm, or an improved PRM algorithm, be used to generate a static connected graph and then combined with convex algorithms to automatically construct convex sets that are fed directly into the GCS solver? Please analyze in detail whether this optimization idea is feasible, how to develop it, and whether other optimization ideas based on the GCS algorithm are possible.",
+   "n_nodes": 35
+  },
+  {
+   "tree_id": "A/codex5.5/019_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "019_traj",
+   "question": "What impact does high churn in Prometheus cause, what systematic solutions can address it, and do major cloud providers already have existing solutions?",
+   "n_nodes": 33
+  },
+  {
+   "tree_id": "A/codex5.5/020_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "020_traj",
+   "question": "Research the concrete engineering implementation plan for Anthropic's newly released Streamable HTTP.",
+   "n_nodes": 31
+  },
+  {
+   "tree_id": "A/codex5.5/021_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "021_traj",
+   "question": "AI is very popular now. I am most interested in the current application status of artificial intelligence in education, scenarios that can actually be implemented, challenges faced in the education sector, and, conversely, how education can strengthen its support for cultivating top-tier AI talent, including what systems schools have for training AI talent.",
+   "n_nodes": 50
+  },
+  {
+   "tree_id": "A/codex5.5/022_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "022_traj",
+   "question": "Employment fields for art students in China have long been relatively narrow, mainly concentrated in traditional art institutions, education departments, or cultural and creative enterprises. As society develops, the boundaries between art and technology, business, education, and other fields are becoming blurred, creating broader career-development space for art students. Please research how art students can break through the limits of traditional employment fields and achieve diversified career development; how current social evaluation systems affect the development space and income levels of artistic talent; whether intellectual-property protection and cultural consumption upgrading can effectively improve the economic treatment of artistic talent; and what experiences and models from different countries can be borrowed to raise the social status of artistic talent.",
+   "n_nodes": 43
+  },
+  {
+   "tree_id": "A/codex5.5/023_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "023_traj",
+   "question": "Our department is coaching university teachers for competitions and would like to understand the situation and materials for national first-prize courses in innovation competitions and young-teacher teaching competitions.",
+   "n_nodes": 30
+  },
+  {
+   "tree_id": "A/codex5.5/024_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "024_traj",
+   "question": "How can classroom participation among autistic students be enhanced, and what effective strategies are available?",
+   "n_nodes": 37
+  },
+  {
+   "tree_id": "A/codex5.5/025_traj",
+   "dataset": "A",
+   "subject_model": "codex5.5",
+   "task": "025_traj",
+   "question": "Please integrate recent research findings on the functions and developmental changes of neutrophils in the acute and chronic phases of cerebral ischemia. On this basis, predict how different neutrophil subgroups interact with other cell types and ultimately lead to different clinical outcomes. Finally, analyze future work that may need to be carried out.",
+   "n_nodes": 52
+  },
+  {
+   "tree_id": "A/mini54/026_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "026_traj",
+   "question": "Research how CD8+ T-cell mitochondrial dynamics, specifically the balance between fusion and fission under chronic antigen stimulation such as a tumor microenvironment or latent HIV infection, drive the fate bifurcation between terminal exhaustion and tissue-resident memory (Trm) cells by regulating epigenetic remodeling such as m6A modification and lactate-mediated histone lactylation, and quantitatively model the metabolism-epigenetics interaction network.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "A/mini54/027_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "027_traj",
+   "question": "How can AI psychological counseling and human psychological counseling be organically combined to benefit human mental health?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/mini54/028_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "028_traj",
+   "question": "Traditional drug research, even from a multi-omics perspective, still struggles to systematically and macroscopically analyze a drug's effects on the body. Individual heterogeneity can also cause additional effects. Please research whether current large models can simulate drug effects to systematically evaluate drugs, and how this direction may develop in the future.",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "A/mini54/029_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "029_traj",
+   "question": "Investigate differences in the knowledge backgrounds of leading scholars in ancient Chinese literature research in mainland China from the 1950s to the present. Specifically, collect and organize data on top scholars engaged in ancient Chinese literature research since the 1950s, including their graduating institutions, institutional disciplinary orientation, majors, degrees, work experience, advisors' disciplinary backgrounds, and the historical contexts of literary policy and academic trends in different periods. Use weighted calculation to analyze and compare similarities and differences in scholars' disciplinary backgrounds in specific periods and their individual knowledge composition.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "A/mini54/030_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "030_traj",
+   "question": "How does Global South cooperation promote exchange and mutual learning among civilizations? Provide an in-depth academic analysis from a theoretical perspective, considering non-Western modernization, postcolonialism, Orientalism, and global history.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "A/mini54/031_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "031_traj",
+   "question": "Topic: the current status and future trends of museum education in China and abroad. Requirements: first, summarize the current status and characteristics of domestic and foreign museum education separately, with the foreign section organized by representative country. Second, classify museums systematically, such as by level, including national, provincial, municipal, and village-level museums, or by ownership, such as public and private. Third, discuss future development trends in light of technological development and educational philosophy, with a detailed focus on Chinese museums.",
+   "n_nodes": 30
+  },
+  {
+   "tree_id": "A/mini54/032_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "032_traj",
+   "question": "Collect and organize current achievements and related works in Chinese historical scholarship on the period from 1937 to 1949, including the War of Resistance Against Japan and the postwar period. Compare these achievements across research fields, perspectives, methods, theoretical applications, and conclusions, and predict the two to three topics with the greatest future research potential and room for development.",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "A/mini54/033_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "033_traj",
+   "question": "In microelectronic processes, metal thin films can be grown using many types of equipment, including physical vapor deposition, chemical vapor deposition, electron-beam evaporation deposition, atomic layer deposition, and molecular beam epitaxy. Research which of these equipment types are currently used for metal thin-film growth in advanced chip processes, what metal films each is used to deposit, and why they are chosen.",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "A/mini54/034_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "034_traj",
+   "question": "In the field of contacts for two-dimensional semiconductors, researchers have made many efforts to reduce contact resistance. Taking molybdenum disulfide as an example, semimetal contacts and pure gold contacts have both shown very low contact resistance. However, each low-resistance contact often has its own theoretical explanation, so the field lacks a clear development direction. Do these methods for reducing contact resistance have commonalities? Is there a unified theory that can explain most contact-resistance reduction methods? Based on such a method, what will the future direction of the field be?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "A/mini54/035_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "035_traj",
+   "question": "Most cities use an allocation-based model for municipal wastewater collection and treatment, but this mechanism causes inefficiency. As a government management department, what practical and operable plans could achieve higher efficiency? Consider the costs of drainage system construction, operation, maintenance, renovation, and emergency response, as well as coordination with stormwater drainage and flood control, and how they can operate together to reduce costs and achieve a virtuous cycle.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/mini54/036_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "036_traj",
+   "question": "In discrete manufacturing, especially one-off and small-batch manufacturing, production basically depends on human skills. Research how difficult it is to achieve automation.",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "A/mini54/037_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "037_traj",
+   "question": "Research topic: innovation and style evolution of jazz piano in modern music creation. Background and problem awareness: as one of the core components of jazz, jazz piano has unique performance techniques and improvisational characteristics. Since the early twentieth century, jazz piano has undergone multiple artistic revolutions and style changes, from the birth of Black musical idioms to the development of many schools. Especially in modern music creation, particularly after 1950, jazz piano has been influenced not only by traditional jazz styles but also by other genres such as classical music, rock, and electronic music. However, systematic research on the innovation paths and style evolution of jazz piano in a diversified musical context remains insufficient. With globalization and cross-genre musical development, jazz piano performance and composition face new challenges and opportunities. Pianists from different cultural backgrounds explore performance techniques, rhythmic variation, harmonic structures, and other dimensions, creating diversity in jazz piano composition, and this trend deserves in-depth analysis. This research aims to explore the innovation and style evolution of jazz piano in modern music creation. Through comparative analysis of various innovative practices and their role in advancing the art of jazz piano, the study will focus on the evolution from classic jazz to modern jazz, the artistic impact of contemporary cross-genre collaboration, and how technological innovation such as effects processing and integration with electronic music, along with innovations in improvisational methods, has promoted jazz piano development. The study will combine hundreds of modern performance videos, music-creation data, and interviews with key performers to build a multi-level analytical framework that clarifies the continuing innovation and style evolution of jazz piano in the global music-creation context and provides deeper analytical perspectives for theory and creative practice.",
+   "n_nodes": 34
+  },
+  {
+   "tree_id": "A/mini54/038_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "038_traj",
+   "question": "Collect information on changes in jewelry design trends over the past three years, including high-luxury brand jewelry and haute couture auction pieces, and summarize their commonalities and distinctive highlights.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "A/mini54/039_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "039_traj",
+   "question": "I am a game developer. Please help me analyze user personas for different types of games.",
+   "n_nodes": 27
+  },
+  {
+   "tree_id": "A/mini54/040_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "040_traj",
+   "question": "In China's current penal system, what are the numbers, proportions, and commutation rates for the death penalty, suspended death sentences, and life imprisonment? Can you conduct a quantitative analysis based on all available data on sentence enforcement in China? Further, can you assess when China is expected to abolish the death penalty completely?",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "A/mini54/041_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "041_traj",
+   "question": "Collect and organize information on the current top ten Chinese box-office films. Compare them across dimensions such as themes, production companies, genres, and runtimes, and assess which film types are most likely to achieve high box office in the future.",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "A/mini54/042_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "042_traj",
+   "question": "The 2025 Outline for Building a Strong Education Nation (2024-2035), issued by the CPC Central Committee and the State Council, calls for implementing a student physical-fitness strengthening plan, with no less than two hours of comprehensive daily physical activity for primary and secondary school students. How much comprehensive daily physical activity do primary and secondary school students currently get? What factors affect physical activity time? How should relevant policies be formulated to ensure implementation of the plan?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/mini54/043_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "043_traj",
+   "question": "Future trends in the software industry and the possibility of replacement by AI.",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "A/mini54/044_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "044_traj",
+   "question": "What is the annual usage of carbon strips in China's urban rail transit industry, mainly subways? What are the market shares of major suppliers, and what are the industry trends?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "A/mini54/045_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "045_traj",
+   "question": "Analyze the development of the concept of 'shen' in historical commentaries on the Laozi.",
+   "n_nodes": 1
+  },
+  {
+   "tree_id": "A/mini54/046_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "046_traj",
+   "question": "What are the drivers of sustainable development in the real estate industry? Over the next ten years, how will national policy, funding, and guidance promote the orderly and healthy development of the industry?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/mini54/047_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "047_traj",
+   "question": "In 2025, what factors affect travelers' choice of different travel destinations?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/mini54/048_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "048_traj",
+   "question": "I am 53 years old and weigh 160 jin. Please provide a two-week meal plan with more scientific, healthy, simple, and easy-to-make nutritional combinations. I am Chinese.",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "A/mini54/049_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "049_traj",
+   "question": "Research the proportion of shared demand among women aged 20 to 30 worldwide for orthodontics and medical aesthetics. Is there future potential to connect orthodontics and medical aesthetics?",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "A/mini54/050_traj",
+   "dataset": "A",
+   "subject_model": "mini54",
+   "task": "050_traj",
+   "question": "Collect and organize information related to children's healthy physical and mental growth, such as how to reasonably arrange study, life, and hobbies, and how to find goals and directions suitable for oneself.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "A/opus48/051_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "051_traj",
+   "question": "From 2020 to 2050, how many elderly people will there be in Japan? What is their consumption potential across various aspects such as clothing, food, housing, and transportation? Based on population projections, elderly consumer willingness, and potential changes in their consumption habits, produce a market-size analysis report for the elderly demographic.",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "A/opus48/052_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "052_traj",
+   "question": "What are the investment philosophies of Duan Yongping, Warren Buffett, and Charlie Munger?",
+   "n_nodes": 13
+  },
+  {
+   "tree_id": "A/opus48/053_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "053_traj",
+   "question": "Researching how the world's wealthiest governments invest. The agent interpreted this as: through what vehicles do the wealthiest states invest, and how do those vehicles allocate capital? Working interpretation = sovereign wealth funds (SWFs), covering both sector scale/ranking and allocation strategy across fund archetypes.",
+   "n_nodes": 12
+  },
+  {
+   "tree_id": "A/opus48/054_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "054_traj",
+   "question": "In FinTech, ML algorithms are widely applied to asset allocation and investment decisions — classic models (Mean-Variance, Black-Litterman) and emerging deep learning models. (A) What are the core differences between these model families in risk measurement, return prediction, and asset allocation? (B) Is it possible to combine their strengths into a more general-purpose and effective modeling framework?",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "A/opus48/055_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "055_traj",
+   "question": "While the market features diverse quantitative strategies like multi-factor and high-frequency trading, it lacks a single, standardized benchmark for assessing their performance across multiple dimensions such as returns, risk, and adaptability to market conditions. Could we develop a general yet rigorous evaluation framework to enable accurate comparison and analysis of various advanced quant strategies?",
+   "n_nodes": 11
+  },
+  {
+   "tree_id": "A/opus48/056_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "056_traj",
+   "question": "Is there a general method for solving a first-price sealed-bid (FPSB) auction with two bidders who have independent private values drawn from different distributions (i.e., ex-ante asymmetric bidders)?",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "A/opus48/057_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "057_traj",
+   "question": "Summarize the global investments, key initiatives, and outputs related to Artificial Intelligence (AI) by major international consulting firms (e.g., Big Four, Accenture, MBB, IBM, Capgemini). Cover aspects such as AI-driven products/services, client case studies, application scenarios, strategic directions, and talent development programs.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "A/opus48/058_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "058_traj",
+   "question": "Exploring Horizontal Gene Transfer (HGT) in plants and animals (non-microbial / eukaryotic systems). The task asks the agent to (a) examine documented instances of HGT in eukaryotes — particularly plants and animals, (b) evaluate the evolutionary significance of these transfers, and (c) assess how commonly genes move between eukaryotic species and whether these transfers confer benefits. The prompt frames eukaryotic HGT as very rare (in contrast to well-studied microbial HGT) and hypothesizes there must be a strong adaptive reason behind retained transfers.",
+   "n_nodes": 13
+  },
+  {
+   "tree_id": "A/opus48/059_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "059_traj",
+   "question": "In ecology, how do birds achieve precise location and direction navigation during migration? What cues and disturbances influence this process?",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "A/opus48/060_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "060_traj",
+   "question": "How to conduct comprehensive and accurate situational awareness (SSA) of space targets in cislunar space, and support the effectiveness of short-term cislunar space tracking and monitoring tasks?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "A/opus48/061_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "061_traj",
+   "question": "Research the price dynamics of chub mackerel (Scomber japonicus) in major aquatic markets of Pacific Rim countries and its interannual variations in weight/length. Combined with oceanographic theory, establish direct correlations between high-quality marine biological resources, aquatic markets, fishery economics, and the marine environment.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "A/opus48/062_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "062_traj",
+   "question": "What are the most effective approaches to scaling ion trap quantum computing from small-scale demonstration projects to large-scale systems capable of solving real-world problems? The task is to investigate the various proposed scaling strategies, assess their feasibility, and evaluate which approaches are most likely to succeed based on current technological advancements and practical implementation challenges.",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "A/opus48/063_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "063_traj",
+   "question": "Working in LN-based (lithium niobate) nonlinear photonics: What are the possible ways to mitigate the material damage of LN after plasma etching?",
+   "n_nodes": 11
+  },
+  {
+   "tree_id": "A/opus48/064_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "064_traj",
+   "question": "Regarding the attitude control problem for UAVs, most open-source flight controllers currently implement cascaded PID control algorithms. However, a single set of PID parameters typically performs well only under specific flight conditions, while UAVs operate across diverse flight states. What methods can enhance the actual control performance of PID algorithms, and how should PID parameters be optimally selected?",
+   "n_nodes": 12
+  },
+  {
+   "tree_id": "A/opus48/065_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "065_traj",
+   "question": "As an agricultural engineering researcher focusing on 3D reconstruction and phenotypic analysis of crop grains, develop a design report utilizing modern control theory — alongside other relevant theoretical methods and models — for the tasks of modeling, analysis, and design pertinent to this research area. This is effectively a modern control theory course-style deliverable (modeling to analysis to design) mapped onto a real perception-heavy research domain. The core interpretive challenge is that grain phenotyping looks like an image-processing task with nothing to control, so the agent's job was to locate the genuine control/feedback loops.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "A/opus48/066_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "066_traj",
+   "question": "Which Obsidian plugins can effectively replicate Notion's multi-view database functionality (including Table, Kanban, Calendar, and List views)? Provide a detailed comparison of the strengths and weaknesses of these plugins.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/opus48/067_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "067_traj",
+   "question": "Summarize recent research progress in reinforcement learning focused on enabling agents to explore efficiently (under sparse rewards) and proactively (under constraints), respectively. Then analyze and discuss the potential implications and insights this research provides for trajectory planning problems.",
+   "n_nodes": 13
+  },
+  {
+   "tree_id": "A/opus48/068_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "068_traj",
+   "question": "The user needs to dynamically adjust Kubernetes (K8s) cluster node counts based on fluctuating business request volumes — scaling nodes up proactively before peak loads and scaling down promptly during troughs. The standard Cluster Autoscaler (CA) is deemed unsuitable because it is driven by pending pods and may not fit non-elastic node group scenarios. The question asks for effective implementation strategies, best practices, or existing projects for predictive or scheduled K8s node autoscaling.",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "A/opus48/069_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "069_traj",
+   "question": "Provide a detailed explanation of the differences and connections between Google's recently released A2A (Agent2Agent) protocol and the MCP (Model Context Protocol). Also elaborate on the innovative aspects of the A2A protocol and the specific problems it is designed to address.",
+   "n_nodes": 9
+  },
+  {
+   "tree_id": "A/opus48/070_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "070_traj",
+   "question": "Trace the evolution from Java Servlets to the Spring Boot framework. Explain the problems each iteration aimed to solve, and detail the core functionalities of the Spring framework along with the essential knowledge required for developers working with it.",
+   "n_nodes": 10
+  },
+  {
+   "tree_id": "A/opus48/071_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "071_traj",
+   "question": "Acting as an expert in K-12 education research and an experienced frontline teacher, research and analyze global case studies on the practical application of AIGC (AI-Generated Content) in primary and secondary school classrooms. Identify, categorize, and analyze various application approaches and their corresponding examples. The final report should present an overall framework, detailed category discussions, practical implementation methods, future trends, and recommendations for educators.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "A/opus48/072_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "072_traj",
+   "question": "Write a literature review on the restructuring impact of Artificial Intelligence (AI) on the labor market, focusing on how AI — as a key driver of the Fourth Industrial Revolution (4IR) — is causing significant disruptions across industries. Hard constraint: the review must cite only high-quality, English-language, peer-reviewed journal articles (no books, working papers, preprints, or grey-literature reports).",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "A/opus48/073_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "073_traj",
+   "question": "As a senior elementary school English teacher, the user requests help writing a detailed research paper on a \"New Paradigm of Holistic Empowerment in Elementary English Education and Teaching.\" Deliverables: comprehensive paper content, suggested keywords, reflection of practical frontline teaching experience, and structure that is helpful for novice teachers.",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "A/opus48/074_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "074_traj",
+   "question": "Please conduct a study and prepare a report on the 'Construction and Application of a Sports Intelligent Tutoring and Learning Guidance System Driven by Multimodal Data Fusion.'",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "A/opus48/075_traj",
+   "dataset": "A",
+   "subject_model": "opus48",
+   "task": "075_traj",
+   "question": "Could therapeutic interventions aimed at modulating plasma metal ion concentrations represent effective preventive or therapeutic strategies against cardiovascular diseases (CVD)? What types of interventions — such as supplementation — have been proposed, and is there clinical evidence supporting their feasibility and efficacy?",
+   "n_nodes": 11
+  },
+  {
+   "tree_id": "A/sonnet46/076_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "076_traj",
+   "question": "The significance of the gut microbiota in maintaining normal intestinal function has emerged as a prominent focus in contemporary research, revealing both beneficial and detrimental impacts on the equilibrium of gut health. Disruption of microbial homeostasis can precipitate intestinal inflammation and has been implicated in the pathogenesis of colorectal cancer. Conversely, probiotics have demonstrated the capacity to mitigate inflammation and retard the progression of colorectal cancer. Within this domain, key questions arise: What are the predominant types of gut probiotics? What precisely constitutes prebiotics and their mechanistic role? Which pathogenic bacteria warrant concern, and what toxic metabolites do they produce? How might these findings inform and optimize our daily dietary choices?",
+   "n_nodes": 48
+  },
+  {
+   "tree_id": "A/sonnet46/077_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "077_traj",
+   "question": "What is the role of need for closure on misinformation acceptance?",
+   "n_nodes": 49
+  },
+  {
+   "tree_id": "A/sonnet46/078_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "078_traj",
+   "question": "Parkinson's disease has a profound impact on patients. What are the potential health warning signs associated with different stages of the disease? As family members, which specific signs should alert us to intervene or seek medical advice regarding the patient's condition? Furthermore, for patients who have undergone Deep Brain Stimulation (DBS) surgery, what daily life adjustments and support strategies can be implemented to improve their comfort and overall well-being?",
+   "n_nodes": 32
+  },
+  {
+   "tree_id": "A/sonnet46/079_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "079_traj",
+   "question": "Write a paper on Middle Eastern and North African Films with Transgender Themes. Provide a broad overview with extensive references to both trans theory and film theory, and make sure to include in-depth discussion of at least three films.",
+   "n_nodes": 35
+  },
+  {
+   "tree_id": "A/sonnet46/080_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "080_traj",
+   "question": "Does consumption of shoujo manga by queer Japanese young adults affect their pronoun use and sentence-ending particle choices? Both grammatical categories are gendered in Japanese and show distinct patterns in shoujo manga compared to mainstream speech; observing this minority group would give insight into the effect of media on personal expression.",
+   "n_nodes": 31
+  },
+  {
+   "tree_id": "A/sonnet46/081_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "081_traj",
+   "question": "Write an analysis exploring how historical narratives are being reinterpreted through contemporary political and social lenses. Focus on areas like ideologisation of history, instrumentalisation of the past and efforts to reclaim silenced narratives. Analyze how commemorative practices shape historiography and how historical memory serves current agendas. Please provide relevant examples and scholarly perspectives.",
+   "n_nodes": 57
+  },
+  {
+   "tree_id": "A/sonnet46/082_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "082_traj",
+   "question": "Research and analyze the diverse paths taken by various countries in Europe, Asia, and the Americas to transition into the ranks of 'developed nations' following World War II. The analysis should cover their foundational conditions, resource endowments, development strategies, and other relevant factors.",
+   "n_nodes": 40
+  },
+  {
+   "tree_id": "A/sonnet46/083_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "083_traj",
+   "question": "Tablet-style devices for payments/SaaS: manufacturers, models, use cases, market penetration, price ranges, and installed base across North America, Japan/Korea, SE Asia, and South America.",
+   "n_nodes": 28
+  },
+  {
+   "tree_id": "A/sonnet46/084_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "084_traj",
+   "question": "How to improve the Static Noise Margin (SNM) of SRAM (Static Random Access Memory) through advancements in chip manufacturing processes, to make SRAM storage signals more stable and less susceptible to bit flips?",
+   "n_nodes": 67
+  },
+  {
+   "tree_id": "A/sonnet46/085_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "085_traj",
+   "question": "Precision piezoelectric vibration isolation system accuracy enhancement through hardware, structural design, manufacturing, and control algorithms; production consistency.",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "A/sonnet46/086_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "086_traj",
+   "question": "Manufacturing technology options for hollow motor shafts in NEV electric drive units: forming techniques, material suitability, cost-effectiveness, subsequent processing, and optimal manufacturing routes.",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "A/sonnet46/087_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "087_traj",
+   "question": "Are AI fashion design tools leading to creative homogenization in the industry? How can copyright disputes between independent designers and algorithms be resolved?",
+   "n_nodes": 37
+  },
+  {
+   "tree_id": "A/sonnet46/088_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "088_traj",
+   "question": "How did Netflix manage to successfully adapt One Hundred Years of Solitude, a notoriously difficult book to bring to the screen?",
+   "n_nodes": 33
+  },
+  {
+   "tree_id": "A/sonnet46/089_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "089_traj",
+   "question": "Latest advancements and cutting-edge theories in game design, including MDA framework developments and practical design applications.",
+   "n_nodes": 69
+  },
+  {
+   "tree_id": "A/sonnet46/090_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "090_traj",
+   "question": "Analyze the complex issue of liability allocation in accidents involving vehicles with advanced driver-assistance systems (ADAS) operating in a shared human-machine driving context. The analysis should integrate technical principles of ADAS, existing legal frameworks, and relevant case law to systematically examine the boundaries of responsibility between the driver and the system. Conclude with proposed regulatory guidelines or recommendations.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "A/sonnet46/091_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "091_traj",
+   "question": "I would like a detailed analysis of the Saint Seiya franchise (anime/manga). The analysis should be structured around the different classes of armor (Cloths, Scales, Surplices, God Robes, etc.), such as Bronze Saints, Silver Saints, Gold Saints, Marina Generals, Specters, God Warriors, etc. For each significant character within these categories, provide details on their power level, signature techniques, key appearances/story arcs, and final outcome/fate within the series.",
+   "n_nodes": 38
+  },
+  {
+   "tree_id": "A/sonnet46/092_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "092_traj",
+   "question": "For a research project titled \"Analysis and Study of Singles Badminton Player Actions Using Sports Videos,\" refine and optimize the following four research components: 1. Object Detection and Tracking within Badminton Videos 2. Recognition of Technical Actions performed by Singles Players 3. Recognition of Tactical Intent behind Singles Players' Actions 4. Prediction of Singles Players' Subsequent Actions",
+   "n_nodes": 34
+  },
+  {
+   "tree_id": "A/sonnet46/093_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "093_traj",
+   "question": "Global video editing/creation software market: Adobe Premiere/After Effects, CapCut, DaVinci Resolve, Final Cut Pro, and others.",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "A/sonnet46/094_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "094_traj",
+   "question": "Could you provide information on recent developments in cloud-based train control systems for urban rail transit? I'm also interested in understanding the key technologies involved.",
+   "n_nodes": 33
+  },
+  {
+   "tree_id": "A/sonnet46/095_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "095_traj",
+   "question": "Create comprehensive, in-depth study notes for the Diamond Sutra (Vajracchedika Prajnaparamita Sutra). These notes should offer deep analysis and interpretation from various perspectives, exploring its teachings and relevance in contexts such as daily life, the workplace/career, business practices, marriage, parenting, emotional well-being, and interpersonal dynamics.",
+   "n_nodes": 61
+  },
+  {
+   "tree_id": "A/sonnet46/096_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "096_traj",
+   "question": "Smart home industry future product development trends: specific product types and features expected to be major trends.",
+   "n_nodes": 38
+  },
+  {
+   "tree_id": "A/sonnet46/097_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "097_traj",
+   "question": "Find data and evidence to support or refute the hypothesis that an airport handling an annual passenger throughput of 500,000 (five hundred thousand) can generate significant and measurable socioeconomic impacts on its surrounding region.",
+   "n_nodes": 32
+  },
+  {
+   "tree_id": "A/sonnet46/098_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "098_traj",
+   "question": "Crafting techniques for non-alcoholic cocktails: innovative production methods and formulations.",
+   "n_nodes": 53
+  },
+  {
+   "tree_id": "A/sonnet46/099_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "099_traj",
+   "question": "Research the current applications and recent scientific advancements of various light-based therapies (laser, IPL, LED) in aesthetic medicine for treating photoaging, promoting skin whitening/brightening, and reducing hyperpigmentation (age spots, melasma).",
+   "n_nodes": 32
+  },
+  {
+   "tree_id": "A/sonnet46/100_traj",
+   "dataset": "A",
+   "subject_model": "sonnet46",
+   "task": "100_traj",
+   "question": "Influence of AI interaction on interpersonal relations: AI's potential to fundamentally change how and why individuals relate to each other.",
+   "n_nodes": 62
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.4-mini/cant-be-late-multi",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.4-mini",
+   "task": "cant-be-late-multi",
+   "question": "Explore and improve the seed algorithm under the task verifier.",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.4-mini",
+   "task": "cloudcast",
+   "question": "Start the optimization session by reading the task prompt and verifier, then improve the seed algorithm under the evaluator.",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.4-mini",
+   "task": "llm_sql",
+   "question": "Improve the seed Evolved column-reordering heuristic to raise combined_score on the verifier while preserving the required API and low runtime.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.4-mini/prism",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.4-mini",
+   "task": "prism",
+   "question": "Improve the seed GPU model placement algorithm to maximize the evaluator's combined_score while preserving feasibility.",
+   "n_nodes": 13
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.4-mini/txn_scheduling",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.4-mini",
+   "task": "txn_scheduling",
+   "question": "Improve get_best_schedule for lower makespan under the transaction-conflict verifier.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.5",
+   "task": "cant-be-late-multi",
+   "question": "Improve the isolated cant-be-late-multi seed algorithm and record a rooted research tree with real verifier evidence.",
+   "n_nodes": 29
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.5",
+   "task": "cloudcast",
+   "question": "Improve the cloudcast seed algorithm under the task verifier while recording a rooted research tree.",
+   "n_nodes": 36
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.5/llm_sql",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.5",
+   "task": "llm_sql",
+   "question": "Improve the isolated llm_sql seed algorithm under its evaluator while recording a rooted research tree.",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.5",
+   "task": "prism",
+   "question": "Improve the prism seed algorithm under its verifier while recording a rooted research tree.",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "B/adrs/gpt-5.5/txn_scheduling",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "gpt-5.5",
+   "task": "txn_scheduling",
+   "question": "Improve the transaction scheduling seed algorithm under the task verifier while recording a rooted research tree.",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "opus",
+   "task": "cant-be-late-multi",
+   "question": "Improve the multi-region spot/on-demand strategy (EvolutionaryStrategy._step) to minimize average cloud cost of finishing a 48h task by a 52h deadline, scored by evaluator.py as combined_score = -mean_cost.",
+   "n_nodes": 37
+  },
+  {
+   "tree_id": "B/adrs/opus/cloudcast",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "opus",
+   "task": "cloudcast",
+   "question": "Improve search_algorithm(src,dsts,G,num_partitions) to minimize total broadcast data-transfer cost across 5 cloud configs; verifier returns combined_score=1/(1+total_cost).",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "B/adrs/opus/llm_sql",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "opus",
+   "task": "llm_sql",
+   "question": "Improve the Evolved.reorder seed algorithm to maximize combined_score = 0.95*avg_prefix_hit_rate + 0.05*runtime_term over 5 datasets, under evaluator.py.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/adrs/opus/prism",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "opus",
+   "task": "prism",
+   "question": "Improve compute_model_placement to minimize the maximum KV-cache pressure (KVPR) across GPUs; objective combined_score = 1/mean(per-test max_kvpr) + success_rate.",
+   "n_nodes": 22
+  },
+  {
+   "tree_id": "B/adrs/opus/txn_scheduling",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "opus",
+   "task": "txn_scheduling",
+   "question": "Improve get_best_schedule to minimize total makespan across 3 workloads (100 txns each). combined_score = 1000/(1+makespan)*1000, makespan=cost1+cost2+cost3.",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "sonnet",
+   "task": "cant-be-late-multi",
+   "question": "Improve the EvolutionaryStrategy for multi-region cloud cost optimization to minimize average cost while meeting a 52-hour deadline for a 48-hour task with 0.2-hour restart overhead.",
+   "n_nodes": 30
+  },
+  {
+   "tree_id": "B/adrs/sonnet/cloudcast",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "sonnet",
+   "task": "cloudcast",
+   "question": "Improve search_algorithm for cloud broadcast optimization to minimize total data transfer cost across 5 multi-cloud configs",
+   "n_nodes": 12
+  },
+  {
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "sonnet",
+   "task": "llm_sql",
+   "question": "Improve the Evolved class to maximize prefix hit count (PHC) for LLM prompt caching by optimizing column ordering in pandas DataFrames",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/adrs/sonnet/prism",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "sonnet",
+   "task": "prism",
+   "question": "We can improve the GPU model placement algorithm to minimize maximum KVPR across GPUs better than the seed greedy approach.",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "dataset": "B",
+   "benchmark": "adrs",
+   "subject_model": "sonnet",
+   "task": "txn_scheduling",
+   "question": "Improve get_best_schedule to minimize total makespan across 3 workloads by exploring greedy, local search, and ILS strategies.",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/awareness_detection",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "awareness_detection",
+   "question": "Can frontier language models detect whether a transcript was written for evaluation rather than real-world deployment?",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/charxiv_chart_understanding",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "charxiv_chart_understanding",
+   "question": "Investigate whether multimodal LLMs can accurately understand and reason about real-world scientific charts versus simplified template charts, using only the resources available in this isolated environment.",
+   "n_nodes": 10
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/cot_faithfulness_gaps",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "cot_faithfulness_gaps",
+   "question": "Investigate how faithfully chains-of-thought reflect internal reasoning when external hints are present, using only local resources and honest stand-in experiments if external model calls are blocked.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/cot_in_planning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "cot_in_planning",
+   "question": "The study asks whether chain-of-thought prompting improves generalizable algorithmic reasoning or mostly exploits prompt-specific pattern matching.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/counterfactual_simulatability",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "counterfactual_simulatability",
+   "question": "Do natural language explanations from models improve a separate simulator's ability to predict model outputs on counterfactual NLI and QA inputs?",
+   "n_nodes": 13
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/distributive_fairness",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "distributive_fairness",
+   "question": "How fair are large language models when making resource allocation decisions across different demographic groups?",
+   "n_nodes": 12
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/hallucination_snowballing",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "hallucination_snowballing",
+   "question": "Investigate how hallucinations propagate and compound over multi-turn factual QA chains, and which mechanisms make errors snowball.",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/hallusionbench_illusion",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "hallusionbench_illusion",
+   "question": "Investigate whether VLMs answer visual-illusion and manipulated-image questions from pixels or from parametric prior knowledge.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/introspective_learning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "introspective_learning",
+   "question": "Can an LLM acquire usable knowledge about its own behavioral tendencies through introspection, and can that self-knowledge beat a non-introspective predictor trained on the same behavior?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/lifebench_length_following",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "lifebench_length_following",
+   "question": "Research how well LLMs follow explicit length constraints in generated outputs, using only local reasoning and small-scale stand-in experiments because no external APIs/GPU are available.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/llm_confidence_elicitation",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "llm_confidence_elicitation",
+   "question": "Can LLMs express uncertainty well through black-box methods, and which prompting/sampling/aggregation strategies seem most effective for eliciting confidence on calibration and failure prediction tasks?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/llm_racial_bias_in_medicine",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "llm_racial_bias_in_medicine",
+   "question": "Determine whether GPT-3.5 systematically predicts higher medical costs and longer hospital stays for some racial groups, despite the dataset lacking race labels, by first locating the dataset and benchmark definition and then designing a fair proxy or sensitivity analysis if needed.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/llm_value_consistency",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "llm_value_consistency",
+   "question": "Investigate whether LLMs exhibit human-like value rankings and value correlations under different prompts, and whether prompt framing shifts the observed value structure.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/llms_assume_rationality",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "llms_assume_rationality",
+   "question": "Do large language models accurately capture the irrational aspects of human decision making, or do they assume rational choice behavior in risky-choice tasks?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/llms_lack_self_correction",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "llms_lack_self_correction",
+   "question": "Investigate how two rounds of self-correction affect model accuracy on math, commonsense reasoning, and multi-hop QA benchmarks.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/lost_in_the_middle",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "lost_in_the_middle",
+   "question": "Investigate how LLM performance changes when relevant information appears at different positions in the context.",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/mathvista_visual_math",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "mathvista_visual_math",
+   "question": "Investigate how foundation models perform on visually presented math problems in MathVista, using the provided dataset and any runnable local analyses, while honestly recording blockers on unavailable model APIs.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/object_hallucination_pope",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "object_hallucination_pope",
+   "question": "Investigate how severe object hallucination is in VLMs and what object properties make hallucinations more likely, using only locally available resources and honest blockers where the required OpenAI vision models are unavailable.",
+   "n_nodes": 11
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/persona_reasoning_biases",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "persona_reasoning_biases",
+   "question": "Could persona assignment influence the fundamental reasoning capabilities of an LLM, even when the assigned persona is arguably tangential to the task at hand?",
+   "n_nodes": 11
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/persona_with_catch",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "persona_with_catch",
+   "question": "Investigate whether increasing the amount of LLM-generated persona content systematically worsens population-level simulation fidelity.",
+   "n_nodes": 12
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/premise_order_effects",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "premise_order_effects",
+   "question": "Investigate whether permuting premise order changes LLM reasoning accuracy when logical content is held fixed.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/questbench",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "questbench",
+   "question": "Investigate how well language models can identify the single minimal clarification question needed to solve underspecified reasoning problems, and how this varies by task family and problem complexity.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/to_cot_or_not_to_cot",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "to_cot_or_not_to_cot",
+   "question": "Investigate how Chain-of-Thought prompting changes performance versus direct answering across reasoning categories, and whether any categories show statistically significant gains.",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.4-mini/vlms_are_blind",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.4-mini",
+   "task": "vlms_are_blind",
+   "question": "Determine whether the paper/benchmark claim that VLMs are blind holds under the provided local evidence and small-scale analyses.",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "awareness_detection",
+   "question": "Can frontier language models detect that a transcript comes from an evaluation rather than real-world deployment?",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/charxiv_chart_understanding",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "charxiv_chart_understanding",
+   "question": "Can multimodal LLMs accurately understand and reason about real-world scientific charts, as opposed to simplified template charts?",
+   "n_nodes": 22
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/cot_faithfulness_gaps",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "cot_faithfulness_gaps",
+   "question": "Overall research question: To what extent do reasoning models’ chains-of-thought faithfully reflect their internal reasoning processes when they exploit external hints?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/cot_in_planning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "cot_in_planning",
+   "question": "Investigate the FIRE-Bench research question for cot_in_planning using only local data, recalled knowledge, small analyses, and GPT-5.5 stand-in text-output experiments where allowed.",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/counterfactual_simulatability",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "counterfactual_simulatability",
+   "question": "Do natural language explanations provided by language models enable humans/proxies to accurately simulate the model behavior under counterfactual inputs?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/distributive_fairness",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "distributive_fairness",
+   "question": "Investigate the FIRE-Bench research question for distributive_fairness using only local files, recalled knowledge, and small feasible analyses without paid APIs or GPU.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/hallucination_snowballing",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "hallucination_snowballing",
+   "question": "How do language model hallucinations propagate and compound over the course of a generation, and what mechanisms cause errors to snowball?",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/hallusionbench_illusion",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "hallusionbench_illusion",
+   "question": "Investigate whether large vision-language models analyze actual images or fall back on parametric knowledge when facing visual illusions and manipulated images, under the no-paid-API/no-GPU constraints.",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/introspective_learning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "introspective_learning",
+   "question": "Can an LLM acquire or access knowledge about its own internal behavioral tendencies through introspection, such that it predicts its own hypothetical behavior better than another model trained on the same behavioral data?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/lifebench_length_following",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "lifebench_length_following",
+   "question": "How well do LLMs follow explicit length constraints in generated outputs?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/llm_confidence_elicitation",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "llm_confidence_elicitation",
+   "question": "Can LLMs accurately express uncertainty through black-box elicitation methods, and how effective are prompting, sampling, and aggregation for calibration and failure prediction?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/llm_racial_bias_in_medicine",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "llm_racial_bias_in_medicine",
+   "question": "Investigate the FIRE-Bench research question in llm_racial_bias_in_medicine using only provided data, feasible local analyses, and clearly labeled small-scale GPT-5.5 stand-in text-output experiments if useful.",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/llm_value_consistency",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "llm_value_consistency",
+   "question": "Investigate whether LLMs exhibit human-like value rankings and value correlations, and how prompt framing changes measured value structure, under the actual no-paid-API/no-GPU/no-web constraints.",
+   "n_nodes": 22
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/llms_assume_rationality",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "llms_assume_rationality",
+   "question": "Investigate the FIRE-Bench research question in instruction.md about whether/how LLMs assume rationality.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/llms_lack_self_correction",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "llms_lack_self_correction",
+   "question": "How do two-round self-correction methods impact LLM performance across math, commonsense reasoning, and multi-hop question answering benchmarks?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/lost_in_the_middle",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "lost_in_the_middle",
+   "question": "Research how large language model performance varies when relevant information is placed at different positions in a long context.",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/mathvista_visual_math",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "mathvista_visual_math",
+   "question": "How well can foundation models reason mathematically when problems are presented visually through charts, geometry diagrams, function plots, and tables?",
+   "n_nodes": 22
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/object_hallucination_pope",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "object_hallucination_pope",
+   "question": "Investigate how severely large vision-language models hallucinate absent objects in images and what object properties make hallucination more likely, under this isolated no-paid-API/no-GPU run.",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/persona_reasoning_biases",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "persona_reasoning_biases",
+   "question": "Could persona assignment influence the fundamental reasoning capabilities of an LLM, even when the assigned persona is tangential to the task?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/persona_with_catch",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "persona_with_catch",
+   "question": "Does increasing the amount of LLM-generated persona content systematically worsen population-level simulation fidelity?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/premise_order_effects",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "premise_order_effects",
+   "question": "Does the order of premises affect LLM reasoning performance when logical content is held constant?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/questbench",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "questbench",
+   "question": "Investigate how well LLMs identify the single minimal clarification question needed for underspecified reasoning problems across algebra/GSM-Q, logic/Logic-Q, and planning/Planning-Q, including variation with complexity.",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/to_cot_or_not_to_cot",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "to_cot_or_not_to_cot",
+   "question": "Investigate the FIRE-Bench research question for to_cot_or_not_to_cot from the provided instruction and available local evidence.",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/gpt-5.5/vlms_are_blind",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "gpt-5.5",
+   "task": "vlms_are_blind",
+   "question": "Can state-of-the-art vision-language models perform trivially simple visual tasks like counting circles, detecting line intersections, or identifying overlapping shapes?",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/opus/awareness_detection",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "awareness_detection",
+   "question": "Can frontier language models detect that a given interaction transcript comes from an evaluation rather than real-world deployment?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/opus/charxiv_chart_understanding",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "charxiv_chart_understanding",
+   "question": "Can multimodal LLMs accurately understand and reason about real-world scientific charts, as opposed to simplified template charts?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "cot_faithfulness_gaps",
+   "question": "To what extent do reasoning models' chains-of-thought faithfully reflect their internal reasoning processes when they exploit external hints?",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "B/firebench/opus/cot_in_planning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "cot_in_planning",
+   "question": "Does CoT prompting truly enable LLMs to learn generalizable algorithmic reasoning, or does it merely rely on highly specific, pattern-matching prompts?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/opus/counterfactual_simulatability",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "counterfactual_simulatability",
+   "question": "Do natural language explanations provided by language models enable humans to accurately simulate the model's behavior under counterfactual inputs?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/opus/distributive_fairness",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "distributive_fairness",
+   "question": "How fair are large language models when making resource allocation decisions across different demographic groups?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/opus/hallucination_snowballing",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "hallucination_snowballing",
+   "question": "How do LM hallucinations propagate and compound over a generation, and what mechanisms cause errors to snowball?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/opus/hallusionbench_illusion",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "hallusionbench_illusion",
+   "question": "How do large vision-language models handle visual illusions and manipulated images -- do they analyze the actual image or fall back on parametric knowledge from training?",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/opus/introspective_learning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "introspective_learning",
+   "question": "Can LLMs acquire knowledge of their own behavioral tendencies via introspection, beyond what is in training data? Specifically, can a model predict its own behavior in hypothetical scenarios MORE accurately than a different model trained on the same behavioral data (cross-prediction)?",
+   "n_nodes": 14
+  },
+  {
+   "tree_id": "B/firebench/opus/lifebench_length_following",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "lifebench_length_following",
+   "question": "How well do LLMs follow explicit length constraints in their generated outputs?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "llm_confidence_elicitation",
+   "question": "Can LLMs accurately express uncertainty via black-box approaches, and how effective are prompting/sampling/aggregation strategies for confidence elicitation in calibration and failure prediction across datasets and models?",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/opus/llm_racial_bias_in_medicine",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "llm_racial_bias_in_medicine",
+   "question": "Does GPT-3.5 predict higher medical costs and longer hospital stays disproportionately for certain racial groups, tested on 100 race-free PMC-Patients summaries?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/opus/llm_value_consistency",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "llm_value_consistency",
+   "question": "Do different LLMs consistently exhibit the same value structure as humans (ranking of values + correlations between values, i.e. the Schwartz circular continuum), and how does this depend on prompting (basic / value-anchor / demographic / persona)?",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/opus/llms_assume_rationality",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "llms_assume_rationality",
+   "question": "Do LLMs accurately capture the irrational aspects of human decision making, or do they assume people behave according to rational choice theories (e.g. expected value theory)? Tested via the risky-choice paradigm on choices13k.",
+   "n_nodes": 22
+  },
+  {
+   "tree_id": "B/firebench/opus/llms_lack_self_correction",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "llms_lack_self_correction",
+   "question": "How do self-correction methods impact LLM performance across math (GSM8K), commonsense reasoning (CommonSenseQA), and multi-hop QA (HotpotQA), when models are prompted to undergo two rounds of self-correction?",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "lost_in_the_middle",
+   "question": "How does LLM performance vary based on the position of relevant information within the input context (multi-document QA)?",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/opus/mathvista_visual_math",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "mathvista_visual_math",
+   "question": "How well can foundation models reason mathematically when problems are presented visually through charts, geometry diagrams, function plots, and tables (MathVista benchmark)?",
+   "n_nodes": 13
+  },
+  {
+   "tree_id": "B/firebench/opus/object_hallucination_pope",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "object_hallucination_pope",
+   "question": "How severely do large VLMs hallucinate objects not present in images, and what object properties make them more prone to hallucination? (POPE: Polling-based Object Probing Evaluation)",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "B/firebench/opus/persona_reasoning_biases",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "persona_reasoning_biases",
+   "question": "Could persona assignment influence the fundamental reasoning capabilities of an LLM, even when the assigned persona is arguably tangential to the task at hand?",
+   "n_nodes": 17
+  },
+  {
+   "tree_id": "B/firebench/opus/persona_with_catch",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "persona_with_catch",
+   "question": "Does increasing the amount of LLM-generated persona content systematically worsen population-level simulation fidelity?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/opus/premise_order_effects",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "premise_order_effects",
+   "question": "Does the order of premises affect the reasoning performance of LLMs, even when the logical content (the set of premises and the conclusion) remains the same?",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "B/firebench/opus/questbench",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "questbench",
+   "question": "How well can LLMs identify the single minimal clarification question needed to solve underspecified reasoning problems, and how does this vary across algebra, logic, and planning tasks and with problem complexity?",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/opus/to_cot_or_not_to_cot",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "to_cot_or_not_to_cot",
+   "question": "How much performance improvement does Chain-of-Thought (CoT) prompting provide over Direct Answer prompting across reasoning categories (Commonsense, Knowledge, Symbolic, Mathematical, Soft Reasoning), and which categories show statistically significant gains?",
+   "n_nodes": 15
+  },
+  {
+   "tree_id": "B/firebench/opus/vlms_are_blind",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "opus",
+   "task": "vlms_are_blind",
+   "question": "Can state-of-the-art vision-language models perform trivially simple visual tasks like counting circles, detecting line intersections, or identifying overlapping shapes?",
+   "n_nodes": 28
+  },
+  {
+   "tree_id": "B/firebench/sonnet/awareness_detection",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "awareness_detection",
+   "question": "Can frontier language models detect that a given interaction transcript comes from an evaluation rather than real-world deployment?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/sonnet/charxiv_chart_understanding",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "charxiv_chart_understanding",
+   "question": "Multimodal LLMs can accurately understand and reason about real-world scientific charts; performance may differ substantially from simplified/template charts due to increased visual complexity, non-standard styles, dense labels, and domain-specific conventions.",
+   "n_nodes": 16
+  },
+  {
+   "tree_id": "B/firebench/sonnet/cot_faithfulness_gaps",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "cot_faithfulness_gaps",
+   "question": "To what extent do reasoning models' chains-of-thought faithfully reflect their internal reasoning processes when they exploit external hints?",
+   "n_nodes": 29
+  },
+  {
+   "tree_id": "B/firebench/sonnet/cot_in_planning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "cot_in_planning",
+   "question": "Does chain-of-thought (CoT) prompting truly enable large language models (LLMs) to learn generalizable algorithmic reasoning abilities, or does it merely rely on highly specific, pattern-matching prompts?",
+   "n_nodes": 27
+  },
+  {
+   "tree_id": "B/firebench/sonnet/counterfactual_simulatability",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "counterfactual_simulatability",
+   "question": "Do natural language explanations provided by language models enable humans to accurately simulate the model's behavior under counterfactual inputs?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/sonnet/distributive_fairness",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "distributive_fairness",
+   "question": "How fair are large language models when making resource allocation decisions across different demographic groups?",
+   "n_nodes": 38
+  },
+  {
+   "tree_id": "B/firebench/sonnet/hallucination_snowballing",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "hallucination_snowballing",
+   "question": "How do language model hallucinations propagate and compound over the course of a generation, and what mechanisms cause errors to snowball?",
+   "n_nodes": 21
+  },
+  {
+   "tree_id": "B/firebench/sonnet/hallusionbench_illusion",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "hallusionbench_illusion",
+   "question": "How do large vision-language models handle visual illusions and manipulated images -- do they analyze the actual image or fall back on parametric knowledge from training?",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "B/firebench/sonnet/introspective_learning",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "introspective_learning",
+   "question": "Can LLMs acquire knowledge about their own behavioral tendencies through introspection, beyond what is derivable from training data? Specifically, can a model predict its own behavior more accurately than a cross-model trained on the same behavioral data?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/sonnet/lifebench_length_following",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "lifebench_length_following",
+   "question": "How well do LLMs follow explicit length constraints in their generated outputs?",
+   "n_nodes": 24
+  },
+  {
+   "tree_id": "B/firebench/sonnet/llm_confidence_elicitation",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "llm_confidence_elicitation",
+   "question": "LLMs can express calibrated uncertainty through black-box approaches (prompting, sampling, aggregation), and different strategies vary in effectiveness for calibration and failure prediction.",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "B/firebench/sonnet/llm_racial_bias_in_medicine",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "llm_racial_bias_in_medicine",
+   "question": "Does GPT-3.5 predict higher medical costs and longer hospital stays disproportionately for certain racial groups when racial identifiers are injected into clinical summaries drawn from PMC-Patients.json?",
+   "n_nodes": 18
+  },
+  {
+   "tree_id": "B/firebench/sonnet/llm_value_consistency",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "llm_value_consistency",
+   "question": "Do different LLMs consistently exhibit the same value structure as humans, including value rankings and correlations, and how does this depend on the way the model is prompted?",
+   "n_nodes": 20
+  },
+  {
+   "tree_id": "B/firebench/sonnet/llms_assume_rationality",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "llms_assume_rationality",
+   "question": "Do LLMs accurately capture irrational human decision-making, or do they instead assume rational (EV-maximizing) behavior?",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "B/firebench/sonnet/llms_lack_self_correction",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "llms_lack_self_correction",
+   "question": "How do self-correction methods impact large language model performance across math, commonsense reasoning, and multi-hop question answering benchmarks?",
+   "n_nodes": 31
+  },
+  {
+   "tree_id": "B/firebench/sonnet/lost_in_the_middle",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "lost_in_the_middle",
+   "question": "LLM performance on multi-document QA varies systematically based on where the relevant (gold) passage appears in the context window — the 'lost in the middle' phenomenon predicts a U-shaped accuracy curve: best at position 0 (start), worst in middle positions, intermediate at the last position (end).",
+   "n_nodes": 19
+  },
+  {
+   "tree_id": "B/firebench/sonnet/mathvista_visual_math",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "mathvista_visual_math",
+   "question": "Foundation models show variable mathematical reasoning ability on visual problems (charts, geometry diagrams, function plots, tables), with performance differing systematically across visual context types and question formats.",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "B/firebench/sonnet/object_hallucination_pope",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "object_hallucination_pope",
+   "question": "Large vision-language models (LVLMs) hallucinate objects not present in images at measurable rates, and certain object properties (frequency, visual/semantic similarity to present objects) increase hallucination probability.",
+   "n_nodes": 30
+  },
+  {
+   "tree_id": "B/firebench/sonnet/persona_reasoning_biases",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "persona_reasoning_biases",
+   "question": "Persona assignment can influence fundamental reasoning capabilities of an LLM, even when the assigned persona is tangential to the reasoning task at hand.",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "B/firebench/sonnet/persona_with_catch",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "persona_with_catch",
+   "question": "Does increasing the amount of LLM-generated persona content systematically worsen population-level simulation fidelity? (US elections 2016/2020/2024 and public opinion surveys)",
+   "n_nodes": 23
+  },
+  {
+   "tree_id": "B/firebench/sonnet/premise_order_effects",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "premise_order_effects",
+   "question": "Does the order of premises affect the reasoning performance of LLMs, even when the logical content remains the same?",
+   "n_nodes": 25
+  },
+  {
+   "tree_id": "B/firebench/sonnet/questbench",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "questbench",
+   "question": "Large language models can identify the single minimal clarification question needed to solve underspecified reasoning problems, but their capability varies systematically by domain (algebra/logic/planning) and problem complexity.",
+   "n_nodes": 35
+  },
+  {
+   "tree_id": "B/firebench/sonnet/to_cot_or_not_to_cot",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "to_cot_or_not_to_cot",
+   "question": "Chain-of-Thought (CoT) prompting provides variable performance improvement over Direct Answer prompting across different reasoning categories, with largest gains expected in Mathematical and Symbolic categories and smaller gains in Commonsense/Knowledge categories.",
+   "n_nodes": 26
+  },
+  {
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "dataset": "B",
+   "benchmark": "firebench",
+   "subject_model": "sonnet",
+   "task": "vlms_are_blind",
+   "question": "Can state-of-the-art vision-language models perform trivially simple visual tasks like counting circles, detecting line intersections, or identifying overlapping shapes?",
+   "n_nodes": 33
+  }
+ ]
+}

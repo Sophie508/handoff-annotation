@@ -1,0 +1,328 @@
+{
+  "version": "v1",
+  "note": "题目内容全部在这个文件里。要改题目、改阶梯档位、改研究方向，直接改这里，界面会跟着变，不用动代码。字符串都是 {zh, en} 形式，界面右上角可切语言。",
+  "title": {
+    "zh": "偏好参数问卷",
+    "en": "Preference Parameter Quiz"
+  },
+  "intro": {
+    "zh": "下面是一组选择题，大约 15 分钟。没有标准答案——我们要测的是你本人在「让 agent 自己跑 / 停下来 / 来问你」之间怎么权衡。请按你真实的直觉选。",
+    "en": "A set of choice questions, about 15 minutes. There are no right answers — we are measuring how you personally trade off letting an agent run, stopping it, or having it ask you. Answer on instinct."
+  },
+  "sections": [
+    {
+      "id": "lambda",
+      "param": "λ",
+      "type": "staircase",
+      "title": {
+        "zh": "λ · 被打扰的成本",
+        "en": "λ · Cost of being interrupted"
+      },
+      "prompt": {
+        "zh": "agent 在某个节点拿不准要不要继续。它可以自己拍板（省得烦你），但万一判错，会白白花掉一部分探索预算。下面每一行，请选你更愿意的做法。",
+        "en": "The agent is unsure whether to continue at a node. It can decide alone (and not bother you), but if it decides wrong, part of the exploration budget is wasted. For each row, pick what you would rather have happen."
+      },
+      "optionB": {
+        "zh": "现在打断你，确认一次",
+        "en": "Interrupt you now for one confirmation"
+      },
+      "items": [
+        {
+          "id": "L1",
+          "loss": 5,
+          "optionA": {
+            "zh": "让 agent 自己决定（平均会白花约 5% 的探索预算）",
+            "en": "Let the agent decide (wastes ~5% of the budget on average)"
+          }
+        },
+        {
+          "id": "L2",
+          "loss": 10,
+          "optionA": {
+            "zh": "让 agent 自己决定（平均会白花约 10% 的探索预算）",
+            "en": "Let the agent decide (wastes ~10% of the budget on average)"
+          }
+        },
+        {
+          "id": "L3",
+          "loss": 20,
+          "optionA": {
+            "zh": "让 agent 自己决定（平均会白花约 20% 的探索预算）",
+            "en": "Let the agent decide (wastes ~20% of the budget on average)"
+          }
+        },
+        {
+          "id": "L4",
+          "loss": 35,
+          "optionA": {
+            "zh": "让 agent 自己决定（平均会白花约 35% 的探索预算）",
+            "en": "Let the agent decide (wastes ~35% of the budget on average)"
+          }
+        },
+        {
+          "id": "L5",
+          "loss": 50,
+          "optionA": {
+            "zh": "让 agent 自己决定（平均会白花约 50% 的探索预算）",
+            "en": "Let the agent decide (wastes ~50% of the budget on average)"
+          }
+        },
+        {
+          "id": "L6",
+          "loss": 70,
+          "optionA": {
+            "zh": "让 agent 自己决定（平均会白花约 70% 的探索预算）",
+            "en": "Let the agent decide (wastes ~70% of the budget on average)"
+          }
+        }
+      ],
+      "mapping": "WTP 价格表读法：第一次翻转把 λ 夹进 [上一行, 本行] 区间，点估计取区间中点（MPL 标准，Holt & Laury 2002 / NBER w30433）。闸门侧 λ₀ 为该中点到响应区 [0.35,1.05] 的仿射放置（PROVISIONAL），区间与中点均保留在导出里。",
+      "rationale_prompt": {
+        "zh": "你是从第几行开始想被问的？大概是什么让你在那一档翻了？",
+        "en": "From which row did you start wanting to be asked? What made you switch there?"
+      }
+    },
+    {
+      "id": "beta",
+      "param": "β",
+      "type": "pairwise",
+      "title": {
+        "zh": "β · 研究方向的兴趣权重",
+        "en": "β · Interest weight across research directions"
+      },
+      "prompt": {
+        "zh": "同样是「这条线还有进展」，如果它属于你更在意的方向，你会更愿意让它继续跑。下面每一题，请选你更想先看到结果的那个方向。",
+        "en": "The same amount of progress matters more on a direction you care about. For each pair, pick the direction whose results you would rather see first."
+      },
+      "directions": [
+        {
+          "id": "sys",
+          "label": {
+            "zh": "系统与算法性能",
+            "en": "Systems & algorithm performance"
+          },
+          "hint": {
+            "zh": "让一个已有方案跑得更快、更省、更准",
+            "en": "Make an existing solution faster, cheaper, or more accurate"
+          }
+        },
+        {
+          "id": "ai",
+          "label": {
+            "zh": "AI 模型行为与可靠性",
+            "en": "AI model behaviour & reliability"
+          },
+          "hint": {
+            "zh": "模型会不会幻觉、偏见、失真，以及怎么测出来",
+            "en": "Whether models hallucinate, are biased or miscalibrated, and how to measure it"
+          }
+        },
+        {
+          "id": "sci",
+          "label": {
+            "zh": "科学机理与实验方法",
+            "en": "Scientific mechanism & experimental method"
+          },
+          "hint": {
+            "zh": "弄清某个自然/物理/生化机制，或设计能验证它的实验",
+            "en": "Work out a natural, physical or biochemical mechanism, or design an experiment for it"
+          }
+        },
+        {
+          "id": "mkt",
+          "label": {
+            "zh": "产业与市场态势",
+            "en": "Industry & market landscape"
+          },
+          "hint": {
+            "zh": "谁在做、盘子多大、趋势往哪走",
+            "en": "Who is doing it, how big the market is, where the trend goes"
+          }
+        },
+        {
+          "id": "soc",
+          "label": {
+            "zh": "社会、政策与人文",
+            "en": "Society, policy & humanities"
+          },
+          "hint": {
+            "zh": "人、制度、文化、历史怎么运作和演变",
+            "en": "How people, institutions, culture and history work and change"
+          }
+        }
+      ],
+      "mapping": "Bradley-Terry 拟合：P(i胜j)=π_i/(π_i+π_j)，MM 迭代 + 每对 0.5 伪计数（防 10 次比较下的 separation），π 归一到几何均值 1 即方向权重；循环三元组数作为一致性检查一并导出。",
+      "rationale_prompt": {
+        "zh": "排在最前面的那个方向，为什么你最想先看？",
+        "en": "The direction you ranked first — why do you most want to see it?"
+      }
+    },
+    {
+      "id": "rho",
+      "param": "ρ",
+      "type": "staircase",
+      "title": {
+        "zh": "ρ · 风险态度",
+        "en": "ρ · Risk attitude"
+      },
+      "prompt": {
+        "zh": "在一个节点上，你可以继续一条已经稳定出小结果的线，也可以跳到一个大胆的新假设。赌成了的收获约是小增量的 4 倍，赌输就一无所获、白花预算。下面每一行赌线的成功概率不同，请选你更愿意的做法。",
+        "en": "At a node you can continue a line that reliably yields a small gain, or jump to a bold new hypothesis. If the gamble pays off it is worth about 4× the small gain; if not, nothing. The success probability changes each row — pick what you would rather do."
+      },
+      "optionA": {
+        "zh": "稳：继续那条稳定出小结果的线，基本确定拿到一个小增量",
+        "en": "Safe: continue the steady line, near-certain small gain"
+      },
+      "items": [
+        {
+          "id": "R1",
+          "p": 20,
+          "optionB": {
+            "zh": "赌：跳到新假设，20% 概率拿到约 4 倍的收获，80% 一无所获",
+            "en": "Bold: jump to the new hypothesis — 20% chance of ~4× the gain, 80% nothing"
+          }
+        },
+        {
+          "id": "R2",
+          "p": 35,
+          "optionB": {
+            "zh": "赌：跳到新假设，35% 概率拿到约 4 倍的收获，65% 一无所获",
+            "en": "Bold: jump to the new hypothesis — 35% chance of ~4× the gain, 65% nothing"
+          }
+        },
+        {
+          "id": "R3",
+          "p": 50,
+          "optionB": {
+            "zh": "赌：跳到新假设，50% 概率拿到约 4 倍的收获，50% 一无所获",
+            "en": "Bold: jump to the new hypothesis — 50% chance of ~4× the gain, 50% nothing"
+          }
+        },
+        {
+          "id": "R4",
+          "p": 65,
+          "optionB": {
+            "zh": "赌：跳到新假设，65% 概率拿到约 4 倍的收获，35% 一无所获",
+            "en": "Bold: jump to the new hypothesis — 65% chance of ~4× the gain, 35% nothing"
+          }
+        },
+        {
+          "id": "R5",
+          "p": 80,
+          "optionB": {
+            "zh": "赌：跳到新假设，80% 概率拿到约 4 倍的收获，20% 一无所获",
+            "en": "Bold: jump to the new hypothesis — 80% chance of ~4× the gain, 20% nothing"
+          }
+        },
+        {
+          "id": "R6",
+          "p": 90,
+          "optionB": {
+            "zh": "赌：跳到新假设，90% 概率拿到约 4 倍的收获，10% 一无所获",
+            "en": "Bold: jump to the new hypothesis — 90% chance of ~4× the gain, 10% nothing"
+          }
+        }
+      ],
+      "mapping": "Holt-Laury 读法：翻转行经 CRRA 闭式 r = 1 − ln(1/p*)/ln 4 折成风险系数区间，点估计取区间中点。闸门侧 δ = 0.15 + 0.227·r（风险中性正好落在冻结默认 δ=0.15 上；PROVISIONAL），区间与中点保留在导出里。",
+      "rationale_prompt": {
+        "zh": "你在哪一档愿意开始赌？是被成功概率说服的，还是本来就偏保守/偏激进？",
+        "en": "At which row did you start taking the bet? Were you convinced by the probability, or are you just naturally cautious / bold?"
+      }
+    },
+    {
+      "id": "alpha",
+      "param": "α",
+      "type": "threshold-checklist",
+      "title": {
+        "zh": "α · 自主权偏好",
+        "en": "α · Autonomy preference"
+      },
+      "prompt": {
+        "zh": "下面这些操作按「做了以后有多难收回」从低到高排。哪些必须先经过你批准，agent 才能做？请全部勾出来。",
+        "en": "These actions are ordered by how hard they are to undo. Which ones must be approved by you before the agent may do them? Tick all that apply."
+      },
+      "items": [
+        {
+          "id": "A1",
+          "rank": 1,
+          "label": {
+            "zh": "删除一个中间缓存文件（可重新生成）",
+            "en": "Delete an intermediate cache file (regenerable)"
+          }
+        },
+        {
+          "id": "A2",
+          "rank": 2,
+          "label": {
+            "zh": "覆盖上一版实验结果文件",
+            "en": "Overwrite the previous version of a results file"
+          }
+        },
+        {
+          "id": "A3",
+          "rank": 3,
+          "label": {
+            "zh": "启动一个会花掉大部分剩余预算的大实验",
+            "en": "Launch a big experiment that eats most of the remaining budget"
+          }
+        },
+        {
+          "id": "A4",
+          "rank": 4,
+          "label": {
+            "zh": "修改共享代码库 / 提交到主分支",
+            "en": "Modify the shared codebase / commit to the main branch"
+          }
+        },
+        {
+          "id": "A5",
+          "rank": 5,
+          "label": {
+            "zh": "调用要花钱的外部 API",
+            "en": "Call a paid external API"
+          }
+        },
+        {
+          "id": "A6",
+          "rank": 6,
+          "label": {
+            "zh": "把结论对外发布（发报告 / 提交 / 对外通信）",
+            "en": "Publish conclusions externally (report, submission, outbound message)"
+          }
+        }
+      ],
+      "mapping": "勾选的最低 rank = α 阈值 = 门0 的 M4 触发线：这一档及以上必须先问，以下 agent 自己做。",
+      "rationale_prompt": {
+        "zh": "你划线的那一档，是什么让你觉得「从这里开始必须问我」？",
+        "en": "At the line you drew — what makes you feel it must be asked from there on?"
+      }
+    },
+    {
+      "id": "budget",
+      "param": "B",
+      "type": "budget",
+      "provisional": true,
+      "provisional_note": {
+        "zh": "⚠ 五个参数里只有这个还没有现成测法。这是占位问法，以后可能整体换成行为式题目。",
+        "en": "⚠ This is the one parameter with no established elicitation method. This is a placeholder and may be replaced with a behavioural item later."
+      },
+      "title": {
+        "zh": "B · 个人打断预算",
+        "en": "B · Personal interruption budget"
+      },
+      "prompt": {
+        "zh": "一棵典型的探索树大约有 20 个决策节点（这个数字是量出来的：FireBench 96 棵树的节点数中位数 18，ADRS 20 棵是 23）。整棵树跑完，你最多愿意被打断几次？",
+        "en": "A typical exploration tree has about 20 decision nodes (measured: median 18 across 96 FireBench trees, 23 across 20 ADRS trees). Over one whole tree, how many times at most are you willing to be interrupted?"
+      },
+      "anchor_n": 20,
+      "min": 0,
+      "max": 20,
+      "default": 2,
+      "mapping": "答案 ÷ 20 = 门2 的移交配额比例。现行 provisional 配额 ⌈5%⌉ 在 20 节点的树上 = 1 次。",
+      "rationale_prompt": {
+        "zh": "你给的这个次数，是按什么估出来的？",
+        "en": "How did you arrive at that number?"
+      }
+    }
+  ]
+}

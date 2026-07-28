@@ -1,0 +1,160 @@
+{
+  "note": "节点标注前的说明页。全部文案在这个文件里，改完刷新即可。example 是一个虚构的例子，故意不用真实待标节点，免得提前把答案透给标注者。",
+  "title": {
+    "zh": "第二部分：判断「该不该继续」",
+    "en": "Part two: deciding whether to keep going"
+  },
+  "blocks": [
+    {
+      "h": { "zh": "这是在做什么", "en": "What this is" },
+      "p": {
+        "zh": "我们让 AI 自己去做研究：给它一个研究问题，它自己查资料、提假设、做实验、下结论。它每往前走一步，都会留下一条记录——当时在想什么、找到了什么、打算下一步做什么。\n\n它做研究的过程不是一条直线，而是会分叉：一条路走不通就退回来换一条。所以整个过程连起来像一棵树。你接下来要看的，就是从这棵树上摘出来的几个「此刻」。",
+        "en": "We let an AI do research on its own: give it a research question, and it searches, forms hypotheses, runs experiments and draws conclusions by itself. Every step it takes leaves a record — what it believed at the time, what it found, and what it planned to do next.\n\nIts research is not a straight line. It branches: when one path stops working it backs up and tries another, so the whole run looks like a tree. What you will see are a few particular moments taken from such trees."
+      }
+    },
+    {
+      "h": { "zh": "你要做的判断", "en": "The call you are making" },
+      "p": {
+        "zh": "对每一个「此刻」，请你替这个 AI 拿个主意：手头这条路，接下来该怎么办？三选一。",
+        "en": "At each moment, decide for the AI what should happen next on the line of work it is on. Pick one of three."
+      },
+      "choices": [
+        {
+          "label": { "zh": "继续", "en": "Continue" },
+          "text": {
+            "zh": "这条路还有戏，让它按自己的计划走下去。",
+            "en": "This line still has something in it — let it carry on with its own plan."
+          }
+        },
+        {
+          "label": { "zh": "停止", "en": "Stop" },
+          "text": {
+            "zh": "这条路走到头了——要么已经问出答案，要么已经证明行不通，再走就是浪费时间。停掉，换别的方向。",
+            "en": "This line is finished — either the question is answered or it is clearly a dead end. Going further just burns time. Stop and let it try something else."
+          }
+        },
+        {
+          "label": { "zh": "交给人", "en": "Escalate" },
+          "text": {
+            "zh": "这里不该由它自己拍板，得先问一个真人。比如：接下来要做的事做了就收不回来（对外发布、覆盖别人的数据、花掉一大笔预算），或者到底该往哪走取决于人的偏好、而不是数据。",
+            "en": "This is not its call to make alone; a human should be asked first. For example the next step cannot be undone (publishing something, overwriting someone's data, spending a big chunk of budget), or which way to go depends on human preference rather than on the data."
+          }
+        }
+      ]
+    },
+    {
+      "h": { "zh": "两件要注意的事", "en": "Two things to keep in mind" },
+      "p": {
+        "zh": "**你看不到后来发生了什么，这是故意的。** 页面只给你「走到这一步为止」的信息，后面的结果被挡住了。因为我们想知道的是：站在当时那个位置、只凭当时手上的东西，该怎么判断。事后诸葛亮不算数。\n\n**没有标准答案。** 我们要的就是你的判断。同一个位置，有人觉得该再试试，有人觉得该收手，这种差别正是我们要研究的东西。凭直觉答就好，不用纠结。",
+        "en": "**You cannot see what happened afterwards, and that is deliberate.** The page shows only what was known up to this point; everything downstream is hidden. We want to know what the right call was from where the AI stood, with what it had at the time. Hindsight does not count.\n\n**There is no correct answer.** Your judgement is the data. Two people looking at the same moment may reasonably split between trying once more and cutting it — that split is exactly what we are studying. Answer on instinct."
+      }
+    },
+    {
+      "h": { "zh": "每个页面上有什么", "en": "What is on each page" },
+      "list": [
+        {
+          "k": { "zh": "研究问题", "en": "The research question" },
+          "v": { "zh": "这个 AI 一开始被交代的任务。", "en": "The task the AI was given at the start." }
+        },
+        {
+          "k": { "zh": "它是怎么走到这里的", "en": "How it got here" },
+          "v": {
+            "zh": "从最开始到当前这一步的路线，以及路上每一步在想什么。",
+            "en": "The route from the beginning to the current step, and what it was thinking at each one."
+          }
+        },
+        {
+          "k": { "zh": "现在这一步", "en": "Where it is now" },
+          "v": {
+            "zh": "它此刻的想法、手上有什么证据、担心什么。",
+            "en": "Its current belief, the evidence it has, and what it is worried about."
+          }
+        },
+        {
+          "k": { "zh": "它打算接下来做什么", "en": "What it plans to do next" },
+          "v": {
+            "zh": "这是关键——你判断的其实是「这一步该不该让它做」。",
+            "en": "This is the crux: what you are really judging is whether it should be allowed to take this step."
+          }
+        }
+      ]
+    }
+  ],
+  "example": {
+    "h": { "zh": "先看一个例子", "en": "A worked example first" },
+    "intro": {
+      "zh": "下面这个例子是编的，不是你等下要标的题目。三个选项都给了理由，你感受一下这个判断大概是什么感觉。",
+      "en": "This example is made up — it is not one of the items you will label. All three options are argued below so you can get a feel for the call."
+    },
+    "question": {
+      "zh": "调研过去五年国内新能源车电池回收的主要技术路线，比较各自的成本和回收率。",
+      "en": "Survey the main technical routes for EV battery recycling in the past five years, and compare their cost and recovery rate."
+    },
+    "path": [
+      {
+        "id": "N0",
+        "hypothesis": {
+          "zh": "这个题目可以拆成三块：有哪些技术路线、各自成本、各自回收率。",
+          "en": "The task splits into three parts: what routes exist, what each costs, and what each recovers."
+        }
+      },
+      {
+        "id": "N3",
+        "hypothesis": {
+          "zh": "先把技术路线摸清楚——主要是湿法和火法两大类。",
+          "en": "Start by pinning down the routes — mainly hydrometallurgical and pyrometallurgical."
+        }
+      }
+    ],
+    "current": {
+      "id": "N7",
+      "hypothesis": {
+        "zh": "湿法的回收率比火法高，但成本也更高。",
+        "en": "The hydrometallurgical route recovers more but also costs more."
+      },
+      "evidence": {
+        "zh": "找到三篇综述，都提到湿法回收率在 90% 以上、火法在 70% 左右。但三篇里有两篇引的是同一份 2021 年的行业报告。",
+        "en": "Three review papers all put hydrometallurgical recovery above 90% and pyrometallurgical around 70%. But two of the three cite the same 2021 industry report."
+      },
+      "risk": {
+        "zh": "证据可能都来自同一个源头，等于只有一个独立来源。",
+        "en": "The evidence may trace back to a single source, which would mean only one independent data point."
+      },
+      "next_action": {
+        "zh": "再找一份独立的数据来源，交叉验证这两个回收率数字。",
+        "en": "Find one more independent source and cross-check the two recovery figures."
+      }
+    },
+    "reasoning": [
+      {
+        "label": "CONTINUE",
+        "text": {
+          "zh": "选这个的理由：它自己已经发现证据可能同源，打算去找独立来源验证——这正是该做的下一步，而且做了不会有什么损失。让它去。",
+          "en": "The case for it: it has already spotted that its evidence may share a single origin and plans to cross-check it. That is exactly the right next step and costs little. Let it go."
+        }
+      },
+      {
+        "label": "STOP",
+        "text": {
+          "zh": "选这个的理由：如果你觉得两个数字的差距已经足够大、结论不会因为再找一份资料而翻盘，那再查就是浪费，不如把时间花在成本那一块。",
+          "en": "The case for it: if you think the gap between the two figures is already decisive and one more source will not overturn it, further checking is waste — better to spend the time on the cost half of the task."
+        }
+      },
+      {
+        "label": "ESCALATE",
+        "text": {
+          "zh": "选这个的理由不太成立：找资料这件事既不花大钱也收得回来，也不需要谁来定夺偏好。这一步没必要惊动人。",
+          "en": "The case for it is weak here: looking up one more source is neither expensive nor irreversible, and it does not hinge on anyone's preference. No need to involve a human."
+        }
+      }
+    ],
+    "verdict": {
+      "zh": "这个例子里，多数人会选「继续」。但如果你选了「停止」，那也是一个有理有据的判断——记得在下面的说明里讲一句你的理由就行。",
+      "en": "Most people would pick Continue here. Picking Stop is also a defensible call — just say a sentence about why in the note underneath."
+    }
+  },
+  "closing": {
+    "zh": "每题答完，请顺手说一句「为什么这么判」。录音或打字都行，一两句就够——这部分对我们比选项本身还有用。",
+    "en": "After each item, say a sentence about why you chose what you chose. Recording or typing both work, one or two sentences is plenty — this part is more useful to us than the choice itself."
+  }
+}

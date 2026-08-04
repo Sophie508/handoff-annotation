@@ -45,7 +45,6 @@ const UI = {
     no_subset:'subset.json 里没有节点——先填好它再开始。',
     loaderr:e=>`数据加载失败：${e}。请确认是用 http.server 打开、且 data/ 目录在。`,
     subset_ok:(n,t)=>`共 ${n} 个节点，来自 ${t} 棵树。改 data/subset.json 可换一批。`,
-    ds_note:'数据集 A（第一数据集）两个打标器同管线、可比；数据集 B（ADRS+FireBench）的 Sonnet 那套是旧 v0，导出时会标 comparable=false。',
     draft_found:(id,n)=>`ID「${id}」，已完成 ${n} 项。录音也还在。`,
     confirm_discard:'确定丢弃草稿（含已录的音频）重新开始？',
     step_learn:'怎么标', learn_back:'回到问卷', learn_next:'我明白了，开始标注',
@@ -102,7 +101,6 @@ const UI = {
     no_subset:'subset.json has no items — fill it in first.',
     loaderr:e=>`Failed to load data: ${e}. Check you opened this via http.server and data/ exists.`,
     subset_ok:(n,t)=>`${n} nodes from ${t} trees. Edit data/subset.json to change the set.`,
-    ds_note:'Dataset A: both labelers ran the same pipeline and are comparable. Dataset B: the Sonnet side is the legacy v0 run, so the export marks comparable=false.',
     draft_found:(id,n)=>`ID "${id}", ${n} items answered. Recordings are still here.`,
     confirm_discard:'Discard the draft (including recordings) and start over?',
     step_learn:'How to label', learn_back:'Back to quiz', learn_next:'Got it — start labeling',
@@ -1049,7 +1047,7 @@ async function init() {
   try {
     const { nTrees } = await loadAll();
     $('#subsetInfo').textContent = NODEDATA.length
-      ? T('subset_ok')(NODEDATA.length, nTrees) + ' ' + T('ds_note')
+      ? T('subset_ok')(NODEDATA.length, nTrees)
       : T('no_subset');
   } catch (e) {
     $('#subsetInfo').textContent = T('loaderr')(e.message);

@@ -1,48 +1,1224 @@
 {
- "name": "human-eval pilot subset (3 trees, 24 items)",
+ "name": "annotation subset (20 trees, 147 items): 10 ADRS + 5 FireBench + 5 Auto-Research(100-set)",
  "selection": {
-  "structure": "one section per tree (meeting 2026-07-22: quiz / tree 1 / tree 2)",
-  "granularity": "leaf nodes + 3 truncated frontiers per tree",
+  "structure": "one section per tree, grouped: 10 ADRS + 5 FireBench + 5 Auto-Research(100-set)",
+  "granularity": "real leaf nodes per tree, capped at 8 (fewer if the tree has fewer; no padding)",
   "criterion": "flip",
   "target_mix": "75% label moves with the persona parameters",
-  "actual_mix": "16/24 = 67%",
+  "actual_mix": "25/147 = 17%",
   "min_depth": 2,
   "seed": 20260726
  },
  "sections": [
   {
    "order": 1,
-   "tree_id": "A/sonnet46/078_traj",
-   "dataset": "A",
-   "task": "078_traj",
-   "subject_model": "sonnet46",
+   "tree_id": "B/adrs/sonnet/prism",
+   "dataset": "B",
+   "task": "prism",
+   "subject_model": "sonnet",
+   "task_type": "adrs",
    "n_items": 8
   },
   {
    "order": 2,
-   "tree_id": "A/codex5.5/020_traj",
-   "dataset": "A",
-   "task": "020_traj",
-   "subject_model": "codex5.5",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "dataset": "B",
+   "task": "txn_scheduling",
+   "subject_model": "sonnet",
+   "task_type": "adrs",
    "n_items": 8
   },
   {
    "order": 3,
-   "tree_id": "B/firebench/opus/introspective_learning",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
    "dataset": "B",
-   "task": "introspective_learning",
+   "task": "cloudcast",
+   "subject_model": "gpt-5.5",
+   "task_type": "adrs",
+   "n_items": 8
+  },
+  {
+   "order": 4,
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "dataset": "B",
+   "task": "cant-be-late-multi",
+   "subject_model": "gpt-5.5",
+   "task_type": "adrs",
+   "n_items": 7
+  },
+  {
+   "order": 5,
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "dataset": "B",
+   "task": "cant-be-late-multi",
+   "subject_model": "sonnet",
+   "task_type": "adrs",
+   "n_items": 7
+  },
+  {
+   "order": 6,
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "dataset": "B",
+   "task": "cant-be-late-multi",
    "subject_model": "opus",
+   "task_type": "adrs",
+   "n_items": 7
+  },
+  {
+   "order": 7,
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "dataset": "B",
+   "task": "prism",
+   "subject_model": "gpt-5.5",
+   "task_type": "adrs",
+   "n_items": 6
+  },
+  {
+   "order": 8,
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "dataset": "B",
+   "task": "cloudcast",
+   "subject_model": "gpt-5.4-mini",
+   "task_type": "adrs",
+   "n_items": 6
+  },
+  {
+   "order": 9,
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "dataset": "B",
+   "task": "llm_sql",
+   "subject_model": "gpt-5.4-mini",
+   "task_type": "adrs",
+   "n_items": 5
+  },
+  {
+   "order": 10,
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "dataset": "B",
+   "task": "llm_sql",
+   "subject_model": "sonnet",
+   "task_type": "adrs",
+   "n_items": 5
+  },
+  {
+   "order": 11,
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "dataset": "B",
+   "task": "cot_faithfulness_gaps",
+   "subject_model": "opus",
+   "task_type": "firebench",
+   "n_items": 8
+  },
+  {
+   "order": 12,
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "dataset": "B",
+   "task": "awareness_detection",
+   "subject_model": "gpt-5.5",
+   "task_type": "firebench",
+   "n_items": 8
+  },
+  {
+   "order": 13,
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "dataset": "B",
+   "task": "llm_confidence_elicitation",
+   "subject_model": "opus",
+   "task_type": "firebench",
+   "n_items": 8
+  },
+  {
+   "order": 14,
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "dataset": "B",
+   "task": "lost_in_the_middle",
+   "subject_model": "opus",
+   "task_type": "firebench",
+   "n_items": 8
+  },
+  {
+   "order": 15,
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "dataset": "B",
+   "task": "vlms_are_blind",
+   "subject_model": "sonnet",
+   "task_type": "firebench",
+   "n_items": 8
+  },
+  {
+   "order": 16,
+   "tree_id": "A/codex5.5/006_traj",
+   "dataset": "A",
+   "task": "006_traj",
+   "subject_model": "codex5.5",
+   "task_type": "A",
+   "n_items": 8
+  },
+  {
+   "order": 17,
+   "tree_id": "A/sonnet46/100_traj",
+   "dataset": "A",
+   "task": "100_traj",
+   "subject_model": "sonnet46",
+   "task_type": "A",
+   "n_items": 8
+  },
+  {
+   "order": 18,
+   "tree_id": "A/codex5.5/025_traj",
+   "dataset": "A",
+   "task": "025_traj",
+   "subject_model": "codex5.5",
+   "task_type": "A",
+   "n_items": 8
+  },
+  {
+   "order": 19,
+   "tree_id": "A/sonnet46/084_traj",
+   "dataset": "A",
+   "task": "084_traj",
+   "subject_model": "sonnet46",
+   "task_type": "A",
+   "n_items": 8
+  },
+  {
+   "order": 20,
+   "tree_id": "A/sonnet46/089_traj",
+   "dataset": "A",
+   "task": "089_traj",
+   "subject_model": "sonnet46",
+   "task_type": "A",
    "n_items": 8
   }
  ],
  "items": [
   {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "B-READ-4",
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_BEST",
    "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_SEED",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_CHAIN",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_COMB",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_ILS",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_MR",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "EVAL_SA2",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/prism",
+   "node_id": "ANALYZE_SA",
+   "section": 1,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B0_BASELINE_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B1_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B2_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B3_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B4_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B5_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B6_EVAL",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/txn_scheduling",
+   "node_id": "B8_DECISION",
+   "section": 2,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "DEC_FINAL",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "AN_STEINER_FAIL_RESULT",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "AN_COST",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "E_DIRECT",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "E_STEINER_DP_INVALID",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "E_TERMINAL_TREE",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "E_PENALTY_001",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cloudcast",
+   "node_id": "E_PENALTY_005",
+   "section": 3,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "E_BASE",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "E_BASE_FAIL",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "E_INFRA_WANDB",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "E2",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "AN3",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "E4",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/cant-be-late-multi",
+   "node_id": "D1",
+   "section": 4,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "BASELINE_EVAL",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "ANALYZE_A",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "ANALYZE_B",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "EVAL_E",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "EVAL_F",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "EVAL_H",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/cant-be-late-multi",
+   "node_id": "EVAL_I",
+   "section": 5,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "ENVFIX",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "BASE_EVAL",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "B1_EVAL",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "B3_EVAL",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "B7_EVAL",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "FINAL",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/opus/cant-be-late-multi",
+   "node_id": "B10_EVAL",
+   "section": 6,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "node_id": "D_FINAL_SELECT",
+   "section": 7,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "node_id": "E0_BASELINE",
+   "section": 7,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "node_id": "E1_LOCAL",
+   "section": 7,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "node_id": "E2_BESTFIT",
+   "section": 7,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "node_id": "E4_MULTISTART",
+   "section": 7,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.5/prism",
+   "node_id": "E3_DEEP",
+   "section": 7,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "node_id": "EVAL_SEED",
+   "section": 8,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "node_id": "IMPLEMENT_GREEDY",
+   "section": 8,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "node_id": "IMPLEMENT_RELAY_PAIRWISE",
+   "section": 8,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "node_id": "EVAL_RELAY_PAIRWISE2",
+   "section": 8,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "node_id": "DECISION_RELAY_NEXT",
+   "section": 8,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/cloudcast",
+   "node_id": "DECISION_RELAY_PAIRWISE",
+   "section": 8,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "node_id": "ANALYZE_1",
+   "section": 9,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "node_id": "EVAL_A1",
+   "section": 9,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "node_id": "ANALYZE_2",
+   "section": 9,
+   "_task_type": "adrs",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "node_id": "EVAL_B1",
+   "section": 9,
+   "_task_type": "adrs",
    "_params": [
-    "beta",
     "delta"
    ],
    "_kind": "leaf",
@@ -57,47 +1233,29 @@
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "C-READ-4",
-   "section": 1,
+   "dataset": "B",
+   "tree_id": "B/adrs/gpt-5.4-mini/llm_sql",
+   "node_id": "DECISION_1",
+   "section": 9,
+   "_task_type": "adrs",
    "_params": [],
-   "_kind": "truncated",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "A-SEARCH-3",
-   "section": 1,
-   "_params": [],
-   "_kind": "truncated",
+   "_kind": "leaf",
    "_why": "label fixed across personas (anchor)",
    "_flip_labels": [
-    "CONTINUE"
+    "STOP"
    ],
    "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
+    "luna": "STOP",
+    "sonnet": "ESCALATE"
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "C-PRUNED-1",
-   "section": 1,
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "node_id": "BASELINE_EVAL",
+   "section": 10,
+   "_task_type": "adrs",
    "_params": [
-    "beta",
-    "delta",
-    "lambda0",
     "quota_frac"
    ],
    "_kind": "leaf",
@@ -107,147 +1265,33 @@
     "ESCALATE"
    ],
    "_machine": {
-    "luna": "ESCALATE",
-    "sonnet": "STOP"
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "A-READ-3",
-   "section": 1,
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "node_id": "APPROACH_A_EVAL",
+   "section": 10,
+   "_task_type": "adrs",
    "_params": [],
    "_kind": "leaf",
    "_why": "label fixed across personas (anchor)",
    "_flip_labels": [
-    "CONTINUE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "A-READ-4",
-   "section": 1,
-   "_params": [],
-   "_kind": "truncated",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "B-READ-3",
-   "section": 1,
-   "_params": [
-    "beta",
-    "delta",
-    "lambda0",
-    "quota_frac"
-   ],
-   "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "ESCALATE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/sonnet46/078_traj",
-   "node_id": "A-SEARCH-4",
-   "section": 1,
-   "_params": [],
-   "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N020",
-   "section": 2,
-   "_params": [
-    "m4_cut"
-   ],
-   "_kind": "truncated",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE",
     "STOP"
    ],
    "_machine": {
-    "luna": "CONTINUE",
+    "luna": "STOP",
     "sonnet": "CONTINUE"
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N004",
-   "section": 2,
-   "_params": [
-    "m4_cut"
-   ],
-   "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE",
-    "STOP"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N007",
-   "section": 2,
-   "_params": [
-    "m4_cut"
-   ],
-   "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE",
-    "STOP"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N008",
-   "section": 2,
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "node_id": "APPROACH_B_EVAL",
+   "section": 10,
+   "_task_type": "adrs",
    "_params": [],
    "_kind": "leaf",
    "_why": "label fixed across personas (anchor)",
@@ -260,35 +1304,15 @@
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N013",
-   "section": 2,
-   "_params": [
-    "m4_cut"
-   ],
-   "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE",
-    "STOP"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "STOP"
-   }
-  },
-  {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N014",
-   "section": 2,
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "node_id": "ANALYZE_PDMX",
+   "section": 10,
+   "_task_type": "adrs",
    "_params": [],
    "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
+   "_why": "label fixed across personas (anchor)",
    "_flip_labels": [
-    "ESCALATE",
     "STOP"
    ],
    "_machine": {
@@ -297,166 +1321,32 @@
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N015",
-   "section": 2,
-   "_params": [
-    "m4_cut"
-   ],
+   "dataset": "B",
+   "tree_id": "B/adrs/sonnet/llm_sql",
+   "node_id": "APPROACH_F_EVAL",
+   "section": 10,
+   "_task_type": "adrs",
+   "_params": [],
    "_kind": "leaf",
-   "_why": "label moves with the persona parameters",
+   "_why": "label fixed across personas (anchor)",
    "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE",
     "STOP"
    ],
    "_machine": {
-    "luna": "CONTINUE",
+    "luna": "STOP",
     "sonnet": "STOP"
    }
   },
   {
-   "dataset": "A",
-   "tree_id": "A/codex5.5/020_traj",
-   "node_id": "N025",
-   "section": 2,
-   "_params": [],
-   "_kind": "leaf",
-   "_why": "label fixed across personas (anchor)",
-   "_flip_labels": [
-    "CONTINUE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
    "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q1",
-   "section": 3,
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "d3",
+   "section": 11,
+   "_task_type": "firebench",
    "_params": [
-    "delta",
     "lambda0",
     "quota_frac"
    ],
-   "_kind": "truncated",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "ESCALATE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q2_exp",
-   "section": 3,
-   "_params": [],
-   "_kind": "truncated",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q2_hyp",
-   "section": 3,
-   "_params": [],
-   "_kind": "leaf",
-   "_why": "label fixed across personas (anchor)",
-   "_flip_labels": [
-    "CONTINUE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q3_exp",
-   "section": 3,
-   "_params": [],
-   "_kind": "leaf",
-   "_why": "label fixed across personas (anchor)",
-   "_flip_labels": [
-    "CONTINUE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q2_res",
-   "section": 3,
-   "_params": [],
-   "_kind": "truncated",
-   "_why": "label moves with the persona parameters",
-   "_flip_labels": [
-    "CONTINUE",
-    "ESCALATE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q3_read",
-   "section": 3,
-   "_params": [],
-   "_kind": "leaf",
-   "_why": "label fixed across personas (anchor)",
-   "_flip_labels": [
-    "CONTINUE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q1_hyp",
-   "section": 3,
-   "_params": [],
-   "_kind": "leaf",
-   "_why": "label fixed across personas (anchor)",
-   "_flip_labels": [
-    "CONTINUE"
-   ],
-   "_machine": {
-    "luna": "CONTINUE",
-    "sonnet": "CONTINUE"
-   }
-  },
-  {
-   "dataset": "B",
-   "tree_id": "B/firebench/opus/introspective_learning",
-   "node_id": "q2_dec",
-   "section": 3,
-   "_params": [],
    "_kind": "leaf",
    "_why": "label moves with the persona parameters",
    "_flip_labels": [
@@ -466,6 +1356,1421 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "e2a",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "e3",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "r1",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "r3",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "res3",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "d2",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/cot_faithfulness_gaps",
+   "node_id": "d2b",
+   "section": 11,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "dec_published_evidence",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "dec_standin_probe",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [
+    "delta",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "r_arxiv_methods_results",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [
+    "delta"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "r_firebench_hf_metadata",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [
+    "beta",
+    "delta",
+    "m4_cut",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "r_github_repro_readme",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "res_published_metrics",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "res_frontier_repro_blocked",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/gpt-5.5/awareness_detection",
+   "node_id": "res_standin_toy_metrics",
+   "section": 12,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q2-dec",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q2-exp",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q2-hyp",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q2-res",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q3-int",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [
+    "beta",
+    "delta",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q3-res",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q1-read",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/llm_confidence_elicitation",
+   "node_id": "q1-dec",
+   "section": 13,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q2-d1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q3-d1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q3-e1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q3-h1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q4-d1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q4-e1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [
+    "lambda0",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q2-r1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [
+    "lambda0",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/opus/lost_in_the_middle",
+   "node_id": "q1-h1",
+   "section": 14,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "d-4",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "r-10",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "r-2",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "r-11",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "d-1",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "r-8",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "d-2",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "B",
+   "tree_id": "B/firebench/sonnet/vlms_are_blind",
+   "node_id": "d-3",
+   "section": 15,
+   "_task_type": "firebench",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N008",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N010",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N011",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N028",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N034",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N046",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N052",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [
+    "lambda0",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/006_traj",
+   "node_id": "N059",
+   "section": 16,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "SY5",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E16",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E21",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E26",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E29",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [
+    "m4_cut"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E3",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [
+    "delta",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E5",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/100_traj",
+   "node_id": "E8",
+   "section": 17,
+   "_task_type": "A",
+   "_params": [
+    "delta",
+    "m4_cut",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "ESCALATE",
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N012",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N031",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N039",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N047",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N049",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N027",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N024",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [
+    "lambda0",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/codex5.5/025_traj",
+   "node_id": "N037",
+   "section": 18,
+   "_task_type": "A",
+   "_params": [
+    "lambda0",
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "H1.1",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R1.1.1",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "ESCALATE",
+    "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R1.2.1",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [
+    "quota_frac"
+   ],
+   "_kind": "leaf",
+   "_why": "label moves with the persona parameters",
+   "_flip_labels": [
+    "CONTINUE",
+    "ESCALATE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "ESCALATE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R3.3.1",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R4.1.2",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R6.1.1",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "STOP"
+   ],
+   "_machine": {
+    "luna": "STOP",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R7.1.1",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/084_traj",
+   "node_id": "R7.3.2",
+   "section": 19,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "CONTINUE"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E11",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E14",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E15",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E27",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E29",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E31",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E6",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
+   }
+  },
+  {
+   "dataset": "A",
+   "tree_id": "A/sonnet46/089_traj",
+   "node_id": "E2",
+   "section": 20,
+   "_task_type": "A",
+   "_params": [],
+   "_kind": "leaf",
+   "_why": "label fixed across personas (anchor)",
+   "_flip_labels": [
+    "CONTINUE"
+   ],
+   "_machine": {
+    "luna": "CONTINUE",
+    "sonnet": "STOP"
    }
   }
  ]

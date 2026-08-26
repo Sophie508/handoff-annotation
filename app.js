@@ -565,8 +565,9 @@ function renderSpine(steps) {
 function nodeKey(item) { return item.tree_id + '|' + item.node_id; }
 
 // Per-action reason taxonomy (action, reason). Shown as multi-select once a
-// label is picked. [code, zh, en]. ESCALATE keeps its internal value; it is
-// displayed as HUMAN. CONTINUE sub-labels are the new addition.
+// label is picked. [code, zh, en]. Only CONTINUE and STOP have reasons; the
+// HUMAN (internal value ESCALATE) action has none — annotators just write a
+// rationale for those.
 const REASONS = {
   CONTINUE: [
     ['cont_unexplored', '有分支没探索', 'Unexplored branch'],
@@ -579,14 +580,6 @@ const REASONS = {
     ['stop_sufficient', '够了，已足够回答问题', 'Sufficient — question answered'],
     ['stop_exhausted', '搜尽了，再搜也不会有新信息', 'Exhausted — no new info expected'],
     ['stop_impossible', '做不到，当前环境无法解决', 'Impossible in this environment'],
-  ],
-  ESCALATE: [
-    ['esc_expertise', '需要领域专业', 'Requires domain expertise'],
-    ['esc_subjective', '主观 / 规范判断', 'Normative / subjective judgment'],
-    ['esc_ambiguous', '用户意图模糊', 'Ambiguity in user intent'],
-    ['esc_conflict', '证据冲突无法自动调和', 'Evidence conflict unresolvable'],
-    ['esc_highstakes', '高风险决策', 'High-stakes decision'],
-    ['esc_quality', 'agent 无法自评质量', 'Agent cannot assess quality'],
   ],
 };
 
@@ -671,7 +664,7 @@ function renderNode() {
   const reasonHost = el('div', { class: 'reasonblock', style: 'margin-top:14px' });
   const paintReasons = () => {
     reasonHost.innerHTML = '';
-    if (!st.label) return;
+    if (!st.label || !REASONS[st.label]) return;   // HUMAN has no reason options
     reasonHost.append(el('div', { class: 'fieldlabel' }, T('reason_h')));
     const opts = el('div', { style: 'display:flex;flex-direction:column;gap:7px;margin-top:8px' });
     (REASONS[st.label] || []).forEach(([code, zh, en]) => {

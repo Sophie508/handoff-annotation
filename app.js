@@ -907,7 +907,7 @@ async function buildExport() {
       rows.push({
         annotator_id: State.annotatorId, kind: 'quiz', section: sec.id, param: sec.param,
         item_id: k, response: typeof v === 'boolean' ? (v ? 'checked' : '') : v,
-        dataset: '', subject_model: '', task: '', node_id: '',
+        dataset: '', tree_id: '', subject_model: '', task: '', node_id: '',
         human_label: '', human_reasons: '', human_reason_other: '',
         luna_label: '', luna_gate: '', sonnet_label: '', sonnet_gate: '',
         labelers_comparable: '',
@@ -948,7 +948,8 @@ async function buildExport() {
     rows.push({
       annotator_id: State.annotatorId, kind: 'node', section: '', param: '',
       item_id: item.tree_id + '|' + item.node_id, response: st.label || '',
-      dataset: item.dataset, subject_model: item.tree.subject_model, task: item.tree.task,
+      dataset: item.dataset, tree_id: item.tree_id,
+      subject_model: item.tree.subject_model, task: item.tree.task,
       node_id: item.node_id, human_label: st.label || '',
       human_reasons: (st.reasons || []).join(';'), human_reason_other: st.reason_other || '',
       luna_label: m.luna ? m.luna.label : '', luna_gate: m.luna ? m.luna.gate : '',
@@ -960,7 +961,7 @@ async function buildExport() {
   }
 
   const cols = ['annotator_id','kind','section','param','item_id','response','dataset',
-    'subject_model','task','node_id','human_label','human_reasons','human_reason_other',
+    'tree_id','subject_model','task','node_id','human_label','human_reasons','human_reason_other',
     'luna_label','luna_gate','sonnet_label',
     'sonnet_gate','labelers_comparable','rationale_text','audio_file','audio_seconds','timestamp'];
   const csv = [cols.join(',')]
@@ -992,7 +993,7 @@ async function doExport() {
     'audio/        recordings; file names appear in the audio_file column\n');
   // recordings: re-encode and ship an index so a clip's file name is not the
   // only clue to which question it answers
-  const manifest = [['file', 'part', 'order', 'refers_to', 'prompt', 'seconds']];
+  const manifest = [['file', 'annotator_id', 'part', 'order', 'refers_to', 'prompt', 'seconds']];
   const keys = (await AudioStore.keys()).filter(k => k.endsWith(safe(State.annotatorId)));
   for (const k of keys) {
     const raw = await AudioStore.get(k);
@@ -1001,8 +1002,8 @@ async function doExport() {
     const { blob, ext, seconds } = await toWav(raw);
     zip.file(`audio/${k}.${ext}`, blob);
     const meta = AUDIO_CONTEXT[k] || {};
-    manifest.push([`${k}.${ext}`, meta.part || '', meta.order || '', meta.refers_to || '',
-                   meta.prompt || '', seconds ?? (State.audio[k] || {}).dur ?? '']);
+    manifest.push([`${k}.${ext}`, State.annotatorId, meta.part || '', meta.order || '',
+                   meta.refers_to || '', meta.prompt || '', seconds ?? (State.audio[k] || {}).dur ?? '']);
   }
   if (manifest.length > 1)
     zip.file('audio/INDEX.csv', manifest.map(r => r.map(csvCell).join(',')).join('\n'));

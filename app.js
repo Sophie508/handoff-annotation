@@ -37,6 +37,7 @@ const UI = {
     q_cur:'当前节点', q_cand:'候选的下一步', q_ask:'你会怎么判断这个节点？',
     l_cont:'继续', l_stop:'停止', l_esc:'交给人',
     l_cont_s:'这条线继续跑', l_stop_s:'剪掉这条线', l_esc_s:'停下来问人',
+    reason_h:'为什么这么判？勾选适用的（可多选）', reason_other:'其他（补充说明）',
     f_hyp:'当前假设', f_ev:'关键证据', f_risk:'主要风险', f_tools:'调用的工具', f_status:'状态',
     sum_id:'标注者 ID', sum_quiz:'问卷完成组数', sum_nodes:'已标节点数',
     sum_audio:'录音段数', sum_text:'文字说明数',
@@ -90,8 +91,9 @@ const UI = {
     q_research:'Research question', q_chain:'Path from the root to here',
     q_ctx:'Earlier nodes on the path', q_cur:'Current node', q_cand:'Candidate next step',
     q_ask:'What is your call on this node?',
-    l_cont:'Continue', l_stop:'Stop', l_esc:'Escalate',
-    l_cont_s:'keep this line running', l_stop_s:'prune this line', l_esc_s:'stop and ask a human',
+    l_cont:'Continue', l_stop:'Stop', l_esc:'Human',
+    l_cont_s:'keep this line running', l_stop_s:'prune this line', l_esc_s:'defer to a human',
+    reason_h:'Why this call? Check all that apply', reason_other:'Other (specify)',
     f_hyp:'Current hypothesis', f_ev:'Key evidence', f_risk:'Main risk',
     f_tools:'Tools called', f_status:'Status',
     sum_id:'Annotator ID', sum_quiz:'Quiz groups done', sum_nodes:'Nodes labeled',
@@ -562,6 +564,32 @@ function renderSpine(steps) {
 // ───────────────────────────── node rendering ─────────────────────────────
 function nodeKey(item) { return item.tree_id + '|' + item.node_id; }
 
+// Per-action reason taxonomy (action, reason). Shown as multi-select once a
+// label is picked. [code, zh, en]. ESCALATE keeps its internal value; it is
+// displayed as HUMAN. CONTINUE sub-labels are the new addition.
+const REASONS = {
+  CONTINUE: [
+    ['cont_unexplored', '有分支没探索', 'Unexplored branch'],
+    ['cont_insufficient', '证据不足，需要再找', 'Evidence insufficient'],
+    ['cont_contradiction', '有矛盾证据待解决', 'Unresolved contradiction'],
+    ['cont_verify', '需要验证已有结论', 'Verify existing claim'],
+    ['cont_recover', '从失败的路子里恢复 / 换方法', 'Recover from failed approach'],
+  ],
+  STOP: [
+    ['stop_sufficient', '够了，已足够回答问题', 'Sufficient — question answered'],
+    ['stop_exhausted', '搜尽了，再搜也不会有新信息', 'Exhausted — no new info expected'],
+    ['stop_impossible', '做不到，当前环境无法解决', 'Impossible in this environment'],
+  ],
+  ESCALATE: [
+    ['esc_expertise', '需要领域专业', 'Requires domain expertise'],
+    ['esc_subjective', '主观 / 规范判断', 'Normative / subjective judgment'],
+    ['esc_ambiguous', '用户意图模糊', 'Ambiguity in user intent'],
+    ['esc_conflict', '证据冲突无法自动调和', 'Evidence conflict unresolvable'],
+    ['esc_highstakes', '高风险决策', 'High-stakes decision'],
+    ['esc_quality', 'agent 无法自评质量', 'Agent cannot assess quality'],
+  ],
+};
+
 // Some source trees stored list-valued fields as their Python/JSON repr
 // (`["a", "b"]`). Render those as readable text instead of raw brackets.
 function prettyValue(v) {
@@ -591,6 +619,8 @@ function renderNode() {
   const item = NODEDATA[State.ni];
   const st = State.nodes[nodeKey(item)] ||= { label: null, rationale: '', shownAt: null };
   st.shownAt ||= new Date().toISOString();
+  st.reasons ||= [];
+  if (st.reason_other == null) st.reason_other = '';
 
   const sameTree = NODEDATA.filter(x => x.tree_id === item.tree_id);
   const posInTree = sameTree.indexOf(item) + 1;
@@ -638,17 +668,47 @@ function renderNode() {
   const row = el('div', { class: 'labelrow' });
   const defs = [['CONTINUE', 'l_cont', 'l_cont_s'], ['STOP', 'l_stop', 'l_stop_s'],
                 ['ESCALATE', 'l_esc', 'l_esc_s']];
+  const reasonHost = el('div', { class: 'reasonblock', style: 'margin-top:14px' });
+  const paintReasons = () => {
+    reasonHost.innerHTML = '';
+    if (!st.label) return;
+    reasonHost.append(el('div', { class: 'fieldlabel' }, T('reason_h')));
+    const opts = el('div', { style: 'display:flex;flex-direction:column;gap:7px;margin-top:8px' });
+    (REASONS[st.label] || []).forEach(([code, zh, en]) => {
+      const cb = el('input', { type: 'checkbox' });
+      cb.checked = st.reasons.includes(code);
+      cb.addEventListener('change', () => {
+        if (cb.checked) { if (!st.reasons.includes(code)) st.reasons.push(code); }
+        else st.reasons = st.reasons.filter(x => x !== code);
+        State.save();
+      });
+      opts.append(el('label', {
+        style: 'display:flex;align-items:flex-start;gap:8px;font-size:14.5px;cursor:pointer'
+      }, cb, el('span', {}, LANG === 'zh' ? zh : en)));
+    });
+    reasonHost.append(opts);
+    const other = el('input', {
+      type: 'text', value: st.reason_other || '', placeholder: T('reason_other'),
+      style: 'margin-top:9px;width:100%;padding:7px 10px;border:1px solid var(--line,#d8dfe6);border-radius:6px;font-size:14px'
+    });
+    other.addEventListener('input', () => { st.reason_other = other.value; State.save(); });
+    reasonHost.append(other);
+  };
   const paint = () => {
     row.innerHTML = '';
     defs.forEach(([L, k, s]) => row.append(el('button', {
       class: 'lbtn' + (st.label === L ? ' sel' : ''), type: 'button', 'data-l': L,
       onclick: () => {
-        st.label = L; st.answeredAt = new Date().toISOString(); State.save(); paint();
+        // reasons are action-specific: switching the action clears them
+        if (st.label !== L) { st.label = L; st.reasons = []; st.reason_other = ''; }
+        st.answeredAt = new Date().toISOString(); State.save(); paint(); paintReasons();
       }
     }, T(k), el('span', { class: 'sub' }, T(s)))));
   };
   paint();
   host.append(row);
+  paintReasons();
+  host.append(reasonHost);
 
   host.append(RationaleBlock(
     nodeRecId(State.ni, item),
@@ -855,7 +915,8 @@ async function buildExport() {
         annotator_id: State.annotatorId, kind: 'quiz', section: sec.id, param: sec.param,
         item_id: k, response: typeof v === 'boolean' ? (v ? 'checked' : '') : v,
         dataset: '', subject_model: '', task: '', node_id: '',
-        human_label: '', luna_label: '', luna_gate: '', sonnet_label: '', sonnet_gate: '',
+        human_label: '', human_reasons: '', human_reason_other: '',
+        luna_label: '', luna_gate: '', sonnet_label: '', sonnet_gate: '',
         labelers_comparable: '',
         rationale_text: st.rationale || '', audio_file: af,
         audio_seconds: af ? (ameta.dur ?? '') : '', timestamp: now
@@ -880,7 +941,9 @@ async function buildExport() {
     nodeOut.push({
       dataset: item.dataset, tree_id: item.tree_id, subject_model: item.tree.subject_model,
       task: item.tree.task, node_id: item.node_id, node_type: item.node.node_type || '',
-      human_label: st.label || null, rationale_text: st.rationale || '', audio_file: af,
+      human_label: st.label || null, human_reasons: st.reasons || [],
+      human_reason_other: st.reason_other || '',
+      rationale_text: st.rationale || '', audio_file: af,
       audio_seconds: af ? (ameta.dur ?? null) : null,
       shown_at: st.shownAt || null, answered_at: st.answeredAt || null,
       machine: {
@@ -894,6 +957,7 @@ async function buildExport() {
       item_id: item.tree_id + '|' + item.node_id, response: st.label || '',
       dataset: item.dataset, subject_model: item.tree.subject_model, task: item.tree.task,
       node_id: item.node_id, human_label: st.label || '',
+      human_reasons: (st.reasons || []).join(';'), human_reason_other: st.reason_other || '',
       luna_label: m.luna ? m.luna.label : '', luna_gate: m.luna ? m.luna.gate : '',
       sonnet_label: m.sonnet ? m.sonnet.label : '', sonnet_gate: m.sonnet ? m.sonnet.gate : '',
       labelers_comparable: comparable,
@@ -903,7 +967,8 @@ async function buildExport() {
   }
 
   const cols = ['annotator_id','kind','section','param','item_id','response','dataset',
-    'subject_model','task','node_id','human_label','luna_label','luna_gate','sonnet_label',
+    'subject_model','task','node_id','human_label','human_reasons','human_reason_other',
+    'luna_label','luna_gate','sonnet_label',
     'sonnet_gate','labelers_comparable','rationale_text','audio_file','audio_seconds','timestamp'];
   const csv = [cols.join(',')]
     .concat(rows.map(r => cols.map(c => csvCell(r[c])).join(','))).join('\n');

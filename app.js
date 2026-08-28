@@ -34,6 +34,7 @@ const UI = {
     flip_multi:'⚠ 出现了多次来回翻转，导出时会标出来',
     pair_q:'更想先看哪个方向的结果？',
     q_research:'研究问题', q_chain:'从根节点到这里的路径', q_ctx:'路径上前面的节点',
+    q_tree:'整棵探索树（蓝色为当前要判断的节点；它之后的分支已隐藏。点任意节点看该分支内容）',
     q_cur:'当前节点', q_cand:'候选的下一步', q_ask:'你会怎么判断这个节点？',
     l_cont:'继续', l_stop:'停止', l_esc:'交给人',
     l_cont_s:'这条线继续跑', l_stop_s:'剪掉这条线', l_esc_s:'停下来问人',
@@ -89,6 +90,7 @@ const UI = {
     flip_multi:'⚠ multiple switches back and forth; this is flagged in the export',
     pair_q:'Which direction would you rather see results from first?',
     q_research:'Research question', q_chain:'Path from the root to here',
+    q_tree:'Full exploration tree (blue = the node you are judging; its continuation is hidden. Click any node to read that branch).',
     q_ctx:'Earlier nodes on the path', q_cur:'Current node', q_cand:'Candidate next step',
     q_ask:'What is your call on this node?',
     l_cont:'Continue', l_stop:'Stop', l_esc:'Human',
@@ -561,6 +563,70 @@ function renderSpine(steps) {
   return wrap;
 }
 
+// Whole exploration tree, drawn up to the current decision node. Ex-ante:
+// the current node's own subtree (its continuation) is dropped entirely — not
+// even hinted at — so the labeler judges from context without seeing the
+// outcome or the agent's actual choice. Sibling branches stay as context.
+function renderTreeDiagram(tree, curId) {
+  const esc = x => String(x == null ? '' : x).replace(/[&<>"]/g,
+    c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const nodes = tree.nodes;
+  const kids = {};                       // children rebuilt from parent pointers
+  Object.values(nodes).forEach(n => { if (n.parent) (kids[n.parent] ||= []).push(n.id); });
+  const hidden = new Set();              // current node's descendants → masked
+  (function collect(id) { (kids[id] || []).forEach(c => { hidden.add(c); collect(c); }); })(curId);
+  const vis = {};
+  Object.values(nodes).forEach(n => { if (!hidden.has(n.id)) vis[n.id] = n; });
+  const root = Object.values(vis).find(n => !n.parent || !vis[n.parent]) || vis[curId];
+  const vkids = id => (kids[id] || []).filter(c => vis[c]);
+  let leaf = 0, maxd = 0; const X = {}, Y = {};
+  (function A(id, d) {
+    Y[id] = d; maxd = Math.max(maxd, d);
+    const ks = vkids(id);
+    if (!ks.length) X[id] = leaf++;
+    else { ks.forEach(c => A(c, d + 1)); X[id] = (X[ks[0]] + X[ks[ks.length - 1]]) / 2; }
+  })(root.id, 0);
+  const GX = 66, GY = 60, PX = 26, PY = 22, R = 13;
+  const W = Math.max(1, leaf) * GX + PX * 2, H = (maxd + 1) * GY + PY * 2;
+  const xp = id => X[id] * GX + PX, yp = id => Y[id] * GY + PY;
+  let s = `<svg width="${W}" height="${H}" font-family="inherit">`;
+  Object.values(vis).forEach(n => {
+    if (n.parent && vis[n.parent]) {
+      const px = xp(n.parent), py = yp(n.parent), cx = xp(n.id), cy = yp(n.id);
+      s += `<path d="M${px} ${py} C${px} ${(py + cy) / 2} ${cx} ${(py + cy) / 2} ${cx} ${cy}" stroke="#c6d0d8" fill="none" stroke-width="1.6"/>`;
+    }
+  });
+  Object.values(vis).forEach(n => {
+    const cur = n.id === curId, x = xp(n.id), y = yp(n.id);
+    s += `<g class="tnode" data-id="${esc(n.id)}" style="cursor:pointer">`
+      + `<circle cx="${x}" cy="${y}" r="${R}" fill="${cur ? '#28425E' : '#fff'}" stroke="${cur ? '#28425E' : '#b0bcc8'}" stroke-width="${cur ? 2.6 : 1.6}"/>`
+      + `<text x="${x}" y="${y + 3.5}" text-anchor="middle" font-size="9.5" fill="${cur ? '#fff' : '#4a5a6a'}" font-weight="600">${esc((n.node_type || '').slice(0, 3))}</text>`
+      + `<text x="${x}" y="${y + R + 10}" text-anchor="middle" font-size="8.5" fill="#4a5a6a">${esc(n.id.length > 9 ? n.id.slice(0, 8) + '…' : n.id)}</text>`
+      + `</g>`;
+  });
+  s += '</svg>';
+  const scroller = el('div', { style: 'overflow:auto;border:1px solid var(--line,#d8dfe6);border-radius:8px;background:#fafbfc;padding:8px;max-height:420px' });
+  scroller.innerHTML = s;
+  const panel = el('div', { class: 'hint', style: 'margin-top:8px;min-height:1.2em' });
+  const showN = id => {
+    const n = vis[id]; if (!n) return;
+    panel.innerHTML = '';
+    panel.append(el('div', { class: 'sid' },
+      n.id + (n.node_type ? ' · ' + n.node_type : '') + (id === curId ? ' · ' + T('spine_here') : '')));
+    const h = prettyValue(n.current_hypothesis || '');
+    if (h) panel.append(el('div', {}, h));
+    const e = prettyValue(n.key_evidence || '');
+    if (id !== curId && e && !/^none recorded/i.test(e))
+      panel.append(el('div', { style: 'color:#4a5a6a;margin-top:3px' }, e));
+  };
+  scroller.querySelectorAll('.tnode').forEach(g =>
+    g.addEventListener('click', () => showN(g.getAttribute('data-id'))));
+  showN(curId);
+  const wrap = el('div', {});
+  wrap.append(scroller, panel);
+  return wrap;
+}
+
 // ───────────────────────────── node rendering ─────────────────────────────
 function nodeKey(item) { return item.tree_id + '|' + item.node_id; }
 
@@ -634,14 +700,10 @@ function renderNode() {
   host.append(el('div', { class: 'nodemeta' },
     `${item.dataset === 'A' ? 'Dataset A' : 'Dataset B'} · ${tree.subject_model} · ${tree.task} · node ${node.id}`));
 
-  // ex-ante masking: ancestors + current only. No children, no machine output.
-  const path = node.path || [node.id];
-  host.append(el('div', { class: 'fieldlabel' }, T('q_chain')));
-  host.append(renderSpine(path.map(pid => {
-    const p = tree.nodes[pid] || {};
-    return { id: pid, type: p.node_type || '', cur: pid === node.id,
-             label: prettyValue(p.current_hypothesis || '') };
-  })));
+  // Whole tree up to this frontier; the current node's continuation is masked
+  // (ex-ante). Click any node to read that branch's hypothesis / evidence.
+  host.append(el('div', { class: 'fieldlabel' }, T('q_tree')));
+  host.append(renderTreeDiagram(tree, node.id));
 
   host.append(el('div', { class: 'fieldlabel', style: 'margin-top:16px' }, T('q_cur')));
   const card = el('div', { class: 'card' },

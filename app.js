@@ -39,7 +39,8 @@ const UI = {
     l_cont:'继续', l_stop:'停止', l_esc:'交给人',
     l_cont_s:'这条线继续跑', l_stop_s:'剪掉这条线', l_esc_s:'停下来问人',
     reason_h:'为什么这么判？勾选适用的（可多选）', reason_other:'其他（补充说明）',
-    f_hyp:'当前假设', f_ev:'关键证据', f_risk:'主要风险', f_tools:'调用的工具', f_status:'状态',
+    f_hyp:'这一步的假设 / claim', f_ev:'关键证据', f_risk:'主要风险',
+    f_tools:'这一步做了什么（工具 / 命令）', f_lessons:'从这一步学到 / 得出的结论', f_status:'状态',
     sum_id:'标注者 ID', sum_quiz:'问卷完成组数', sum_nodes:'已标节点数',
     sum_audio:'录音段数', sum_text:'文字说明数',
     exporting:'打包中…', exported:f=>`已下载 ${f}`,
@@ -96,8 +97,8 @@ const UI = {
     l_cont:'Continue', l_stop:'Stop', l_esc:'Human',
     l_cont_s:'keep this line running', l_stop_s:'prune this line', l_esc_s:'defer to a human',
     reason_h:'Why this call? Check all that apply', reason_other:'Other (specify)',
-    f_hyp:'Current hypothesis', f_ev:'Key evidence', f_risk:'Main risk',
-    f_tools:'Tools called', f_status:'Status',
+    f_hyp:'Hypothesis / claim of this step', f_ev:'Key evidence', f_risk:'Main risk',
+    f_tools:'What this step did (tools / commands)', f_lessons:'What it learned / concluded', f_status:'Status',
     sum_id:'Annotator ID', sum_quiz:'Quiz groups done', sum_nodes:'Nodes labeled',
     sum_audio:'Recordings', sum_text:'Typed notes',
     exporting:'packing…', exported:f=>`downloaded ${f}`,
@@ -708,9 +709,10 @@ function renderNode() {
   host.append(el('div', { class: 'fieldlabel', style: 'margin-top:16px' }, T('q_cur')));
   const card = el('div', { class: 'card' },
     fieldBlock(T('f_hyp'), node.current_hypothesis),
-    fieldBlock(T('f_ev'), node.key_evidence),
-    fieldBlock(T('f_risk'), node.main_risk),
     fieldBlock(T('f_tools'), node.tools_called),
+    fieldBlock(T('f_ev'), node.key_evidence),
+    fieldBlock(T('f_lessons'), node.lessons),
+    fieldBlock(T('f_risk'), node.main_risk),
     fieldBlock(T('f_status'), node.status));
   host.append(card);
 

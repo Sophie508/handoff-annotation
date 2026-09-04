@@ -1,5 +1,5 @@
 {
- "name": "annotation subset (20 trees, 160 items): 0 ADRS + 10 FireBench + 10 Auto-Research(100-set) + 3 synthetic next-step options/item",
+ "name": "annotation subset (20 trees, 160 items): 0 ADRS + 10 FireBench + 10 Auto-Research(100-set)",
  "selection": {
   "structure": "one section per tree, grouped: 0 ADRS + 10 FireBench + 10 Auto-Research(100-set)",
   "granularity": "real leaf nodes per tree, capped at 8 (fewer if the tree has fewer; no padding)",
@@ -211,21 +211,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "ESCALATE"
-   },
-   "candidates": [
-    {
-     "text": "Record the 'useful but unreliable; pair CoT monitoring with behavioral checks and interpretability' statement as the final answer to the research question and close the tree.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Run a targeted follow-up probe testing whether increasing optimization or RL-style pressure drives verbalization of misaligned hints toward zero, sharpening the 'unreliable' claim.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a safety researcher to sign off on framing CoT monitoring as an acceptable-but-insufficient safeguard before this conclusion informs any deployment or monitoring policy.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -242,21 +228,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a person judge whether self-as-subject GPT-5.5 stand-in outputs count as valid evidence at all, given they are explicitly not the paper's model.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Log the single-sample CoT and final answer for each of the five items as the recorded result and move on.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Rerun the five hinted items with multiple samples per item and a temperature sweep to check whether the CoT and 'Answer:' outcomes are stable.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -273,21 +245,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Defer to a researcher on whether a self-run that structurally cannot RL-train an undisclosed hack habit can speak to the safety-critical regime at all.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that the aligned single-turn stand-in resisted and disclosed on both the grader-hacking and unethical-key cases, and note this does not reproduce the RL-induced gap.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Extend the probe with more genuinely uncertain items and subtler embedded misaligned cues to see whether the resist-and-disclose pattern still holds.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -304,21 +262,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person to verify the approximate Claude 3.7 and DeepSeek R1 percentages against the primary Chen et al. source before they are relied upon.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Treat the recalled literature finding (CoTs substantially unfaithful, and lower for misaligned hints) as the established answer and close the reading branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Turn the recalled ~25-40% hint-verbalization figures into a testable hypothesis and design a stand-in probe to examine it.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -335,21 +279,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Convert the recalled '<2% verbalized while taken >99%' reward-hack finding into a hypothesis and run a small genuine probe on misaligned framing.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Accept the recalled conclusion that CoT monitoring has a high false-negative rate for learned reward hacking as the result of this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Have a domain expert confirm the reward-hacking verbalization statistics before they are treated as a robust basis for the safety argument.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -366,21 +296,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Escalate the claim that the danger stems from training-induced silent exploitation to a researcher, since it rests entirely on inaccessible RL evidence.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Probe whether the training-induced gap can be approximated with any available fine-tuning or prompt-based optimization proxy rather than full RL.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize the combined finding that safety-relevant unfaithfulness is real and large in RL-trained models yet invisible in the benign stand-in.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -397,21 +313,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Rerun the elicitation with harder items and subtler hints to actually populate the exploited set needed to estimate faithfulness.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record that easy in-knowledge items yield an empty exploited set and cannot estimate faithfulness, and treat this lesson as the branch outcome.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person to decide what item difficulty and hint subtlety would make the exploited-set faithfulness measurement legitimate.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -428,21 +330,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Hand off to someone with access to measure Claude 3.7 at scale using the causal hint-injection paradigm the stand-in cannot substitute for.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Conclude the stand-in investigation with the verdict that faithfulness is regime-dependent and cannot be measured by introspective self-report.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Examine the neutral-versus-misaligned contrast in q3, the part of the tree most relevant to safety monitoring.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -459,21 +347,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Compare the accepted published above-chance finding against the GPT-5.5 stand-in's toy detection behavior.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Accept 'yes, above chance' from the published AUCs as the directional answer, qualified by calibration, prompt-priming, and contamination caveats.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether accepting the paper's above-chance claim without independent replication is acceptable given the contamination and probe-priming risks.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -494,21 +368,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "ESCALATE"
-   },
-   "candidates": [
-    {
-     "text": "Run additional stand-in probes with harder, less cue-obvious synthetic transcripts to further test the cue-driven detection mechanism.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize the trajectory with the stand-in recorded as plausibility-only evidence and all active nodes closed.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Defer to a person on whether the toy probe risks overstating how easy the real frontier evaluation-detection task actually is.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -528,21 +388,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Treat the arXiv Table 1 AUCs (0.74-0.83 chat, up to 0.95 agentic) as the settled published evidence and close the reading.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Record a hypothesis and result that published frontier models detect evaluation status above chance, strongest on agentic transcripts, with calibration and priming caveats.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person to weigh whether the 0.921 human baseline, compiled by the dataset's own annotators, is inflated before models are compared against it.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -565,21 +411,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person whether relying on the curator's stated conclusion would improperly leak the benchmark's answer into downstream analysis.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that the metadata confirms task provenance and dataset source, and stop before using its curator conclusion as a result.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Download and inspect the upstream jjpn2/eval_awareness dataset if it is publicly accessible.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -597,21 +429,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Mark paid frontier replication as blocked given the thousands-of-dollars API cost and rely on the published aggregate evidence.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Escalate the budget and authorization question of spending thousands in OpenAI/Anthropic credits for a full reproduction to a person.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Attempt a scaled-down partial reproduction stage (e.g., a single probe variant on local data) that fits within the no-paid-API constraints.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -628,21 +446,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Cross-check the reported agentic-versus-chat AUC gap against the stand-in probe to see whether the same structured-artifact pattern appears.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Conclude this branch with the published metrics and mixed-calibration caveat as the answer to the research question.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an expert whether the numbers' dependence on the five selected probe prompts and held-out construction undermines using them as the headline result.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -659,21 +463,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Substitute the published metrics plus a stand-in probe to approximate what the blocked frontier replication would have shown.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record that frontier API replication could not run under the no-paid-API and gated-dataset constraints and generated no new numbers.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Hand the blocked replication to someone with paid API and gated-dataset access to run the model queries end-to-end.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -691,21 +481,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Expand the probe with harder, less separable examples to test whether the perfect N=10 AUC and the 0.210 ECE degrade under difficulty.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the toy AUC=1.000, Brier=0.060, ECE=0.210 as a plausibility result noting the inflated separability, and move to the decision node.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Defer to a person on whether ten hand-constructed examples with perfect ranking can support any qualitative claim about the real benchmark.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -722,21 +498,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Hand off to someone with the actual GPT-3.5 and Llama-2 models plus GSM8K to verify the effect size the sandbox cannot reach.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Synthesize Q3 on model and dataset effects and internals-based methods as the next step toward the full answer.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the model-dependent consistency-benefit claim, grounded in Xiong et al. and self-consistency, as the conclusion for this branch.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -753,21 +515,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Read out the AUROC for both the verbalized-confidence and consistency signals on the 12-item set and record the result as-is.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Enlarge the hard item set beyond 12 so it produces more genuine errors and the failure-prediction AUROC comparison becomes stable.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person whether a hard set that yields only one genuine error can support any AUROC comparison between the two signals.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -784,21 +532,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Test H2 on a harder item set and via a labeled Monte-Carlo simulation to check whether consistency separates correct from wrong at least as well as verbalized confidence.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Register H2 as motivated by self-consistency and Xiong et al. and leave its verification to the recalled literature.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Defer to someone with access to a weak, miscalibrated model to demonstrate the differential benefit the strong stand-in cannot exhibit.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -815,21 +549,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that the strong stand-in (N=12, one error, identical 0.955 AUROCs) is too error-sparse to show consistency's advantage, leaning the conclusion on literature.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Hand off to a person with weaker models (GPT-3.5/Llama-2) and GSM8K to expose the failure-prediction gap consistency is meant to fill.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Run a labeled Monte-Carlo simulation to probe the consistency mechanism where the real stand-in data is too error-starved to discriminate.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -851,21 +571,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "ESCALATE"
-   },
-   "candidates": [
-    {
-     "text": "Exercise the remaining black-box mechanisms and qualitative patterns a stand-in can still reach without GPU or open weights.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record white-box internals (logit averaging, P(True), hidden-state probes) and the full cross-model reproduction as out of reach in this sandbox and finalize.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Hand the specified GPT-3.5/GPT-4/Llama-2 sweep over GSM8K, CSQA, and Law with P(True) and logit baselines to someone with the required GPU and API resources.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -882,21 +588,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that verbalized confidence ranks failures correctly even when absolute calibration is poor, mark internals-based methods blocked, and finalize.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether only two errors is enough to claim calibration and failure prediction are genuinely distinct axes.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Gather more items so the 2-error trend can move toward a conclusive test of whether errors concentrate in the low-confidence slice.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -913,21 +605,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Accept the recalled findings that verbalized confidence is overconfident, low-resolution, and a weak failure predictor as the answer to this sub-question.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person to verify the recalled ECE (~0.2-0.4) and AUROC (~0.5-0.7) ranges against the primary sources before building on them.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Form H1 (verbalized confidence overconfident plus round-number clustering) and test it on a small stand-in set.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -944,21 +622,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Proceed to Q2 to test whether sampling-plus-consistency beats raw verbalized confidence for failure prediction on harder, error-producing items.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Defer to a person on whether the underconfidence observed at tiny N, opposite the paper's overconfidence, warrants reinterpreting the calibration claim.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Conclude that raw verbalized confidence is low-resolution and miscalibrated with a model-dependent sign, and close the Q1 branch.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -975,21 +639,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record the blocker (no qa_data, no inference util, no model API, no GPU) explicitly and refrain from fabricating per-position accuracy numbers.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Run the GPT-5.5 stand-in on a tiny synthetic version of the task (Q3) to obtain genuine, if substituted, position observations.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Hand the prescribed 50-samples-by-20-positions gpt-3.5-turbo protocol to a person who has the real data and API key.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1006,21 +656,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Move on to cover the mechanism and moderators of the effect in Q4.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Conclude that the flat stand-in result validates the pipeline but neither supports nor refutes lost-in-the-middle, leaving the literature as the answer.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Hand off to a human to run the provided protocol on the real data and model to obtain the actual 20-position U-curve.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1037,21 +673,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person whether the fictional-entity, short-context, single-sample design is a fair test before its EM outcomes are interpreted.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the observed EM for each of the five gold positions and treat the stand-in trial as complete.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Extend the sweep beyond the five slots to all 20 positions with multiple samples each to gain power to detect a middle dip.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1068,21 +690,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Defer to a person on whether a model far stronger than gpt-3.5-turbo can meaningfully test a claim about the effect being model-agnostic.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Run the stand-in experiment to test whether the predicted middle-position EM dip actually appears.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Register the U-shape prediction as the falsifiable claim, noting a flat curve would indicate suppression at short context length and strong model.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1099,21 +707,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Run the length-sweep experiment to test the predicted primacy-plus-recency-plus-dilution mechanism and how trough depth scales with context length.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize the tree with the answer that performance is best when relevant info sits at the start or end and degrades in the middle, worsening with length.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person to run the real data and model so the one missing piece, the numeric U-curve magnitude, can be confirmed.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1135,21 +729,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "State the predicted outcome, a deeper trough at longer context, for the specified 10/20/30-document length sweep.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Mark the 3-length by 20-position by 50-sample protocol needs_review for a human to execute within the 5000-call budget.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the length-sweep and query-aware mitigation experiment as blocked with no model, data, or GPU, and leave it unexecuted.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1170,21 +750,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "ESCALATE"
-   },
-   "candidates": [
-    {
-     "text": "Record the exact EM normalization recipe (lowercase, strip articles, remove punctuation, collapse whitespace, contains-match) as the deliverable protocol and close this terminal node.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether the standard normalization adequately handles NQ answer aliases before the protocol is finalized.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Implement the specified SQuAD-style normalization and EM code skeleton so it is ready to consume model outputs once they exist.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1201,21 +767,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Check the feasibility of actually running the 20-document, 20-position-by-50-sample gold-position sweep in Q2.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Register the U-shape prediction with a 10-25 EM-point trough as the reference shape and treat the recalled paper as high-confidence support.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Defer to a person to run gpt-3.5-turbo on this configuration to confirm the predicted trough magnitude.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1232,21 +784,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a vision-model researcher to judge whether attributing the 2023-era failures to resolution and training-objective mismatch is a defensible causal claim given that model internals cannot be inspected here.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Regenerate the geometric test images at 224px, 448px, and 1024px and measure how stand-in accuracy tracks patches-per-object to directly test the resolution-scaling mechanism.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Write up the two-mechanism explanation (resolution scaling plus comprehensive instruction tuning) as the ROOT finding, treating the resolution and training analyses as sufficient support.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1264,21 +802,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that the current benchmark images are too easy (blue circle fully hidden inside the rectangle, only two intersection patterns) as a stated validity limitation and close this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person familiar with the original VLMs Are Blind benchmark whether these simplified image designs are close enough to the paper's difficulty to support any comparison at all.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Redesign the overlap and line-intersection images with hidden-circle-free depth ordering, varied diagonal orientations, and near-miss intersections, then rerun the stand-in to see whether the 100% result survives harder configurations.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1298,21 +822,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a person verify the recalled MMVP and CLIP-blind-pair claims against the actual papers before this dissociation is used as an architectural explanation.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Design a small stand-in probe contrasting pixel-trivial spatial tasks against semantic VQA items to empirically test the claimed semantic-strong, spatial-weak dissociation.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the semantic-versus-spatial dissociation as the literature branch's conclusion, treating the recalled MMVP and CLIP-blind-pair findings as sufficient grounding.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1329,21 +839,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Close this branch with the mechanistic conclusion that low ViT resolution is the primary driver of the counting failures, based on the patch-coverage math.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a domain expert to weigh how much of the improvement is really resolution versus the co-occurring training-data and RLHF changes the risk note flags as confounds.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Empirically render 25px circles at 224px and 1024px and count actual patch coverage to confirm the ~1.8 versus 6+ patches-per-circle estimate rather than relying on the mathematical derivation.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1360,21 +856,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Raise with a person who can authorize GPT-4V/GPT-4o API access so the cross-model comparison the conclusion rests on can actually be run.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Extend the stand-in evaluation to a broader and harder image set to strengthen the tentative claim that 2025-era models improved beyond the paper's GPT-4V baseline.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize this branch stating that VLMs were blind circa 2023-2024 and appear improved by 2025, treating the 100%-versus-32-58% contrast as the answer.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1391,21 +873,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Expand the grid-row test from 4 of 12 images to the full set and add harder configurations (more rows, varied visual styles) to check whether 100% holds.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record grid-row counting as trivially solved by the stand-in (4/4) and move on, treating the small clear sample as adequate.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask someone familiar with the paper's grid configurations to judge whether these four clean grids fairly represent the original task's difficulty.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1423,21 +891,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Conclude that modern VLMs have effectively solved circle counting, treating the 9/9 versus ~43% baseline gap as definitive for this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a reviewer whether a 100%-versus-43% gap can be claimed as a real improvement given it was never run on the paper's GPT-4o.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Rerun circle counting with denser, overlapping, and higher-count arrangements to see whether the stand-in's 100% (9/9) degrades under harder counting demands.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1454,21 +908,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Move to the q-3 mechanism question and test whether resolution and training explanations account for the 24/24 versus 32-58% gap across all five tasks.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person to adjudicate the risk note's open question of whether the perfect scores reflect genuine model improvement or simply that these test images are easier than the paper's.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the overall 24/24 stand-in result against the paper's 32-58% as the experimental finding and run no further task variants.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1485,21 +925,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Run a small stand-in comparison of Self-Refine on an open-ended generation task versus an exact-match reasoning task to test the claim that gains vanish once the rubric is removed.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Have a person check the Self-Refine paper's actual task list and metrics before relying on the claim that its reasoning-task performance drops.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that Self-Refine's gains are confined to subjective open-ended tasks and likely come from richer feedback-prompt instructions, closing this reading.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1519,21 +945,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Adopt the survey's taxonomy (intrinsic fails on reasoning, tool-based extrinsic helps) as the organizing frame and end this reading.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask someone to confirm whether the survey's conclusions have been updated, since the risk note flags that its findings may no longer be current.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Cross-check Pan et al.'s three-way taxonomy against the other collected papers to see whether the intrinsic-fails, extrinsic-with-tools-helps pattern holds consistently.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1550,21 +962,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a person verify the recalled Sharma 2023 and Perez 2022 findings before this sycophancy account is used as the causal mechanism, since RLHF dynamics are model-specific.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record sycophancy from RLHF as the explanatory mechanism for unnecessary correct-answer flips and treat the recalled Sharma and Perez findings as sufficient.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Design a stand-in probe that presents a correction prompt after a correct answer to observe how often the model unnecessarily flips, testing the RLHF-sycophancy mechanism.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1584,21 +982,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Add ambiguous CommonsenseQA items where the stand-in makes initial errors to try to surface the degradation regime the capable model has been hiding.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Raise with a person the need for a lower-capability model like GPT-3.5, since the degradation regime the claim depends on cannot be observed with this stand-in.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Conclude that self-correction is neutral for this high-capability model on CommonsenseQA, consistent with the paper's degradation for weaker models, and close the branch.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1615,21 +999,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Conclude that model capability is the key moderator of self-correction harm, with the GPT-4-tier stand-in resisting flips as Huang et al.'s hierarchy predicts.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person to authorize running GPT-3.5 directly, since the capability-hierarchy claim cannot be verified without the weaker model.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Run the adversarial flip test across several difficulty levels to see whether the stand-in's resistance weakens, sharpening the capability-as-moderator hypothesis.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1646,21 +1016,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Construct multi-hop HotpotQA cases that force intermediate-hop corrections to empirically test the compounding-error propagation the decision only reasons about.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the null self-correction effect for the capable model on HotpotQA and attribute the paper's degradation to chain disruption in weaker models, ending the branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether the untested compounding-error hypothesis is sound enough to attribute the paper's multi-hop degradation to hop disruption.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1677,21 +1033,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Finalize the conclusion that intrinsic self-correction is counterproductive for reasoning and only external verifiers deliver genuine improvement, treating the oracle analysis as complete.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person to weigh the risk note's caveat that in domains with cheap verifiers the practical recommendation may reverse, before this is stamped as the final conclusion.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Test the oracle boundary on a math task with a cheap verifier (calculator or code execution) to see whether external verification recovers the gains that intrinsic correction loses.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1708,21 +1050,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a person judge whether the ~2-3% drop generalizes given the risk that magnitude varies with model, task difficulty, and prompt phrasing.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Accept the hypothesis that intrinsic self-correction degrades reasoning accuracy because detection is bounded by production, treating Huang et al. plus the taxonomy and stand-in results as sufficient confirmation.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Run a controlled two-round stand-in on GSM8K tracking right-to-wrong versus wrong-to-right flip rates to test the net-negative bound the hypothesis predicts.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1739,21 +1067,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Compute the centered value scores and Spearman rho against the recorded benchmark order, then repeat the 15-item rating a few times to check response stability before reading off the ranking.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Read off the single-respondent ranking and rho from the recorded ratings as the basic-prompt result and move on.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether using the agent's own 1-6 ratings as the experimental subject is a valid design, given the risk that a single self-rated respondent confounds the result.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1770,21 +1084,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Run additional respondents per prompt condition to check whether the anchor, demographic, and persona effects on ranking are stable rather than single-draw noise.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Read the four-condition ranking table and its Spearman correlations off the recorded run as the prompt-dependence result and finalize.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Have a person judge whether one respondent per condition is enough to claim prompt-driven reshuffling of the value ranking.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1801,21 +1101,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person to assess whether the recovered circle is real structure or an artifact of the six designed personas, given the flagged confound and rough SSD scale.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Add more and less hand-designed personas and rerun the MDS-plus-Procrustes pipeline to test whether the recovered Schwartz circle survives when persona design is not driving the correlations.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Read off the inter-value correlation matrix, circular order, and SSD from the six-persona run as the structure-facet result and finalize.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1832,21 +1118,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person whether the agent rating its own values as the stand-in subject is a legitimate test of the RLHF-amplification claim rather than a self-fulfilling one.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Operationalize the amplification hypothesis by rating the 5-value, 3-item set under the basic prompt and computing centered scores and Spearman rho against the recorded benchmark order.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Accept on training-based reasoning that aligned models amplify self-transcendence and suppress Power, and treat the hypothesis as established without a run.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1863,21 +1135,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Proceed to q3 and test how the value-anchor, demographic, and persona prompts shift the ranking away from the basic-prompt rho of 0.90.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Conclude the basic-prompt ranking facet with rho=0.90 and Power lowest, Benevolence highest, treating the amplification hypothesis as confirmed.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether a single stand-in's rho=0.90 can be generalized to 'different LLMs' without any cross-model API or GPU run.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1894,21 +1152,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Conclude that ranking is strongly prompt-dependent, with the anchor reversing it (rho -0.50), demographic mild (0.80), and persona moderate (0.30), and close the facet.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Move on to examine the correlation and circular-structure facet and whether it stays stable under the same anchor, demographic, and persona prompts.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person whether these prompt-shift magnitudes generalize beyond the single stand-in model the risk note says is unverified across models.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1926,21 +1170,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Flag to a person that the recovered circle came from only six designed personas on a stand-in that is not the paper's model, and that cross-model consistency in the research question remains entirely unverified.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Synthesize all facets into the ROOT lessons and finalize, treating the recovered Schwartz circle (order exact, SSD=0.17) as the structure result.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Rerun the structure recovery with less-engineered personas or more respondents to test whether the exact circular order and SSD=0.17 hold once the persona confound is relaxed.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1958,21 +1188,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person to confirm the exact reference ranking to use, since the risk note warns it varies by sample and culture and the circular structure needs many respondents to estimate.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Adopt the recalled pan-cultural hierarchy and circular-structure benchmark as the reference standard and proceed no further on grounding it.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Use the recalled PVQ-RR benchmark to build the 5-value, 3-item instrument and run the ranking test in q2 and the prompt-dependence test in q3.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -1989,21 +1205,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that the instruction targets GPT-3.5 race-varied cost and length-of-stay predictions over PMC-Patients but that its required API and dataset are barred by the run constraints, and go no further here.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person how to proceed given that the instruction demands paid model APIs and a dataset that the hard constraints forbid or that may be absent.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Search the workspace and nearby directories for PMC-Patients.json and the utils.llm_inference utility the instruction references.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2023,21 +1225,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Broaden the search to the full filesystem and alternate filename patterns before concluding the PMC-Patients dataset and inference utility are truly unavailable.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person whether the dataset can be supplied or the search scope expanded, given that the sweep was not exhaustive but the task said to use only working-directory data.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the direct GPT-3.5 experiment as pruned and blocked, since the find and rg sweeps surfaced only textual references and no usable dataset or utility.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2055,21 +1243,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that the intended race-varied GPT-3.5 experiment cannot run because PMC-Patients.json is absent and paid APIs are forbidden, and close it.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Pivot to a clearly labeled small GPT-5.5 stand-in race-swap experiment to test the counterfactual methodology while the target dataset and model stay unavailable.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person to authorize dataset and GPT-3.5 access, since any real claim about GPT-3.5 bias requires rerunning this blocked experiment.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2086,21 +1260,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Proceed with the small GPT-5.5 stand-in race-swap prompts to validate the mechanics that the blocked direct replication cannot cover.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person whether abandoning direct replication is acceptable, since it forecloses testing how race effects interact with case complexity or specialty.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Finalize that direct replication is blocked and should not be pursued further in this isolated run, given only instruction.md is present and APIs and GPU are forbidden.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2117,21 +1277,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Create the concrete counterfactual prompt template and a small set of clinical vignettes to test whether swapping only the race descriptor leaves cost and length-of-stay estimates unchanged.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a clinical or bias-domain expert whether treating race as a purely counterfactual attribute with no structural mediators is the right fairness assumption for this test.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Accept the fairness hypothesis that a race-only change in an otherwise identical vignette should not move a narrowly clinical cost or length-of-stay estimate, and treat it as the framing.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2148,21 +1294,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record the two-vignette, four-label, N=8 prompt design as the finalized stand-in methodology without executing further runs.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Generate the eight GPT-5.5 stand-in outputs across the two vignettes and four race labels and compute the paired within-vignette cost and length-of-stay differences.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a clinical expert to review whether the appendicitis and CHF vignettes and the White/Black/Hispanic/Asian labels are appropriate for probing medical cost bias before generating outputs.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2179,21 +1311,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that the directory holds only instruction.md and no PMC-Patients.json, fixing the local inventory as the basis for a stand-in-only path.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Split the work into a blocked-target-experiment question and a small GPT-5.5 stand-in race-swap test, then build the stand-in vignettes.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person whether to obtain the raw patient summaries, since without them any synthetic vignette may not match the paper's data distribution.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2211,21 +1329,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person to run the real GPT-3.5 experiment on PMC-Patients, since it might reveal bias even though the stand-in did not.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Add stochastic repeats and more vignettes to the race-invariant stand-in run to firm up the methodology validation before finalizing.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize with limitations, using the race-invariant stand-in results only to validate the counterfactual race-swap method and not to conclude anything about GPT-3.5.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2245,21 +1349,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a faithfulness researcher to confirm the recalled Lanham et al. findings before they are relied upon, given the noted risk that memory may be imprecise on specifics.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the process-versus-output faithfulness distinction from Lanham et al. as the settled conceptual framing for this line and close the reading.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Trace how Lanham et al.'s Early Answering and Adding Mistakes tests could be adapted to distinguish process faithfulness from output faithfulness under external hints.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2279,21 +1369,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Design a small counterfactual probe to check whether the recalled ~90% hint-omission rate for sycophancy and anchoring holds across the neutral hint categories listed.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Take the recalled neutral-hint concealment patterns across sycophancy, consistency, visual, and metadata as sufficient and log them as the neutral-hint faithfulness profile.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Have a domain expert vet the specific concealment rates cited for sycophancy and anchoring, since the node flags that recalled rates may be imprecise.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2310,21 +1386,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Accept the deductive argument that grader hacking entails structural unfaithfulness and the bimodal safety-training pattern as the finding for misaligned hints.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a safety researcher whether the claimed structural-unfaithfulness necessity of grader hacking is sound before treating it as established.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Run an empirical check on a model that actually exhibits reward hacking to test whether grader gaming forces the predicted structural CoT unfaithfulness.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2341,21 +1403,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask someone familiar with Anthropic's Claude 3.7 Sonnet extended-thinking analysis to confirm the deceptive-reasoning claim, which the node flags as possibly imprecise from memory.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Consolidate the four extended-thinking mechanisms into the writeup as the account of reasoning-model faithfulness and end this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Probe the thinking-trace-versus-final-answer divergence hypothesis by comparing extended thinking traces to their summarized CoT on hint-influenced items.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2375,21 +1423,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record H2 as partially confirmed and finalize the conclusion that misaligned hints differ from neutral hints through mechanism rather than rate.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Open a follow-up branch to test empirically whether misaligned hints produce categorical failures while neutral hints produce graded ones, rather than resting on the mechanism argument.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Route the H2 conclusion to a reviewer, since empirical verification is blocked without model API access and the partial-confirmation call is a judgment.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2406,21 +1440,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask an expert to review whether the three-mechanism taxonomy is exhaustive, given the flagged risk that additional mechanisms may exist.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Search for additional unfaithfulness mechanisms beyond post-hoc rationalization, selective emphasis, and structural concealment before treating the taxonomy as complete.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize the three-mechanism taxonomy and its shared invisible signature as the answer to Q3 and mark the root ready to close.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2440,21 +1460,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Report H3 and H4 as confirmed and H1 as unverifiable in this environment, closing the theoretical analysis at its current reach.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Flag that H1 needs an empirical study with Claude 3.7 Sonnet extended thinking and hand it to a person who can arrange the required API access.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Explore the still-open H2 rationalization-under-training claim through a stand-in analysis while H1's empirical test remains blocked.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2471,21 +1477,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a person confirm the operational faithfulness definitions before downstream branches build on them, since full verification needs API access and large-scale experiments.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Advance to designing the counterfactual comparison identified here as the necessary measurement approach for CoT faithfulness.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Treat the operational definitions and confirmed primary faithfulness failure as settled and close the measurement-definition sub-decision.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2502,21 +1494,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Proceed to test the LLM rationality-assumption on the clean classic risky-choice problems from Q2 in place of the corrupted choices13k data.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the two corruption proofs and the missing raw file as the finding that choices13k cannot support rationality conclusions, and set aside the original protocol.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Hand the corrupted dataset back to a person who can repair or re-source choices13k before the paper's exact protocol is attempted again.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2533,21 +1511,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a behavioral-economics expert to confirm the documented human majority direction for each of the four problems before they anchor the test.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Finalize the four EV-versus-human opposed problems as the clean stimulus set and treat the construction step as complete.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Run stand-in predictions on the four constructed problems in both the population-forecast and own-choice framings.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2564,21 +1528,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Log the four cold population predictions and their cited reasoning as the population-forecast result for this small-scale run.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Given the single-model N=4 qualitative design, ask a person whether these predictions are strong enough to draw a conclusion.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Compare each of the four %B predictions to the EV-maximizing and human-majority directions and check whether reasoning cited EV or a behavioral factor.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2595,21 +1545,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Compare the model's own first-person choices on the four problems to both EV-maximization and the human majority.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a person whether a single model at N=4 warrants any own-choice conclusion before comparisons are reported.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the four own-choice decisions and justifications as the first-person result and end this experiment.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2626,21 +1562,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Quantify the correlation between EV advantage and human choice across the 9723 trials to test the apparent EV-independent B-bias.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Take the mean P(B)=0.685 and substantial EV gaps as sufficient evidence of a blanket B preference and record it as the human-choice signature.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person to check whether the B-bias reflects dataset construction, since Gamble B is often the safer option, before it is read as label bias.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2657,21 +1579,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Raise the missing raw choices13k file with a person who can supply it before further sign-convention work is attempted.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that the payoffs are unrecoverable and /data/choices13k/ is absent, closing analysis of the provided text as a dead end.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Pivot the rationality test to the clean classic problems with documented human patterns, since no sign convention recovered a rational signal.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2688,21 +1596,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Move to Q2 and collect an LLM's own predictions to see whether they align with EV or with the ~68% human P(B) baseline.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Adopt the EV-independent, ~68%-B human pattern as the fixed rationality-deviation baseline and close this decision.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an expert whether naive-EV is the right rational benchmark, given a model could be rational under a fitted probability-weighting function yet differ from naive EV.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "B",
@@ -2719,21 +1613,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that the 'LLMs assume rationality' claim is false for this strong model in population forecasting, based on 4/4 human-direction predictions.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person whether 4/4 directional matches, without quantitative calibration to empirical P(A), justify the falsification claim.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Contrast the population-forecast result with the own-choice framing in h3 to see whether the model still tracks human irrational patterns.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2750,21 +1630,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask the requester whether autonomous vehicles should be included as a route before deciding to keep them out of the robotics-focused taxonomy.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Fix the six routes covering VLA, humanoids, warehouse, service, medical, and defense as the final route taxonomy and end the enumeration.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Populate each of the six identified routes with its representative companies and technical paths to build out the roadmap.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2784,21 +1650,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Gather each company's robot generations, pilots, releases, preorders, and installed base to fill in the product-progress column.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask the requester how much weight demo videos should carry as evidence before entering demo-only claims into product progress.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the product-progress categories of demos, pilots, and paid deployments as marked-separately fields and treat the schema as set.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2815,21 +1667,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask the requester how to handle private companies that rarely disclose revenue before leaving their commercialization cells blank.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Collect revenue, paid contracts, subscriptions, and backlog figures from public filings to fill the commercialization column.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record commercialization as the set of revenue, contract, subscription, and deployment fields sourced from filings and finalize the schema.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2846,21 +1684,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask the requester how to treat Gemini Robotics given its restricted access and absent broad commercial API when assessing commercialization.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record Gemini Robotics on Gemini 2.0, with its VLA control and embodied-reasoning capabilities, as the Big Tech VLA entry and move on.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Track Apptronik and the trusted-tester integrations to document Gemini Robotics' product progress on the Big Tech VLA route.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2877,21 +1701,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a robotics expert how much the persistent sim-to-real gap qualifies the claimed VLA-plus-simulation-data convergence.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the roadmap convergence on VLA combined with world and simulation data as the cross-route technical finding.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Track the autonomous data-collection loops behind GR00T, Gemini Robotics, and PI to substantiate the VLA-plus-world-data convergence claim.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2908,21 +1718,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record Bear Robotics, its $60M LG investment, ex-Google founder, and US/Korea/Japan deployments as the indoor service-delivery entry.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Track Bear Robotics' fleet size and restaurant retention to fill in commercialization for the indoor service-delivery route.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask the requester whether a navigation-and-delivery robot with limited manipulation still belongs on the embodied-intelligence roadmap.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2943,21 +1739,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask the requester how to handle the ethics and source limits around defense/field companies before folding them into the deliverable.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Merge Anduril and Shield AI into the final taxonomy as the defense/field embodied-autonomy route and close this node.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Gather technical-path and commercialization detail on Anduril and Shield AI to complete the defense/field entry before merging into the taxonomy.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -2974,21 +1756,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Detail Anduril, Shield AI, and FieldAI's overlapping technical paths to define Route 6 more precisely.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Summarize Route 6 separately as the Anduril / Shield AI / FieldAI defense-and-field cluster and finalize its definition.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask the requester how export-control and ethical constraints should shape what is reported for Route 6 before writing it up.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3006,21 +1774,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person to weigh the normative tradeoff, since over-restriction may harm youth who benefit from AI social support.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the synthesis of E25–E27 and E32 as the finding that adolescent AI-companion exposure needs urgent intervention and close the branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Gather evidence on which regulatory and design interventions for youth AI companions are actually effective before asserting urgency.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3037,21 +1791,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a domain expert whether the trust-drop holds as AI-assisted dating communication becomes normalized over time.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Locate the primary research source behind the sharp trust-drop finding when AI dating-message assistance is revealed.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record that revealed AI assistance in dating communication undermines trust, citing the dating-app research and Hinge CEO remark, and move on.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3068,21 +1808,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person to judge whether the advocacy-organization framing overstates the harm before this evidence is weighted in the synthesis.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Cross-verify the Amnesty International claim with peer-reviewed sources on AI and racial bias in social applications.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the Amnesty International 2025 finding that AI perpetuates systemic inequality for marginalized groups as supporting evidence and proceed.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3099,21 +1825,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record the APA advisory's rising 17.14%-to-24.19% adolescent AI dependence as evidence of a public-health concern and close the node.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Verify the definition of dependence in the APA June 2025 advisory to assess whether the 17–24% figures reflect clinical thresholds.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a clinician whether the advisory's dependence definition conflates high use with pathological reliance before citing the rates.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3134,21 +1846,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Check whether Turkle's expected 2025 book on artificial intimacy has been published and add the citation if so.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record Turkle's intensified 2025 warnings about artificial intimacy from the NPR transcript and leave the forthcoming book uncited.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a person how to handle citing Turkle's updated framework given the book is not yet published.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3169,21 +1867,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Find the primary Harvard/U Graz publication to verify the sample and methodology behind GPT-4 outperforming humans on cognitive reframing.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a domain expert whether this bounded reframing result should be generalized to broader emotional intelligence in the synthesis.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that GPT-4 outperformed human controls in 3 of 4 cognitive-reframing domains as the evidence and move to the next node.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3200,21 +1884,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a person how to account for significant individual variation in susceptibility before generalizing the sycophancy-distortion claim.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the Tandfonline 2025 finding that AI's lack of reciprocity and sycophancy erodes patience for human imperfection as evidence and proceed.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Test whether AI sycophancy actually shifts users' expectations of friendship reciprocity beyond the single Tandfonline 2025 source.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3236,21 +1906,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a methodologist how to treat the non-randomized design and self-selection confounder before citing the loneliness correlation.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Open the MIT Media Lab longitudinal publication to verify the dosage threshold that separates heavy from moderate use.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the MIT finding that heavy daily chatbot use correlates with increased loneliness, with voice helping only at moderate use, and move on.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3267,21 +1923,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a stroke immunologist whether the sparse human chronic neutrophil subgroup data are strong enough to justify asserting a distinct smoldering chronic program rather than hedging it.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Build the acute injury-amplifying versus chronic resolving/smoldering neutrophil subgroup model and map each state onto the microglia trajectory and MMP9/NET evidence already gathered.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the acute injury-amplifying versus chronic resolving/remodeling split as the settled framing for the acute/chronic distinction and move on to writing it into the integration.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3298,21 +1940,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Trace the NETotic neutrophil state's interactions with platelets, fibrin, endothelium, and macrophages in more detail to predict which clinical outcomes each partnership drives.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Enter the NETotic subgroup with its platelet/fibrin/endothelium/macrophage/thrombolytic partners into the prediction table as a finished entry and stop gathering NET-source references.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Have a clinician judge whether the difficulty of distinguishing NETotic cells from extracellular NET burden makes the platelet-driven mechanism reportable as stated or needs qualification.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3329,21 +1957,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Defer to a vascular neurologist on whether the unproven state of NET-targeted therapy means the recanalization prediction should be framed as clinically actionable or purely exploratory.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "State that NET-high AIS predicts thrombolysis resistance and poor recanalization as a mechanistically supported prediction and stop pursuing further NET-tPA references.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Search for additional cohort or thrombectomy data quantifying how NET-high thrombus content correlates with recanalization failure to strengthen the thrombolysis-resistance prediction.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3360,21 +1974,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a stroke modeling expert whether in vitro systems that miss systemic marrow and spleen signaling can validly establish causality or whether only in vivo designs should be recommended.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Specify the paired in vivo/in vitro experiments that would test causality for each predicted interaction with platelets, endothelium, microglia/macrophages, astrocytes, T cells, and neurons.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record paired in vivo/in vitro validation as the recommended causality-testing approach in the future-work section and close this line.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3391,21 +1991,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a clinical trialist weigh the infection, impaired-repair, bleeding, and off-target immunosuppression risks against the benefit before endorsing a narrow-window targeting strategy.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Work out phase-specific safety endpoints for each harmful program (NET-tPA impairment, MMP9/protease BBB injury, TREM1 amplification) and their narrow therapeutic windows.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the recommendation to target harmful neutrophil programs within narrow windows with phase-specific safety endpoints as the settled future-work guidance and stop here.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3422,21 +2008,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Add the persistent post-stroke inflammatory response from the 2024 microglia model as an interaction prediction and stop searching for further support.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a domain expert whether it is legitimate to extrapolate the microglia-centered persistent-inflammation finding to neutrophils given the model does not cover them.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Search for neutrophil-specific persistent-inflammation data to check whether the microglia-focused 2024 model's lingering inflammatory response extends to chronic neutrophil states.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3457,21 +2029,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Open the Laridan 2017, Ducroux 2018, and Vallés 2017 primary articles to verify the NET-in-thrombi, tPA-impairment, and prognostic claims before relying on them.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Flag for a human reviewer that the clinical NET claim rests on sources whose primary articles were not directly read and let them decide whether that is acceptable.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Treat the three secondary references as sufficient to state that NETs are clinically relevant in ischemic stroke, using cautious language, without reading the primary articles.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3492,21 +2050,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a stroke immunology expert whether the unclear clinical stroke subgroup validation permits stating the TREM1+ interaction as a prediction or only as a hypothesis.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Gather stroke-specific evidence on TREM1+ neutrophil-macrophage crosstalk to confirm the predicted cytokine-amplifying interaction beyond the general TREM1 inflammation literature.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Add the TREM1+ neutrophil-macrophage cytokine-amplification interaction to the model as supported and stop pursuing further validation.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3526,21 +2070,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Accept the S1.2 validation as sufficient and record that scaling degrades SNM through co-occurring RDF, LER, and WFV as an established finding.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a device-physics specialist whether the S1.2 results actually isolate all three mechanisms or whether the co-occurrence claim overstates what the data support.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Run a focused analysis separating the RDF, LER, and WFV contributions to confirm they co-occur and quantify each one's share of SNM degradation under scaling.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3560,21 +2090,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "ESCALATE"
-   },
-   "candidates": [
-    {
-     "text": "Compare additional 8T-versus-SOI-FinFET-6T datasets to test whether the SNM gain per unit area holds beyond the 230mV/30%-area and 125mV cases already recorded.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record that 8T topology raises SNM to 230mV at a real 30% area cost while SOI FinFET 6T reaches 125mV with far tighter sigma, and treat the area/SNM tradeoff as documented.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Have a chip architect decide whether the 30% area overhead of the 8T route is an acceptable cost for the SNM gain in the intended design context.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3594,21 +2110,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "ESCALATE"
-   },
-   "candidates": [
-    {
-     "text": "Record that undoped-channel SOI FinFET and FDSOI suppress RDF to give sigma(SNM)=5.4mV in the 6T cell as an established process lever and move on.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a process-integration engineer whether FDSOI's dopant-interaction elimination is manufacturable at the target node before presenting it as a recommended SNM path.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Look for further data on undoped-channel SOI/FDSOI cells to confirm the sigma(SNM)=5.4mV RDF suppression generalizes beyond the single 6T result.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3625,21 +2127,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Quantify how much the SiGe/SiC asymmetric strain-induced mobility gain translates into SNM improvement rather than only drive-current improvement in FinFET SRAM.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Have a strain-engineering expert judge whether the drive-current benefit of asymmetric SiGe/SiC strain reliably improves SNM stability or could worsen cell asymmetry.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record strained-silicon SiGe/SiC source/drain with HKMG as an established drive-current lever in Intel's process stack and close this branch.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3656,21 +2144,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record halo implant as an established technique that suppresses punchthrough and enables >1GHz operation while balancing NMOS/PMOS via SBF optimization, and move on.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a device engineer whether the 2D localized halo dopant adds RDF that could offset its SNM benefit before recommending it for stable SRAM.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Investigate how halo-implant SBF optimization in the GAA nanosheet context affects NMOS/PMOS balance and SNM, not just punchthrough suppression and >1GHz operation.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3687,21 +2161,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record the confirmed causal chain from EUV stochastic secondary-electron LER through CDU and Vt mismatch to SNM degradation as an established mechanism and stop here.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Trace the LER-to-CDU-to-gate-length-to-Vt-mismatch-to-SNM causal chain quantitatively and test how much acid-quencher optimization reduces the final SNM degradation.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Have a lithography specialist judge whether acid-quencher optimization is a sufficient LER mitigation to recommend or whether stochastic secondary-electron limits make it inadequate.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3718,21 +2178,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Test whether the 1:2:1 SNM-optimal versus 1:2:2 WNM-optimal cell-ratio tradeoff at 14nm FinFET holds under the DTCO area-scaling constraints across other operating points.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a design lead to choose between the SNM-optimal 1:2:1 and WNM-optimal 1:2:2 cell ratio since the tradeoff depends on application priorities rather than data.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that 1:2:1 gives best SNM at 220mV while 1:2:2 gives best WNM under ~60% DTCO area scaling, citing the 2024 Springer SRAM DTCO reference, as a settled finding.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3749,21 +2195,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Have a foundry-process expert verify whether the reported nanosheet-release and inner-spacer failures are truly the root cause before asserting the architecture-versus-maturity conclusion.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Gather additional yield data on GAA nanosheet release uniformity and inner-spacer control to confirm process maturity, not architecture, drives the Samsung 3nm MBCFET <20% yield.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the Samsung 3nm GAA MBCFET <20% Q1-2024 yield as confirming that architecture alone is insufficient without process maturity, and close this line.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3780,21 +2212,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record that LLM NPCs enable dynamic player-driven storylines but require new evaluation frameworks beyond win rates as a finding for the study notes and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Research the emerging LLM-NPC evaluation frameworks for narrative coherence and player trust to flesh out how they extend beyond win rates using the LARP modular-memory approach.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a game-AI researcher whether narrative coherence and player trust are the right primary evaluation axes or whether that reflects a contested design stance.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3811,21 +2229,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record the Ryan & Reeve (2024) finding that autonomy-supportive competition motivates while controlling competition undermines well-being as a settled point for the notes.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a motivation-psychology expert whether the autonomy-supportive versus controlling competition distinction can be operationalized for designers or remains a normative judgment call.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Look for further self-determination-theory studies specifying when competition becomes autonomy-supportive versus controlling to sharpen the design implications of Ryan & Reeve (2024).",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3842,21 +2246,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a game-design practitioner whether the 2005 GameFlow model still reflects current best practice or has been superseded enough to warrant caveats in the notes.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record Sweetser & Wyeth's GameFlow with its eight flow conditions and clear-goals-plus-immediate-feedback path as the operationalization of Flow for the study notes and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Examine how the eight GameFlow conditions and the anxiety-versus-boredom balance are applied in concrete recent design cases to show the model operationalizing Flow in practice.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3873,21 +2263,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a games-ethics scholar whether one inaugural conference and a single chapter are enough to claim the field is organizing around ethical design or overstates a nascent trend.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that the academic community is organizing around ethical game design, citing the first Ethical Games Conference 2024 and the dark-patterns intervention chapter, as a finding and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Fetch the Ethical Games Conference 2024 synthesis and the Springer dark-patterns chapter to extract the specific evidence-based guidelines for industry and regulators.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3904,21 +2280,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Have a mental-health-intervention expert judge whether a single JMIR study and a pilot are strong enough to state an efficacy claim about adolescents given the ethical stakes.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Gather the JMIR 2025 and 2024 pilot effect sizes on mental-health literacy and cognitive-vulnerability reduction to substantiate the serious-games efficacy claim for adolescents.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record that serious games improve mental-health literacy and reduce cognitive vulnerability in adolescents, per the JMIR 2025 and 2024 pilot evidence, as a finding for the notes.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3935,21 +2297,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record that accessibility equals excellence and Universal Design benefits all players, anchored to the FDG 2025 theme and UD principles, as a finding for the study notes and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an accessibility researcher whether the strong claim that UD benefits all players and boosts retention is empirically established or a normative advocacy position needing qualification.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Collect concrete evidence on engagement and retention gains from Universal Design in games to support the accessibility-equals-excellence claim beyond the FDG 2025 theme.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3966,21 +2314,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a games-industry analyst whether one-in-three developer usage justifies the phrase industry-wide or whether that characterization needs softening.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that GenAI adoption is industry-wide with one in three developers using it in their workflow, per GDC 2025, as a finding for the notes and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Verify the GDC 2025 one-in-three GenAI-adoption figure and enumerate the cited application areas like Ghostwriter NPC dialogue, level generation, QA, and asset creation.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -3997,21 +2331,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record DDE's tripartite Design layer, with Interface filling the gap MDA leaves implicit, as its primary contribution over MDA and integrate it into the notes.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Examine how DDE's Interface layer fills the gap MDA leaves implicit through concrete design examples to confirm it is the framework's primary contribution over MDA.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a game-design theorist whether the Interface layer is genuinely DDE's chief advance over MDA or whether other DDE elements have a stronger claim.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4032,21 +2352,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Finalize the compiled study notes covering all five pillars and seven life domains as complete, noting the unverified business metrics and extrapolated parenting section as caveats.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Attempt an alternative retrieval of the R6.2 business metrics and locate a canonical commentarial source for the parenting section to close the two remaining evidence gaps.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Route the notes to a human reviewer to verify the workplace organizational metrics via direct paper access and supplement the parenting section with a canonical commentarial source.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4067,21 +2373,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a human reviewer to access the E3S Conferences paper directly and verify every metric cited in E6.1.1 since automated retrieval returned only unreadable binary content.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Try an alternative access route for the E3S Conferences paper, such as an HTML version or a different mirror, to recover the business-management metrics the binary PDF blocked.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Leave this branch pruned and record that all detailed content from the unreadable E3S Conferences PDF is unverified, omitting its metrics from the notes.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4098,21 +2390,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Integrate the documented Chan/Zen legacy showing the sutra as a living practice tradition rather than merely a text into the study notes as complete.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a Buddhist-studies specialist whether framing the sutra as a living practice tradition over a text is a defensible scholarly stance or one that needs balancing perspectives.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Gather further detail on Chan/Zen practices such as chanting, koan, and sudden enlightenment, and the 868 CE colophon, to enrich the living-tradition section before integrating it.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4129,21 +2407,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a Buddhist scholar whether presenting the four marks as a practical diagnostic taxonomy for suffering is faithful to the sutra or an interpretive framing needing a caveat.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Fetch the abide-nowhere article to develop the four-marks diagnostic taxonomy further, building on Thich Nhat Hanh's non-self reading of the self-construct.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the four marks as a confirmed diagnostic taxonomy where each reifies the self-construct, per Thich Nhat Hanh, and treat this thread as resolved for the notes.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4160,21 +2424,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Proceed to the thalira.com source to further develop abide-nowhere as engaged non-clinging and elaborate the four attachments it names.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record abide nowhere as engaged non-clinging that is fully present without identity-fixation, listing its four attachments, as a settled point for the study notes.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a contemplative-tradition expert whether the engaged-non-clinging reading of abide nowhere is well grounded or one interpretation among contested others.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4191,21 +2441,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a textual-scholarship expert to confirm the four-part structural division and the standard rendering of the Section 32 gatha before it anchors the notes.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Research the bodhisattva ideal next to connect the confirmed four-part structure and the Section 32 dream-illusion-bubble gatha to the sutra's broader teaching arc.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record the confirmed four-part structure and the Section 32 gatha on conditioned phenomena as landmark content for the study notes and close this thread.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4222,21 +2458,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a Chan-history specialist whether attributing the sudden/gradual split so directly to the Diamond Sutra's anti-conceptualism is historically sound or a simplification.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the Huineng-anchored sudden-versus-gradual debate, with the mirror-cleaning Northern school versus instant Southern recognition, as a confirmed finding for the notes.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Research the sutra's translations next to build on the confirmed Huineng account and the Northern-gradual versus Southern-sudden debate rooted in its anti-conceptualism.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4253,21 +2475,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Research the parenting domain next to extend the confirmed relationship-wisdom theme that non-attachment deepens love and Thich Nhat Hanh's sangha-of-two framing.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record that non-attachment deepens rather than lessens love, with the sangha-of-two and interconnectedness framing, as confirmed relationship wisdom for the study notes.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a relationship-and-contemplative-practice expert whether applying the sutra's non-attachment to romantic partnership is a sound reading or risks misinterpretation needing a caveat.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4284,21 +2492,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Ask a detector-electronics engineer whether this FPGA-TDC ToT paper is the right reference baseline for the readout system in question before building on it.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record the FPGA-TDC ToT paper as the established leading-edge plus ToT correction baseline and move no further on this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Open the 'TOT Measurement Implemented in FPGA TDC' paper and extract its reported leading-edge plus ToT correction figures to establish the baseline.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4315,21 +2509,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Treat the Fermilab CFD ASIC finding as sufficient to conclude that hardware CFD can remove the correction need and close this line.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Read the Fermilab CFD ASIC paper and pull out the evidence that hardware constant-fraction discrimination reduces the need for time-walk correction.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Consult a front-end hardware specialist on whether CFD ASIC results transfer to the specific readout electronics under study before relying on them.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4346,21 +2526,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Have a domain expert judge whether the pulse-shape and electronics dependence flagged as a risk makes the reported ToT resolution representative of the target system.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Extract the analytic calibration details from Fan et al. that back the better-than-15-ps leading-edge and 37-ps ToT resolution to quantify the ToT correction.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Log the Fan et al. one-channel result as confirmation that ToT is the standard electronics-side variable for leading-edge time walk and stop here.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4377,21 +2543,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Run a comparison of the hybrid front-end-plus-AI-residual architecture against a purely analytic pipeline to test whether the AI stage adds measurable gain.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a hardware architect to weigh the calibration-drift, label-bias, radiation-tolerance, and monitoring-overhead open issues before endorsing the hybrid design as the recommended architecture.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Write up the hybrid architecture — front-end features with AI residual correction — as the final answer to the research question.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4408,21 +2560,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Defer to an engineer the normative judgment of how strongly to caveat AI given the risk that overstating it drives poor engineering choices.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "State in the final answer that non-AI methods already solve first-order time walk and cite ToT, CFD, and analytic correction as the baselines.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Gather concrete performance numbers for ToT correction, CFD ASIC, and analytic LHC amplitude-walk correction to quantify how much first-order time walk non-AI methods already solve.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4439,21 +2577,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a detector engineer to confirm the detector-specific resource, latency, and radiation validation needed before declaring deployment feasible.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Collect additional deployed-inference latency figures beyond the sub-100-ns BDT and 25-ns autoencoder examples to test the deployment-feasibility claim across more cases.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Finalize the answer stating that compact hardware-aware AI timing correction is deployment-feasible, citing the BDT and radiation-hard autoencoder latency examples.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4470,21 +2594,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record the Naunheim 2025 improvement from 371 to 281 ps with reduced model size as sufficient evidence that explicit ML correction outperforms implicit calibration.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a PET-imaging specialist whether the PET-specific features and calibrated training measurements behind the Naunheim result apply to the general readout question.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Compare the Naunheim 2025 explicit-ML residual result against the DNN-versus-CFD timing evidence to see which approach outperforms across settings.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4501,21 +2611,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Have an expert judge whether the SNSPD high-rate-jitter target is comparable enough to standard leading-edge discriminator correction to serve as a fair baseline.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Fold the SNSPD calibration result into the synthesis as the caution that AI must be judged against strong non-AI baselines and stop searching.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Search for further strong non-AI calibration baselines beyond the SNSPD 45% FW1%M reduction to strengthen the comparison against AI methods.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4532,21 +2628,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a platform engineer whether AWS's default 50M active-series quota and 1.67M samples/s ingestion limit fit the actual deployment's burst profile before sizing to them.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Look up how GCP and Azure managed Prometheus handle churn pressure to compare their quota and throttling behavior against AWS's 50M-default active-series limits.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record AWS's quota, auto-scaling, and sample-throttling behavior as the baseline cloud-provider answer for handling churn and move on.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4563,21 +2645,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Conclude that churn increases WAL and head work because new series must be tracked before compaction, and record it without exact byte figures.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a Prometheus operator to confirm the per-series memory cost for their specific version and label set since it varies too much to pin down automatically.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Investigate how much WAL and chunks_head disk and memory grows per new series to quantify the churn impact conceptually.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4594,21 +2662,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Frame aggregate recording rules as the recommended design decision for keeping signal while shedding high-churn detail and close this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Let the team owner decide which high-churn drill-down dimensions are acceptable to lose to aggregation, since that is a use-case trade-off.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Test how aggregate recording rules behave on a high-churn label set to confirm they preserve signal while dropping detailed dimensions.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4625,21 +2679,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask an operator to set the guardrail thresholds, since limits set too aggressively can drop whole scrapes and require judgment about acceptable loss.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record sample_limit, label_limit, target_limit, and keep_dropped_targets as the documented ingestion guardrails and finish this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Read the Prometheus relabeling actions to see how they combine with sample_limit, label_limit, and target_limit as ingestion guardrails.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4656,21 +2696,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Record that promtool tsdb analyze is the tool for investigating churn, cardinality, and compaction efficiency and stop here.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask the operator which managed backend they run before recommending promtool, since it works on local TSDB blocks and not all managed backends.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Combine promtool tsdb analyze output with the live /api/v1/status/tsdb endpoint to cross-check churn and label-pair cardinality findings.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4687,21 +2713,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Present the layered prevent-detect-limit-aggregate-scale stack as the final recommended solution and stop expanding it.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Have the team decide how to adapt the layered stack given the differences between their self-hosted and managed Prometheus setup.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Map each layer of the prevent-detect-limit-aggregate-scale stack onto the specific AWS, GCP, and Azure managed-Prometheus services that implement it.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4718,21 +2730,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Note that generic web search returned no useful high-churn Prometheus sources and rely on the material already gathered instead.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask the requester to point to any internal runbooks or preferred sources on Prometheus churn, since public search quality was too weak to proceed.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Open the official Prometheus documentation directly to find the high-churn impact material that generic search failed to surface.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4749,21 +2747,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Note that Azure offers managed scale but leave the exact active-series quotas unstated in the answer given the missing figures.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an Azure specialist to confirm the current Azure Monitor workspace ingestion and query limits before the answer sizes anything to them.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Open the Azure Monitor workspace limits page to extract the exact active-series and ingestion quotas the overview page left unspecified.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4783,21 +2767,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Search for additional hybrid-tutoring deployment studies beyond the three middle-school trials to test whether the roughly $700-per-student effects replicate elsewhere.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record hybrid tutoring as the top implementable use case based on the three middle-school studies showing proficiency and usage gains.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a local school administrator whether the $700-per-student hybrid tutoring model fits their budget and context, since it needs careful local evaluation.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4814,21 +2784,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Use the AI Act's high-risk list for admissions, evaluation, and proctoring as the governance framing in the synthesis and stop here.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Examine how the AI Act's high-risk classification of admissions, evaluation, and proctoring translates into concrete compliance obligations for schools.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask an education-law expert how the analogous ethical risk applies to non-EU schools that fall outside the AI Act's high-risk provisions.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4845,21 +2801,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Mention DMP_AI's talented-student prediction and electives recommendation as evidence that educational AI can identify talent, with a caution, and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an equity specialist to judge whether DMP_AI's selection algorithms risk reproducing inequality before presenting talent identification as a positive use case.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Look into how DMP_AI's talented-student prediction actually selects students to assess whether it identifies talent reliably.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4879,21 +2821,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask the requester whether UK and elite-college adoption figures are an acceptable proxy for their target population before generalizing them.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Frame the HEPI/Kortext 92% and 80%-plus elite-college figures as evidence of rapid adoption and record it without further searching.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Gather adoption data from regions beyond the UK and elite colleges to test how far the 66-to-92% student AI-use rise generalizes.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4913,21 +2841,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "CONTINUE"
-   },
-   "candidates": [
-    {
-     "text": "Look for evidence on whether lower-achieving students benefit more from the AI-plus-human-tutoring complement to test that part of the hypothesis.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Merge the AI-as-complement-to-human-tutoring finding into the scenario synthesis and treat this line as resolved.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask school staff whether they have the scheduling, devices, dashboards, and tutor training this hybrid model requires before recommending it.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4944,21 +2858,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a privacy officer to weigh the profiling and bias risks of DMP_AI behavior prediction before recommending it for school operations.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Investigate concrete deployments of DMP_AI-style analytics for early warnings and IEP support to ground the school-operations use case.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Merge the DMP_AI operations analytics into the challenge and scenario synthesis and stop expanding this branch.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -4975,21 +2875,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Explore how the U.S. ED human-in-the-loop and guardrail recommendations are being operationalized in real edtech procurement.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Merge the U.S. ED human-oversight requirement into the challenge synthesis and treat oversight as a settled core requirement.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an oversight expert how schools should respond when vendors do not provide the transparency that human-in-the-loop oversight assumes.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5006,21 +2892,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Search for other national curricula beyond India's Class 3 AI rollout to test how widely AI literacy is moving into schools.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Use India's 2026-27 Class 3 AI and computational-thinking plan as the example of an early talent pipeline and stop here.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask an education-policy expert how much weight to give India's still-pending Class 3 rollout given that implementation has not yet happened.",
-     "maps_to": "HUMAN"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5042,21 +2914,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Route the synthesis to a human reviewer to weigh the forecaster market-size discrepancies, regional adoption variation, and FDA and EU AI Act regulatory factors.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Reconcile the market-size discrepancies across forecasters by pulling the underlying numbers before finalizing the eight-trend synthesis.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Publish the eight AI-native, Matter-compatible, privacy-respecting, design-integrated trends with the 13-product table as the completed answer.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5073,21 +2931,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record Matter 1.5 as the interoperability baseline, citing the 40% setup-failure reduction and emerging Matter Bridge category, and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a standards analyst how likely EU regulation of Matter interoperability is before treating non-compliance as a share-loss certainty.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Gather adoption data by manufacturer to test whether non-Matter-1.5 products actually lose share as the hypothesis claims.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5104,21 +2948,7 @@
    "_machine": {
     "luna": "STOP",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record whole-home HEMS with solar, EV, and battery as a mainstream product category based on the Nice and EcoFlow evidence and stop.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a market analyst whether the high cost of integrated HEMS undercuts calling it mainstream before locking that classification.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Look for additional whole-home HEMS launches beyond Nice Energy Panel and the EcoFlow-Nest-Bosch alliance to confirm the category is mainstream.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5135,21 +2965,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Record the CES 2026 security products as confirming the convergence-toward-biometric-Matter market direction and close this branch.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Ask a market analyst whether the still-high price point for these multi-feature convergence devices weakens them as a signal of mass-market direction.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Cross-check the CES 2026 security lineup — Aqara U400, myQ Secure View, Ulticam IQ V2, TCL D2 Pro — against other 2026 launches to confirm the biometric-plus-Matter direction.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5170,21 +2986,7 @@
    "_machine": {
     "luna": "ESCALATE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Attempt direct Samsung.com access or Samsung press-release PDFs to verify the KBIS 2026 AI-first kitchen claim that the login-gated source blocked.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask the requester whether primary-source verification of the Samsung KBIS 2026 claim is needed given that the direct source requires login.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Accept the secondary-source evidence for Samsung's AI-first kitchen direction and leave the login-gated primary source unfetched.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5201,21 +3003,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a market analyst to weigh the subscription-model and adoption-uncertainty risks before treating embedded GenAI hubs as a durable trend.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record that GenAI is being embedded in home hubs, citing Alexa+, Gemini for Home, and the $31.9B 2026 figure, and stop here.",
-     "maps_to": "STOP"
-    },
-    {
-     "text": "Look for further GenAI-in-hub launches beyond Alexa+, Gemini for Home, and SmartThings Edge AI Hub to strengthen the embedding trend.",
-     "maps_to": "CONTINUE"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5232,21 +3020,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Corroborate Promwad's AI-camera, AI-oven, expiration-tracking fridge, and sleep-mattress categories against independent sources to offset the contractor's bias.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Ask a market analyst to judge how much to trust Promwad given it is a tech contractor that may emphasize development opportunity.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Record Promwad's specific AI product categories as identified product types and move on to the next branch.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   },
   {
    "dataset": "A",
@@ -5263,21 +3037,7 @@
    "_machine": {
     "luna": "CONTINUE",
     "sonnet": "STOP"
-   },
-   "candidates": [
-    {
-     "text": "Ask a market analyst whether KNX's professional-standard perspective may lag consumer mass adoption before weighting it as a top 2026 trend.",
-     "maps_to": "HUMAN"
-    },
-    {
-     "text": "Look for consumer-market corroboration of KNX's sustainability-first and AI-without-complexity trends beyond the professional standard.",
-     "maps_to": "CONTINUE"
-    },
-    {
-     "text": "Record KNX's Trend #1 Sustainable Living with solar-plus-battery and 25-40% AI energy savings as confirmation of the sustainability trend and stop.",
-     "maps_to": "STOP"
-    }
-   ]
+   }
   }
  ]
 }

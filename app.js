@@ -650,6 +650,12 @@ const REASONS = {
     ['stop_exhausted', '搜尽了，再搜也不会有新信息', 'Exhausted — no new info expected'],
     ['stop_impossible', '做不到，当前环境无法解决', 'Impossible in this environment'],
   ],
+  ESCALATE: [
+    ['esc_collaborate', '可能有问题，需要和人协作解决', 'Something may be off — needs human collaboration'],
+    ['esc_steer', '需要人来把握大方向', 'Needs a human to steer the overall direction'],
+    ['esc_expertise', '需要人的专业 / 领域判断', 'Needs human domain expertise to judge'],
+    ['esc_stakes', '涉及主观取舍或高风险，应由人拍板', 'Subjective or high-stakes call a human should make'],
+  ],
 };
 
 // Some source trees stored list-valued fields as their Python/JSON repr
@@ -718,35 +724,52 @@ function renderNode() {
     fieldBlock(T('f_status'), node.status));
   host.append(card);
 
-  // Three synthetic candidate next steps — one each mapping to CONTINUE / STOP /
-  // HUMAN, order pre-shuffled in the data. The human picks the one they'd take;
-  // the pick IS the label. The agent's real next step is deliberately not shown
-  // (anti-anchoring), and the options carry no visible label.
-  const cands = item.candidates || [];
-  host.append(el('div', { class: 'fieldlabel', style: 'margin-top:18px' }, T('q_pick')));
-  const optwrap = el('div', { style: 'display:flex;flex-direction:column;gap:9px;margin-top:9px' });
-  if (!cands.length) {
-    optwrap.append(el('p', { class: 'hint' }, 'No options for this node — please report it.'));
-  }
-  const paint = () => {
-    optwrap.innerHTML = '';
-    cands.forEach((c, i) => {
-      const sel = st.chosen === i;
-      optwrap.append(el('button', {
-        type: 'button', 'data-i': i,
-        style: 'text-align:left;padding:11px 14px;border:1.5px solid ' +
-          (sel ? 'var(--struct,#28425E)' : 'var(--line,#d8dfe6)') + ';border-radius:8px;background:' +
-          (sel ? '#EEF2F5' : '#fff') + ';cursor:pointer;font-size:14.5px;line-height:1.5',
-        onclick: () => {
-          st.chosen = i; st.label = c.maps_to;
-          st.answeredAt = new Date().toISOString(); State.save(); paint();
-        }
-      }, el('span', { style: 'font-family:var(--mono,monospace);color:var(--ink2,#4A5A6A);margin-right:8px' },
-           String.fromCharCode(65 + i) + ')'), c.text));
+  // Three decision buttons. The agent's real next step is deliberately NOT shown
+  // (anti-anchoring). Picking a button reveals that direction's reason options.
+  host.append(el('div', { class: 'fieldlabel', style: 'margin-top:18px' }, T('q_ask')));
+  const row = el('div', { class: 'labelrow' });
+  const defs = [['CONTINUE', 'l_cont', 'l_cont_s'], ['STOP', 'l_stop', 'l_stop_s'],
+                ['ESCALATE', 'l_esc', 'l_esc_s']];
+  const reasonHost = el('div', { class: 'reasonblock', style: 'margin-top:14px' });
+  const paintReasons = () => {
+    reasonHost.innerHTML = '';
+    if (!st.label || !REASONS[st.label]) return;
+    reasonHost.append(el('div', { class: 'fieldlabel' }, T('reason_h')));
+    const opts = el('div', { style: 'display:flex;flex-direction:column;gap:7px;margin-top:8px' });
+    (REASONS[st.label] || []).forEach(([code, zh, en]) => {
+      const cb = el('input', { type: 'checkbox' });
+      cb.checked = st.reasons.includes(code);
+      cb.addEventListener('change', () => {
+        if (cb.checked) { if (!st.reasons.includes(code)) st.reasons.push(code); }
+        else st.reasons = st.reasons.filter(x => x !== code);
+        State.save();
+      });
+      opts.append(el('label', {
+        style: 'display:flex;align-items:flex-start;gap:8px;font-size:14.5px;cursor:pointer'
+      }, cb, el('span', {}, LANG === 'zh' ? zh : en)));
     });
+    reasonHost.append(opts);
+    const other = el('input', {
+      type: 'text', value: st.reason_other || '', placeholder: T('reason_other'),
+      style: 'margin-top:9px;width:100%;padding:7px 10px;border:1px solid var(--line,#d8dfe6);border-radius:6px;font-size:14px'
+    });
+    other.addEventListener('input', () => { st.reason_other = other.value; State.save(); });
+    reasonHost.append(other);
+  };
+  const paint = () => {
+    row.innerHTML = '';
+    defs.forEach(([L, k, s]) => row.append(el('button', {
+      class: 'lbtn' + (st.label === L ? ' sel' : ''), type: 'button', 'data-l': L,
+      onclick: () => {
+        if (st.label !== L) { st.label = L; st.reasons = []; st.reason_other = ''; }
+        st.answeredAt = new Date().toISOString(); State.save(); paint(); paintReasons();
+      }
+    }, T(k), el('span', { class: 'sub' }, T(s)))));
   };
   paint();
-  host.append(optwrap);
+  host.append(row);
+  paintReasons();
+  host.append(reasonHost);
 
   host.append(RationaleBlock(
     nodeRecId(State.ni, item),
@@ -953,7 +976,7 @@ async function buildExport() {
         annotator_id: State.annotatorId, kind: 'quiz', section: sec.id, param: sec.param,
         item_id: k, response: typeof v === 'boolean' ? (v ? 'checked' : '') : v,
         dataset: '', tree_id: '', subject_model: '', task: '', node_id: '',
-        human_label: '', chosen_next_step: '', human_reasons: '', human_reason_other: '',
+        human_label: '', human_reasons: '', human_reason_other: '',
         luna_label: '', luna_gate: '', sonnet_label: '', sonnet_gate: '',
         labelers_comparable: '',
         rationale_text: st.rationale || '', audio_file: af,
@@ -979,11 +1002,8 @@ async function buildExport() {
     nodeOut.push({
       dataset: item.dataset, tree_id: item.tree_id, subject_model: item.tree.subject_model,
       task: item.tree.task, node_id: item.node_id, node_type: item.node.node_type || '',
-      human_label: st.label || null,
-      chosen_next_step: (item.candidates && st.chosen != null && item.candidates[st.chosen])
-        ? item.candidates[st.chosen].text : '',
-      candidates: item.candidates || [],
-      human_reasons: st.reasons || [], human_reason_other: st.reason_other || '',
+      human_label: st.label || null, human_reasons: st.reasons || [],
+      human_reason_other: st.reason_other || '',
       rationale_text: st.rationale || '', audio_file: af,
       audio_seconds: af ? (ameta.dur ?? null) : null,
       shown_at: st.shownAt || null, answered_at: st.answeredAt || null,
@@ -999,8 +1019,6 @@ async function buildExport() {
       dataset: item.dataset, tree_id: item.tree_id,
       subject_model: item.tree.subject_model, task: item.tree.task,
       node_id: item.node_id, human_label: st.label || '',
-      chosen_next_step: (item.candidates && st.chosen != null && item.candidates[st.chosen])
-        ? item.candidates[st.chosen].text : '',
       human_reasons: (st.reasons || []).join(';'), human_reason_other: st.reason_other || '',
       luna_label: m.luna ? m.luna.label : '', luna_gate: m.luna ? m.luna.gate : '',
       sonnet_label: m.sonnet ? m.sonnet.label : '', sonnet_gate: m.sonnet ? m.sonnet.gate : '',
@@ -1011,7 +1029,7 @@ async function buildExport() {
   }
 
   const cols = ['annotator_id','kind','section','param','item_id','response','dataset',
-    'tree_id','subject_model','task','node_id','human_label','chosen_next_step','human_reasons','human_reason_other',
+    'tree_id','subject_model','task','node_id','human_label','human_reasons','human_reason_other',
     'luna_label','luna_gate','sonnet_label',
     'sonnet_gate','labelers_comparable','rationale_text','audio_file','audio_seconds','timestamp'];
   const csv = [cols.join(',')]
